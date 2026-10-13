@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#241b17">
+  <meta name="description" content="Stackly Home store analytics and performance.">
+  <title>Analytics — STACKLY Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/dashboard.css">
+  <script src="../../js/email-validation.js" defer></script>
+  <script src="../js/dashboard.js" defer></script>
+</head>
+<body class="dash-body" data-dash="admin" data-page="analytics" data-title="Analytics">
+  <div class="dash">
+    <aside class="dash-sidebar" id="sidebar"></aside>
+    <div class="dash-scrim" data-sidebar-close></div>
+    <div class="dash-main">
+      <header class="dash-topbar" id="topbar"></header>
+
+      <main class="dash-content">
+        <section class="panel">
+          <div class="panel-head">
+            <div class="panel-title-wrap"><h2>Revenue performance</h2><p>Gross sales, net of returns</p></div>
+            <div class="segmented" role="group" aria-label="Time range">
+              <button onclick="window.location.href='../../404.html';return false" class="seg-btn" data-range="7d">7 days</button>
+              <button onclick="window.location.href='../../404.html';return false" class="seg-btn is-active" data-range="30d">30 days</button>
+              <button onclick="window.location.href='../../404.html';return false" class="seg-btn" data-range="12m">12 months</button>
+            </div>
+          </div>
+          <div class="kpi-row" style="border-bottom:1px solid var(--line-2)">
+            <div class="kpi"><small>Total revenue</small><b data-range-total>$148,920</b></div>
+            <div class="kpi"><small>Growth</small><b class="trend up" data-range-delta style="font-family:var(--sans);font-size:22px">+12.4%</b></div>
+            <div class="kpi"><small>Orders</small><b>1,284</b></div>
+            <div class="kpi"><small>Avg. order value</small><b>$116</b></div>
+            <div class="kpi"><small>Conversion</small><b>3.8%</b></div>
+          </div>
+          <div class="panel-pad">
+            <div class="chart">
+              <div data-chart="area" data-values="42,48,40,55,52,63,58,66,61,72,69,80" data-labels="1,,4,,8,,12,,16,,22,30"></div>
+              <div class="chart-x" data-chart-x></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="grid split-even align-start">
+          <div class="panel">
+            <div class="panel-head"><div class="panel-title-wrap"><h2>Orders by weekday</h2><p>Average volume across the week</p></div></div>
+            <div class="panel-pad">
+              <div class="chart" data-chart="bars" data-values="52,68,44,76,88,96,60" data-labels="Mon,Tue,Wed,Thu,Fri,Sat,Sun"></div>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="panel-head"><div class="panel-title-wrap"><h2>Traffic sources</h2><p>Where your visitors come from</p></div></div>
+            <div class="panel-pad">
+              <div class="donut-wrap">
+                <div class="donut" style="background:conic-gradient(#c9a05b 0 42%, #7a5a9e 42% 68%, #3e6d96 68% 87%, #3f8f6b 87% 100%)">
+                  <div class="donut-center"><b>82.4k</b><small>visits</small></div>
+                </div>
+                <div class="donut-legend">
+                  <span><span class="dot" style="background:#c9a05b"></span>Direct<b>42%</b></span>
+                  <span><span class="dot" style="background:#7a5a9e"></span>Pinterest<b>26%</b></span>
+                  <span><span class="dot" style="background:#3e6d96"></span>Instagram<b>19%</b></span>
+                  <span><span class="dot" style="background:#3f8f6b"></span>Referral<b>13%</b></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="grid stat-grid">
+          <article class="stat">
+            <div class="stat-top"><span class="stat-label">Sessions</span><span class="stat-ico" data-icon="chart"></span></div>
+            <p class="stat-value">82.4k</p>
+            <div class="stat-foot"><span class="trend up" data-icon="arrowUp">5.6%</span><span>vs prior period</span></div>
+          </article>
+          <article class="stat">
+            <div class="stat-top"><span class="stat-label">Add-to-cart rate</span><span class="stat-ico" data-icon="bag"></span></div>
+            <p class="stat-value">9.1%</p>
+            <div class="stat-foot"><span class="trend up" data-icon="arrowUp">1.2%</span><span>improving</span></div>
+          </article>
+          <article class="stat">
+            <div class="stat-top"><span class="stat-label">Checkout rate</span><span class="stat-ico" data-icon="card"></span></div>
+            <p class="stat-value">3.8%</p>
+            <div class="stat-foot"><span class="trend down" data-icon="arrowDown">0.3%</span><span>vs prior period</span></div>
+          </article>
+          <article class="stat">
+            <div class="stat-top"><span class="stat-label">Returning visitors</span><span class="stat-ico" data-icon="users"></span></div>
+            <p class="stat-value">46%</p>
+            <div class="stat-foot"><span class="trend up" data-icon="arrowUp">2.1%</span><span>loyalty growing</span></div>
+          </article>
+        </section>
+
+        <section class="panel">
+          <div class="panel-head">
+            <div class="panel-title-wrap"><h2>Product performance</h2><p>Revenue contribution this period</p></div>
+            <button onclick="window.location.href='../../404.html';return false" class="btn btn-line btn-sm" data-toast="Analytics report exported"><span data-icon="download"></span> Export report</button>
+          </div>
+          <div class="table-wrap">
+            <table class="table">
+              <thead><tr><th>Product</th><th>Views</th><th>Add to cart</th><th>Conversion</th><th>Revenue</th></tr></thead>
+              <tbody>
+                <tr><td><div class="cell-flex"><span class="thumb"><img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&w=200&q=70" alt="Sculpted boucle chair"></span><span class="cell-title"><b>Sculpted Boucle Chair</b><small>Living</small></span></div></td><td class="num">18,420</td><td class="num">1,846</td><td class="num">6.9%</td><td class="num">$158,720</td></tr>
+                <tr><td><div class="cell-flex"><span class="thumb"><img src="https://images.unsplash.com/photo-1499933374294-4584851497cc?auto=format&fit=crop&w=200&q=70" alt="Travertine side table"></span><span class="cell-title"><b>Travertine Side Table</b><small>Living</small></span></div></td><td class="num">12,980</td><td class="num">1,204</td><td class="num">7.4%</td><td class="num">$65,280</td></tr>
+                <tr><td><div class="cell-flex"><span class="thumb"><img src="https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?auto=format&fit=crop&w=200&q=70" alt="Linen throw collection"></span><span class="cell-title"><b>Linen Throw Collection</b><small>Textiles</small></span></div></td><td class="num">22,140</td><td class="num">2,640</td><td class="num">9.5%</td><td class="num">$39,900</td></tr>
+                <tr><td><div class="cell-flex"><span class="thumb"><img src="https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=200&q=70" alt="Amber glass lamp"></span><span class="cell-title"><b>Amber Glass Lamp</b><small>Lighting</small></span></div></td><td class="num">15,760</td><td class="num">1,512</td><td class="num">5.3%</td><td class="num">$35,280</td></tr>
+                <tr><td><div class="cell-flex"><span class="thumb"><img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=200&q=70" alt="Walnut console"></span><span class="cell-title"><b>Walnut Console</b><small>Furniture</small></span></div></td><td class="num">9,240</td><td class="num">612</td><td class="num">4.6%</td><td class="num">$79,380</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+  <div class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

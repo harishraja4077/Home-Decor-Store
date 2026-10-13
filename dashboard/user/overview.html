@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#241b17">
+  <meta name="description" content="Your Stackly Home account dashboard — orders, wishlist, addresses and settings.">
+  <title>Dashboard — STACKLY</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/dashboard.css">
+  <script src="../../js/email-validation.js" defer></script>
+  <script src="../js/dashboard.js" defer></script>
+</head>
+<body class="dash-body" data-dash="user" data-page="overview" data-title="Dashboard">
+  <div class="dash">
+    <aside class="dash-sidebar" id="sidebar"></aside>
+    <div class="dash-scrim" data-sidebar-close></div>
+    <div class="dash-main">
+      <header class="dash-topbar" id="topbar"></header>
+
+      <main class="dash-content">
+        <section class="welcome">
+          <div class="welcome-copy">
+            <p class="welcome-eyebrow">Gold member · 1,280 points</p>
+            <h1 data-greeting>Good evening.</h1>
+            <p>Your orders are on track and your wishlist just got a little lovelier. Here is everything happening with your Stackly home.</p>
+            <div class="welcome-actions mt-20">
+              <a class="btn btn-gold" href="../../404.html">Track my order</a>
+              <a class="btn btn-light-line" href="../../404.html">Continue shopping</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="grid stat-grid">
+          <article class="stat">
+            <div class="stat-top"><span class="stat-label">Total orders</span><span class="stat-ico" data-icon="bag"></span></div>
+            <p class="stat-value">24</p>
+            <div class="stat-foot"><span class="trend up" data-icon="arrowUp">+2</span><span>this year</span></div>
+          </article>
+          <article class="stat">
+            <div class="stat-top"><span class="stat-label">Wishlist items</span><span class="stat-ico" data-icon="heart"></span></div>
+            <p class="stat-value">6</p>
+            <div class="stat-foot"><span class="trend up" data-icon="arrowUp">+3</span><span>new this week</span></div>
+          </article>
+          <article class="stat">
+            <div class="stat-top"><span class="stat-label">Reward points</span><span class="stat-ico" data-icon="star"></span></div>
+            <p class="stat-value">1,280</p>
+            <div class="stat-foot"><span class="trend up" data-icon="arrowUp">+180</span><span>this month</span></div>
+          </article>
+          <article class="stat">
+            <div class="stat-top"><span class="stat-label">Saved addresses</span><span class="stat-ico" data-icon="pin"></span></div>
+            <p class="stat-value">3</p>
+            <div class="stat-foot"><span>Home, Studio &amp; Parents</span></div>
+          </article>
+        </section>
+
+        <section class="grid split align-start">
+          <div class="panel">
+            <div class="panel-head">
+              <div class="panel-title-wrap"><h2>Recent orders</h2><p>Your latest purchases from Stackly Home.</p></div>
+              <a class="btn btn-line btn-sm" href="../../404.html">View all</a>
+            </div>
+            <div class="table-wrap">
+              <table class="table">
+                <thead><tr><th>Order</th><th>Date</th><th>Items</th><th>Total</th><th>Status</th></tr></thead>
+                <tbody>
+                  <tr><td class="cell-strong">#STK-2481</td><td class="muted">Mar 12, 2026</td><td class="muted">2 items</td><td class="num">$1,920</td><td><span class="badge badge-blue">In transit</span></td></tr>
+                  <tr><td class="cell-strong">#STK-2466</td><td class="muted">Mar 02, 2026</td><td class="muted">1 item</td><td class="num">$420</td><td><span class="badge badge-green">Delivered</span></td></tr>
+                  <tr><td class="cell-strong">#STK-2450</td><td class="muted">Feb 21, 2026</td><td class="muted">2 items</td><td class="num">$380</td><td><span class="badge badge-green">Delivered</span></td></tr>
+                  <tr><td class="cell-strong">#STK-2437</td><td class="muted">Feb 15, 2026</td><td class="muted">1 item</td><td class="num">$1,890</td><td><span class="badge badge-amber">Processing</span></td></tr>
+                  <tr><td class="cell-strong">#STK-2401</td><td class="muted">Feb 04, 2026</td><td class="muted">1 item</td><td class="num">$145</td><td><span class="badge badge-green">Delivered</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="grid">
+            <div class="panel">
+              <div class="panel-head"><div class="panel-title-wrap"><h2>Track delivery</h2><p>Order #STK-2481</p></div></div>
+              <div class="panel-pad">
+                <ul class="timeline">
+                  <li><b>Order placed</b><small>Mar 12 · 9:40 AM</small></li>
+                  <li><b>Prepared &amp; packed</b><small>Mar 13 · Stackly studio</small></li>
+                  <li><b>Out for delivery</b><small>Expected Mar 16</small></li>
+                  <li><b>Delivered</b><small>—</small></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="panel panel-pad">
+              <p class="welcome-eyebrow" style="color:var(--gold-2)">Gold membership</p>
+              <p class="inline-value mt-8">1,280 points</p>
+              <p class="lead mt-8">720 points until Platinum — unlock free white-glove delivery and early access.</p>
+              <div class="progress mt-16"><span style="width:64%"></span></div>
+              <div class="between mt-8 text-sm muted"><span>Gold</span><span>Platinum</span></div>
+              <a class="btn btn-gold btn-sm w-full mt-16" href="../../404.html">Manage membership</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-head">
+            <div class="panel-title-wrap"><h2>Picked for you</h2><p>Curated from your saved styles and recent browsing.</p></div>
+            <a class="btn btn-line btn-sm" href="../../404.html">Open wishlist</a>
+          </div>
+          <div class="panel-pad">
+            <div class="product-grid">
+              <article class="p-card">
+                <div class="p-media"><img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&w=700&q=80" alt="Sculpted boucle accent chair"><span class="p-tag">New arrival</span></div>
+                <div class="p-body"><h3>Sculpted Boucle Chair</h3><p>Soft curves, wild oak frame.</p>
+                  <div class="p-foot"><span class="p-price">$1,240</span><button onclick="window.location.href='../../404.html';return false" class="btn btn-gold btn-sm" data-add-bag="Sculpted Boucle Chair">Add to bag</button></div>
+                </div>
+              </article>
+              <article class="p-card">
+                <div class="p-media"><img src="https://images.unsplash.com/photo-1499933374294-4584851497cc?auto=format&fit=crop&w=700&q=80" alt="Minimal travertine side table"><span class="p-tag">Bestseller</span></div>
+                <div class="p-body"><h3>Travertine Side Table</h3><p>Married stone with a brass inlay.</p>
+                  <div class="p-foot"><span class="p-price">$680</span><button onclick="window.location.href='../../404.html';return false" class="btn btn-gold btn-sm" data-add-bag="Travertine Side Table">Add to bag</button></div>
+                </div>
+              </article>
+              <article class="p-card">
+                <div class="p-media"><img src="https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=700&q=80" alt="Amber glass lamp"><span class="p-tag">Handmade</span></div>
+                <div class="p-body"><h3>Amber Glass Lamp</h3><p>Hand-blown, warm ambient glow.</p>
+                  <div class="p-foot"><span class="p-price">$420</span><button onclick="window.location.href='../../404.html';return false" class="btn btn-gold btn-sm" data-add-bag="Amber Glass Lamp">Add to bag</button></div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+  <div class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

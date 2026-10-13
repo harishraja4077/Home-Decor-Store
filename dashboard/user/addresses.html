@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#241b17">
+  <meta name="description" content="Manage your delivery addresses for Stackly Home.">
+  <title>Addresses — STACKLY</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/dashboard.css">
+  <script src="../../js/email-validation.js" defer></script>
+  <script src="../js/dashboard.js" defer></script>
+</head>
+<body class="dash-body" data-dash="user" data-page="addresses" data-title="Addresses">
+  <div class="dash">
+    <aside class="dash-sidebar" id="sidebar"></aside>
+    <div class="dash-scrim" data-sidebar-close></div>
+    <div class="dash-main">
+      <header class="dash-topbar" id="topbar"></header>
+
+      <main class="dash-content">
+        <section class="panel panel-pad between">
+          <div>
+            <h2 class="panel-title">Saved addresses</h2>
+            <p class="lead mt-8">Choose where your pieces are delivered. Set a default for effortless checkout.</p>
+          </div>
+          <button onclick="window.location.href='../../404.html';return false" class="btn btn-gold" data-modal-open="addressModal"><span data-icon="plus"></span> Add address</button>
+        </section>
+
+        <section class="addr-grid">
+          <article class="addr is-default" data-remove>
+            <div class="addr-head">
+              <h3>Home</h3>
+              <span class="badge badge-amber badge-plain">Default</span>
+            </div>
+            <p data-account-name></p>
+            <p>14 Maplewood Terrace, Apt 6B</p>
+            <p>Brooklyn, NY 11201</p>
+            <p>United States</p>
+            <p class="mt-8">+1 (212) 555-0148</p>
+            <div class="addr-actions">
+              <button onclick="window.location.href='../../404.html';return false" class="btn btn-line btn-sm" data-toast="Editing Home address">Edit</button>
+              <button onclick="window.location.href='../../404.html';return false" class="mini-btn danger" data-row-delete="Home address removed" aria-label="Delete"><span data-icon="trash"></span></button>
+            </div>
+          </article>
+
+          <article class="addr" data-remove>
+            <div class="addr-head"><h3>Studio</h3></div>
+            <p>Design Studio</p>
+            <p>203 Bowery, Floor 3</p>
+            <p>New York, NY 10012</p>
+            <p>United States</p>
+            <p class="mt-8">+1 (212) 555-0192</p>
+            <div class="addr-actions">
+              <button onclick="window.location.href='../../404.html';return false" class="btn btn-line btn-sm" data-toast="Editing Studio address">Edit</button>
+              <button onclick="window.location.href='../../404.html';return false" class="mini-btn danger" data-row-delete="Studio address removed" aria-label="Delete"><span data-icon="trash"></span></button>
+            </div>
+          </article>
+
+          <article class="addr" data-remove>
+            <div class="addr-head"><h3>Parents</h3></div>
+            <p>Mr &amp; Mrs <span data-account-surname></span></p>
+            <p>88 Lakeside Avenue</p>
+            <p>Montclair, NJ 07042</p>
+            <p>United States</p>
+            <p class="mt-8">+1 (973) 555-0110</p>
+            <div class="addr-actions">
+              <button onclick="window.location.href='../../404.html';return false" class="btn btn-line btn-sm" data-toast="Editing Parents address">Edit</button>
+              <button onclick="window.location.href='../../404.html';return false" class="mini-btn danger" data-row-delete="Parents address removed" aria-label="Delete"><span data-icon="trash"></span></button>
+            </div>
+          </article>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <div class="modal" id="addressModal" role="dialog" aria-modal="true" aria-labelledby="addressModalTitle">
+    <div class="modal-card">
+      <div class="modal-head">
+        <h2 id="addressModalTitle">Add a new address</h2>
+        <button class="mini-btn" data-modal-close aria-label="Close"><span data-icon="close"></span></button>
+      </div>
+      <form data-simple-form="New address saved to your account">
+        <div class="modal-body">
+          <div class="form-grid">
+            <div class="form-field"><label for="addr-label">Label</label><input id="addr-label" name="label" placeholder="e.g. Home, Studio" required></div>
+            <div class="form-field"><label for="addr-name">Full name</label><input id="addr-name" name="name" placeholder="Recipient name" required></div>
+            <div class="form-field full"><label for="addr-street">Street address</label><input id="addr-street" name="street" placeholder="Street and apartment" required></div>
+            <div class="form-field"><label for="addr-city">City</label><input id="addr-city" name="city" required></div>
+            <div class="form-field"><label for="addr-post">Postal code</label><input id="addr-post" name="postal" required></div>
+            <div class="form-field"><label for="addr-country">Country</label>
+              <select id="addr-country" name="country"><option>United States</option><option>United Kingdom</option><option>Canada</option><option>India</option><option>Australia</option></select>
+            </div>
+            <div class="form-field"><label for="addr-phone">Phone</label><input id="addr-phone" name="phone" type="tel"></div>
+          </div>
+        </div>
+        <div class="modal-foot">
+          <button type="button" class="btn btn-ghost" data-modal-close>Cancel</button>
+          <button type="submit" class="btn btn-gold">Save address</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

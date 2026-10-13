@@ -1,0 +1,228 @@
+.contact-page { --contact-width: 1120px; overflow-x: hidden; }
+.contact-container { width: min(var(--contact-width), calc(100% - 84px)); margin: 0 auto; }
+
+.contact-hero { min-height: 560px; margin: 12px 16px 0; overflow: hidden; border-radius: 18px; color: var(--paper); background: #11110f; }
+.contact-nav { position: relative; z-index: 3; }
+.contact-hero-content { display: grid; min-height: 494px; grid-template-columns: 1fr 1fr; align-items: center; }
+.window-view { position: relative; height: 410px; margin-left: 0; overflow: hidden; }
+.window-view::after { position: absolute; inset: 0; border: 8px solid #070807; box-shadow: inset 0 0 25px rgba(0,0,0,.6); content: ""; pointer-events: none; }
+.window-view img { object-position: 42% center; }
+.window-view > span { position: absolute; z-index: 1; bottom: 20px; left: 7%; color: #eee9e1; font-family: var(--sans); font-size: 13px; }
+.contact-hero-copy { position: relative; z-index: 1; width: 94%; padding: 0 7% 0 5%; }
+.contact-hero-copy h1 { margin: 0; color: var(--gold); font-family: var(--script); font-size: clamp(50px, 6vw, 78px); font-weight: 400; line-height: 1.03; }
+.contact-hero-copy p { max-width: 390px; margin: 18px 0 0; color: #e5dfd5; font-family: var(--sans); font-size: 14px; line-height: 1.5; }
+
+.contact-details { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; padding: 42px 3% 39px; }
+.contact-details article { min-width: 0; }
+.detail-rule { position: relative; display: block; height: 1px; margin-bottom: 9px; background: #b28a4e; }
+.detail-rule::after { position: absolute; top: -2px; right: 0; width: 4px; height: 4px; border-radius: 50%; background: #b28a4e; content: ""; }
+.contact-details h2 { margin: 0 0 7px; color: #9e7948; font-family: var(--sans); font-size: 13px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase; }
+.contact-details address, .contact-details .detail-value { color: var(--ink); font-size: 16px; font-style: normal; }
+.contact-details article > p:last-child { margin: 3px 0 0; color: #9b7848; font-size: 13px; }
+
+.enquiry { padding: 34px 0 36px; background: #eee7da; }
+.enquiry-inner { display: grid; grid-template-columns: 1fr 1fr; align-items: start; gap: 48px; }
+.enquiry-intro { padding: 0 0 0 2%; }
+.enquiry-intro .eyebrow { margin-bottom: 7px; }
+.enquiry-intro h2 { margin: 0; font-size: clamp(36px, 4.8vw, 56px); line-height: .95; }
+.enquiry-intro h2 em { font-weight: 400; }
+.enquiry-intro > p:last-child { max-width: 330px; margin: 18px 0 0; color: #8a704c; font-family: var(--sans); font-size: 13px; line-height: 1.4; }
+.contact-form { display: grid; grid-template-columns: 1fr 1fr; gap: 22px 34px; padding: 25px 29px 18px; border: 1px solid rgba(255,255,255,.65); border-radius: 17px; background: #f8f4ec; box-shadow: 0 2px 2px rgba(36,27,23,.24); }
+.form-field { display: flex; min-width: 0; flex-direction: column; gap: 5px; }
+.form-field label { color: #27221d; font-family: var(--sans); font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+.form-field input, .form-field select, .form-field textarea { width: 100%; min-width: 0; padding: 4px 0 5px; border: 0; border-bottom: 1px solid #c4a36e; border-radius: 0; outline: 0; color: #8a704c; background: transparent; font-family: var(--serif); font-size: 14px; }
+.form-field input::placeholder, .form-field textarea::placeholder { color: #8a704c; opacity: 1; }
+.form-field select { appearance: none; background-image: linear-gradient(45deg, transparent 50%, #9f7947 50%), linear-gradient(135deg, #9f7947 50%, transparent 50%); background-position: calc(100% - 5px) 10px, 100% 10px; background-repeat: no-repeat; background-size: 5px 5px, 5px 5px; }
+.form-field select:invalid { color: #8a704c; }
+.form-field textarea { min-height: 43px; resize: vertical; }
+.form-message-field { grid-column: 1 / -1; }
+.form-submit { grid-column: 1 / -1; display: flex; min-height: 32px; flex-direction: column; align-items: center; justify-content: flex-end; }
+.form-submit .button { min-height: 29px; padding: 0 15px; font-size: 14px; letter-spacing: .12em; text-transform: uppercase; }
+.contact-form-status { margin: 0 0 10px; color: #82643c; font-family: var(--sans); font-size: 13px; line-height: 1.5; text-align: center; }
+.contact-form-status:empty { display: none; }
+
+.consultation { display: grid; grid-template-columns: 1fr 1fr; align-items: stretch; gap: 0; margin-top: 27px; margin-bottom: 31px; padding: 5px; overflow: hidden; border: 1px solid #c7ad81; border-radius: 18px; }
+.consultation-image { position: relative; min-height: 330px; overflow: hidden; border-radius: 13px 0 0 13px; }
+.consultation-image img { object-position: center; }
+.consultation-image > span { position: absolute; bottom: 12px; left: 14px; color: white; font-family: var(--sans); font-size: 13px; letter-spacing: .12em; }
+.consultation-copy { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; padding: 28px 7%; color: var(--paper); background: var(--ink); }
+.consultation-copy .eyebrow { margin-bottom: 8px; }
+.consultation-copy h2 { margin: 0; font-size: clamp(34px, 4.4vw, 52px); line-height: .96; }
+.consultation-copy h2 em { font-weight: 400; }
+.consultation-copy > p:not(.eyebrow) { max-width: 390px; margin: 14px 0 10px; color: #b69a6d; font-size: 14px; line-height: 1.35; }
+.session-options { display: flex; gap: 8px; margin-bottom: 14px; }
+.session-options span { padding: 5px 8px; border: 1px solid #8e6d3d; border-radius: 14px; color: #e7ddd0; font-family: var(--sans); font-size: 13px; }
+.consultation-copy .button { min-height: 30px; padding: 0 14px; font-size: 14px; letter-spacing: .08em; text-transform: uppercase; }
+
+.find-us { padding-top: 4px; padding-bottom: 33px; }
+.find-us .eyebrow { margin: 0 0 5px; }
+.find-us h2 { margin: 0 0 20px; font-size: clamp(38px, 5vw, 59px); }
+.find-us h2 em { font-weight: 400; }
+.map-frame { position: relative; width: 92%; height: 420px; margin: 0 auto; overflow: hidden; border: 1px solid #d1c6b6; border-radius: 17px; background: #e7e8e4; box-shadow: 0 2px 6px rgba(36,27,23,.3); }
+.map-frame iframe { width: 100%; height: 100%; border: 0; }
+.map-label { position: absolute; top: 18px; left: 18px; padding: 10px 13px; border-radius: 8px; color: var(--ink); background: #d1ad70; box-shadow: 0 2px 3px rgba(36,27,23,.25); font-size: 13px; }
+.map-label span { font-size: 14px; }
+
+.contact-cta { padding-top: 2px; padding-bottom: 43px; }
+.contact-cta-inner { display: flex; min-height: 340px; flex-direction: column; align-items: center; justify-content: center; overflow: hidden; border: 1px solid #bba77f; border-radius: 20px; outline: 1px solid rgba(255,255,255,.22); outline-offset: -13px; color: var(--paper); background: radial-gradient(ellipse at 50% 8%, #727965 0%, #4f5245 36%, #281f1a 82%); text-align: center; }
+.contact-cta-inner .eyebrow { margin-bottom: 11px; }
+.contact-cta-inner h2 { margin: 0; font-size: clamp(35px, 4.6vw, 54px); line-height: .98; }
+.contact-cta-inner h2 em { display: inline-block; margin-top: 4px; color: var(--gold); font-size: .88em; font-weight: 400; }
+.contact-cta-inner .button { min-height: 34px; margin-top: 20px; }
+
+@media (max-width: 760px) {
+  .contact-container { width: calc(100% - 40px); }
+  .contact-hero { min-height: 207px; margin: 6px 5px 0; border-radius: 9px; }
+  .contact-nav { height: 34px; gap: 12px; padding: 0 10px; }
+  .contact-nav .wordmark { gap: 3px; font-size: 14px; }
+  .contact-nav .brand-mark { width: 14px; height: 14px; font-size: 13px; }
+  .contact-nav .nav-links { top: 33px; padding: 5px 12px 10px; background: var(--ink); }
+  .contact-nav .nav-links a { padding: 8px 0; font-size: 13px; }
+  .contact-nav .nav-actions { gap: 7px; }
+  .contact-nav .icon-button { width: 12px; height: 18px; }
+  .contact-nav .icon-button svg { width: 11px; }
+  .contact-nav .menu-toggle { width: 19px; height: 21px; gap: 4px; padding: 2px; }
+  .contact-nav .menu-toggle span { width: 14px; }
+  .contact-hero-content { min-height: 173px; grid-template-columns: 1fr 1fr; }
+  .window-view { height: 157px; }
+  .window-view::after { border-width: 4px; }
+  .window-view > span { bottom: 8px; left: 8%; font-size: 14px; }
+  .contact-hero-copy { width: 100%; padding: 0 7% 0 5%; }
+  .contact-hero-copy h1 { font-size: clamp(26px, 7.4vw, 34px); line-height: 1.03; }
+  .contact-hero-copy p { margin-top: 8px; font-size: 14px; line-height: 1.4; }
+  .contact-details { grid-template-columns: repeat(4, 1fr); gap: 17px; padding: 20px 3% 19px; }
+  .detail-rule { margin-bottom: 5px; }
+  .contact-details h2 { margin-bottom: 4px; font-size: 14px; }
+  .contact-details address, .contact-details .detail-value { font-size: clamp(7px, 2vw, 9px); }
+  .contact-details article > p:last-child { margin-top: 2px; font-size: 14px; }
+  .enquiry { padding: 20px 0 21px; }
+  .enquiry-inner { grid-template-columns: 1.05fr .95fr; gap: 12px; }
+  .enquiry-intro { padding-left: 1%; }
+  .enquiry-intro .eyebrow { margin-bottom: 5px; font-size: 14px; }
+  .enquiry-intro h2 { font-size: clamp(24px, 7vw, 31px); }
+  .enquiry-intro > p:last-child { margin-top: 11px; font-size: 14px; }
+  .contact-form { gap: 14px 17px; padding: 14px 12px 12px; border-radius: 10px; }
+  .form-field { gap: 3px; }
+  .form-field label { font-size: 14px; }
+  .form-field input, .form-field select, .form-field textarea { padding: 3px 0; font-size: 13px; }
+  .form-field select { background-position: calc(100% - 4px) 8px, 100% 8px; background-size: 4px 4px, 4px 4px; }
+  .form-field textarea { min-height: 31px; }
+  .form-submit { min-height: 24px; }
+  .form-submit .button { min-height: 19px; padding: 0 9px; font-size: 14px; }
+  .contact-form-status { margin-bottom: 6px; font-size: 14px; }
+  .consultation { grid-template-columns: 1fr 1fr; margin-top: 14px; margin-bottom: 19px; padding: 3px; border-radius: 10px; }
+  .consultation-image { min-height: 163px; border-radius: 7px 0 0 7px; }
+  .consultation-image > span { bottom: 6px; left: 7px; font-size: 14px; }
+  .consultation-copy { padding: 12px 6%; }
+  .consultation-copy .eyebrow { margin-bottom: 5px; font-size: 14px; }
+  .consultation-copy h2 { font-size: clamp(20px, 5.9vw, 26px); }
+  .consultation-copy > p:not(.eyebrow) { margin: 7px 0; font-size: 14px; }
+  .session-options { gap: 4px; margin-bottom: 7px; }
+  .session-options span { padding: 3px 5px; font-size: 14px; }
+  .consultation-copy .button { min-height: 19px; padding: 0 8px; font-size: 14px; }
+  .find-us { padding-bottom: 22px; }
+  .find-us .eyebrow { margin-bottom: 4px; font-size: 14px; }
+  .find-us h2 { margin-bottom: 11px; font-size: 28px; }
+  .map-frame { width: 92%; height: 235px; border-radius: 10px; }
+  .map-label { top: 9px; left: 9px; padding: 6px 8px; border-radius: 5px; font-size: 13px; }
+  .map-label span { font-size: 13px; }
+  .contact-cta { padding-bottom: 28px; }
+  .contact-cta-inner { min-height: 180px; border-radius: 10px; outline-offset: -8px; }
+  .contact-cta-inner .eyebrow { margin-bottom: 7px; font-size: 14px; }
+  .contact-cta-inner h2 { font-size: clamp(21px, 6.2vw, 26px); }
+  .contact-cta-inner h2 em { margin-top: 2px; }
+  .contact-cta-inner .button { min-height: 22px; margin-top: 12px; padding: 0 10px; font-size: 14px; }
+  .contact-page .footer-wrap { padding-top: 27px; }
+  .contact-page .footer-brand h2 { font-size: 27px; }
+  .contact-page .footer-brand .eyebrow { font-size: 14px; }
+  .contact-page .footer-wordmark { margin-top: 11px; font-size: 18px; }
+  .contact-page .footer-note { font-size: 14px; }
+  .contact-page .footer-newsletter > p:first-child { font-size: 13px; }
+  .contact-page .newsletter-form { height: 29px; margin-top: 8px; }
+  .contact-page .newsletter-form input, .contact-page .newsletter-form button { font-size: 14px; }
+  .contact-page .newsletter-form button { min-width: 75px; }
+  .contact-page .footer-bottom { grid-template-columns: .8fr 1.2fr 1.2fr; gap: 9px; margin-top: 14px; padding: 14px 0; }
+  .contact-page .footer-bottom h3 { margin-bottom: 6px; font-size: 14px; }
+  .contact-page .footer-bottom a, .contact-page .footer-bottom p { margin-bottom: 4px; font-size: 14px; }
+  .contact-page .footer-bottom > div:last-child { grid-column: auto; }
+  .contact-page .social-links { gap: 4px; margin-top: 5px; }
+  .contact-page .social-links a { width: 17px; height: 17px; }
+  .contact-page .copyright { gap: 7px; padding-top: 10px; font-size: 14px; }
+}
+
+@media (max-width: 390px) {
+  .contact-hero-copy h1 { font-size: 26px; }
+  .contact-details { gap: 12px; }
+  .contact-details address, .contact-details .detail-value { font-size: 14px; }
+  .contact-form { gap: 12px 12px; }
+  .map-frame { height: 220px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-page *, .contact-page *::before, .contact-page *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
+}
+
+/* ==========================================================================
+   Professional polish — alignment, spacing, padding & sizing
+   ========================================================================== */
+.contact-details { gap: 36px; padding: 48px 3% 44px; }
+.contact-details h2 { margin-bottom: 12px; }
+.contact-details address, .contact-details .detail-value { line-height: 1.4; }
+.enquiry { padding: 58px 0 60px; }
+.contact-form { gap: 24px 34px; padding: 32px 34px 26px; }
+.form-field { gap: 8px; }
+.form-field label { margin-bottom: 1px; }
+.form-field input, .form-field select, .form-field textarea { padding: 7px 0; }
+.form-submit { min-height: 44px; }
+.form-submit .button { min-height: 46px; padding: 0 26px; font-size: 13px; }
+.consultation { margin-top: 40px; margin-bottom: 40px; }
+.consultation-copy { padding: 44px 8%; }
+.consultation-copy .button { min-height: 46px; padding: 0 24px; font-size: 13px; }
+.session-options span { padding: 8px 14px; border-radius: 18px; }
+.find-us { padding-top: 8px; padding-bottom: 48px; }
+.map-frame { width: 100%; height: 460px; }
+.map-label { padding: 12px 16px; }
+.contact-cta { padding-bottom: 62px; }
+.contact-cta-inner .button { min-height: 46px; }
+
+@media (max-width: 760px) {
+  .contact-hero-content { grid-template-columns: 1fr; }
+  .window-view { height: 210px; }
+  .window-view > span { font-size: 12px; }
+  .contact-hero-copy { width: 100%; padding: 26px 22px 30px; }
+  .contact-hero-copy p { margin-top: 12px; font-size: 14px; }
+  .contact-details { grid-template-columns: repeat(2, 1fr); gap: 26px 20px; padding: 34px 0 30px; }
+  .contact-details h2 { margin-bottom: 8px; font-size: 12px; }
+  .contact-details address, .contact-details .detail-value { font-size: 16px; }
+  .contact-details article > p:last-child { font-size: 13px; }
+  .enquiry { padding: 44px 0 46px; }
+  .enquiry-inner { grid-template-columns: 1fr; gap: 26px; }
+  .enquiry-intro { padding-left: 0; }
+  .enquiry-intro > p:last-child { max-width: none; font-size: 14px; }
+  .contact-form { grid-template-columns: 1fr; gap: 20px; padding: 22px 20px 20px; border-radius: 14px; }
+  .form-field label { font-size: 12px; }
+  .form-field input, .form-field select, .form-field textarea { font-size: 15px; padding: 8px 0; }
+  .form-field textarea { min-height: 96px; }
+  .form-submit { min-height: 40px; }
+  .form-submit .button { min-height: 48px; font-size: 14px; }
+  .contact-form-status { margin-bottom: 12px; font-size: 13px; }
+  .consultation { grid-template-columns: 1fr; margin-top: 32px; margin-bottom: 32px; padding: 6px; }
+  .consultation-image { min-height: 220px; border-radius: 12px 12px 0 0; }
+  .consultation-image > span { font-size: 12px; }
+  .consultation-copy { padding: 28px 22px; }
+  .consultation-copy > p:not(.eyebrow) { font-size: 14px; }
+  .session-options span { padding: 7px 12px; font-size: 12px; }
+  .consultation-copy .button { min-height: 46px; }
+  .find-us { padding-bottom: 40px; }
+  .map-frame { width: 100%; height: 320px; }
+  .map-label, .map-label span { font-size: 13px; }
+  .contact-cta { padding-bottom: 52px; }
+  .contact-cta-inner { min-height: 240px; }
+  .contact-cta-inner .button { min-height: 46px; }
+  .contact-page .footer-wrap { padding-top: 46px; }
+  .contact-page .footer-note { font-size: 12px; }
+  .contact-page .footer-bottom { gap: 24px 16px; padding: 22px 0; }
+  .contact-page .footer-bottom h3 { font-size: 11px; }
+  .contact-page .footer-bottom a, .contact-page .footer-bottom p { font-size: 12px; }
+  .contact-page .copyright { font-size: 11px; }
+}

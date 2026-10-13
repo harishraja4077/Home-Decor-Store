@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#241b17">
+  <meta name="description" content="Your saved Stackly Home pieces.">
+  <title>Wishlist — STACKLY</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/dashboard.css">
+  <script src="../../js/email-validation.js" defer></script>
+  <script src="../js/dashboard.js" defer></script>
+</head>
+<body class="dash-body" data-dash="user" data-page="wishlist" data-title="Wishlist">
+  <div class="dash">
+    <aside class="dash-sidebar" id="sidebar"></aside>
+    <div class="dash-scrim" data-sidebar-close></div>
+    <div class="dash-main">
+      <header class="dash-topbar" id="topbar"></header>
+
+      <main class="dash-content">
+        <section class="panel">
+          <div class="toolbar between">
+            <div class="tabs" data-cat-tabs role="tablist" aria-label="Filter wishlist">
+              <button onclick="window.location.href='../../404.html';return false" class="tab is-active" data-cat-filter="all">All pieces</button>
+              <button onclick="window.location.href='../../404.html';return false" class="tab" data-cat-filter="living">Living</button>
+              <button onclick="window.location.href='../../404.html';return false" class="tab" data-cat-filter="lighting">Lighting</button>
+              <button onclick="window.location.href='../../404.html';return false" class="tab" data-cat-filter="objects">Objects</button>
+            </div>
+            <a class="btn btn-gold" href="../../404.html">Discover more</a>
+          </div>
+        </section>
+
+        <section class="product-grid">
+          <article class="p-card" data-cat-item data-cat="living" data-wishlist-item>
+            <div class="p-media">
+              <img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&w=700&q=80" alt="Sculpted boucle accent chair">
+              <span class="p-tag">New arrival</span>
+              <button onclick="window.location.href='../../404.html';return false" class="p-fav is-active" data-fav aria-label="Remove from wishlist">♥</button>
+            </div>
+            <div class="p-body">
+              <h3>Sculpted Boucle Chair</h3>
+              <p>Soft curves, wild oak frame.</p>
+              <div class="p-foot">
+                <span class="p-price">$1,240</span>
+                <div class="p-actions">
+                  <button onclick="window.location.href='../../404.html';return false" class="btn btn-gold btn-sm" data-add-bag="Sculpted Boucle Chair">Add to bag</button>
+                  <button onclick="window.location.href='../../404.html';return false" class="mini-btn danger" data-row-delete="Removed from wishlist" aria-label="Remove"><span data-icon="trash"></span></button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="p-card" data-cat-item data-cat="living" data-wishlist-item>
+            <div class="p-media">
+              <img src="https://images.unsplash.com/photo-1499933374294-4584851497cc?auto=format&fit=crop&w=700&q=80" alt="Minimal travertine side table">
+              <span class="p-tag">Bestseller</span>
+              <button onclick="window.location.href='../../404.html';return false" class="p-fav is-active" data-fav aria-label="Remove from wishlist">♥</button>
+            </div>
+            <div class="p-body">
+              <h3>Travertine Side Table</h3>
+              <p>Married stone with a brass inlay.</p>
+              <div class="p-foot">
+                <span class="p-price">$680</span>
+                <div class="p-actions">
+                  <button onclick="window.location.href='../../404.html';return false" class="btn btn-gold btn-sm" data-add-bag="Travertine Side Table">Add to bag</button>
+                  <button onclick="window.location.href='../../404.html';return false" class="mini-btn danger" data-row-delete="Removed from wishlist" aria-label="Remove"><span data-icon="trash"></span></button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="p-card" data-cat-item data-cat="lighting" data-wishlist-item>
+            <div class="p-media">
+              <img src="https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=700&q=80" alt="Amber glass lamp">
+              <span class="p-tag">Handmade</span>
+              <button onclick="window.location.href='../../404.html';return false" class="p-fav is-active" data-fav aria-label="Remove from wishlist">♥</button>
+            </div>
+            <div class="p-body">
+              <h3>Amber Glass Lamp</h3>
+              <p>Hand-blown, warm ambient glow.</p>
+              <div class="p-foot">
+                <span class="p-price">$420</span>
+                <div class="p-actions">
+                  <button onclick="window.location.href='../../404.html';return false" class="btn btn-gold btn-sm" data-add-bag="Amber Glass Lamp">Add to bag</button>
+                  <button onclick="window.location.href='../../404.html';return false" class="mini-btn danger" data-row-delete="Removed from wishlist" aria-label="Remove"><span data-icon="trash"></span></button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="p-card" data-cat-item data-cat="objects" data-wishlist-item>
+            <div class="p-media">
+              <img src="https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&w=700&q=80" alt="Ribbed ceramic vase">
+              <span class="p-tag">Handmade</span>
+              <button onclick="window.location.href='../../404.html';return false" class="p-fav is-active" data-fav aria-label="Remove from wishlist">♥</button>
+            </div>
+            <div class="p-body">
+              <h3>Ribbed Ceramic Vase</h3>
+              <p>Matte glaze, original silhouettes.</p>
+              <div class="p-foot">
+                <span class="p-price">$145</span>
+                <div class="p-actions">
+                  <button onclick="window.location.href='../../404.html';return false" class="btn btn-gold btn-sm" data-add-bag="Ribbed Ceramic Vase">Add to bag</button>
+                  <button onclick="window.location.href='../../404.html';return false" class="mini-btn danger" data-row-delete="Removed from wishlist" aria-label="Remove"><span data-icon="trash"></span></button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="p-card" data-cat-item data-cat="living" data-wishlist-item>
+            <div class="p-media">
+              <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=700&q=80" alt="Walnut console">
+              <span class="p-tag">Small batch</span>
+              <button onclick="window.location.href='../../404.html';return false" class="p-fav is-active" data-fav aria-label="Remove from wishlist">♥</button>
+            </div>
+            <div class="p-body">
+              <h3>Walnut Console</h3>
+              <p>Skinny profile, deep soul.</p>
+              <div class="p-foot">
+                <span class="p-price">$1,890</span>
+                <div class="p-actions">
+                  <button onclick="window.location.href='../../404.html';return false" class="btn btn-gold btn-sm" data-add-bag="Walnut Console">Add to bag</button>
+                  <button onclick="window.location.href='../../404.html';return false" class="mini-btn danger" data-row-delete="Removed from wishlist" aria-label="Remove"><span data-icon="trash"></span></button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="p-card" data-cat-item data-cat="objects" data-wishlist-item>
+            <div class="p-media">
+              <img src="https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?auto=format&fit=crop&w=700&q=80" alt="Linen throw collection">
+              <span class="p-tag">Loved well</span>
+              <button onclick="window.location.href='../../404.html';return false" class="p-fav is-active" data-fav aria-label="Remove from wishlist">♥</button>
+            </div>
+            <div class="p-body">
+              <h3>Linen Throw Collection</h3>
+              <p>Stonewashed, naturally textured.</p>
+              <div class="p-foot">
+                <span class="p-price">$190</span>
+                <div class="p-actions">
+                  <button onclick="window.location.href='../../404.html';return false" class="btn btn-gold btn-sm" data-add-bag="Linen Throw Collection">Add to bag</button>
+                  <button onclick="window.location.href='../../404.html';return false" class="mini-btn danger" data-row-delete="Removed from wishlist" aria-label="Remove"><span data-icon="trash"></span></button>
+                </div>
+              </div>
+            </div>
+          </article>
+        </section>
+      </main>
+    </div>
+  </div>
+  <div class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

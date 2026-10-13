@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#3e625d">
+  <meta name="description" content="Create a Stackly Home account for exclusive offers and inspiration.">
+  <title>Create Account — STACKLY</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/auth.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/animations.css">
+<script src="js/animations.js"></script>
+<script src="js/email-validation.js" defer></script>
+  <script src="js/auth.js" defer></script>
+</head>
+<body class="auth-page signup-page">
+  <svg class="icon-sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="i-arrow-left" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12H5"></path><path d="m10.5 6.5L5 12l5.5 5.5"></path></g></symbol>
+  </svg>
+  <main class="auth-layout signup-layout">
+    <section class="auth-card signup-card" aria-labelledby="signup-heading">
+      <a class="auth-logo" href="index.html" aria-label="Stackly home"><img src="Assets/logo.webp" alt="STACKLY"></a>
+
+      <h1 id="signup-heading">Create Account</h1>
+      <p class="signup-subtitle">Join Stackly for exclusive offers</p>
+
+      <div class="auth-role" role="radiogroup" aria-label="Choose account type">
+        <label class="role-option"><input type="radio" name="role" value="User" checked><span>User</span></label>
+        <label class="role-option"><input type="radio" name="role" value="Admin"><span>Admin</span></label>
+      </div>
+
+      <form class="auth-form signup-form" data-auth-form="signup">
+        <label class="visually-hidden" for="signup-name">Full name</label>
+        <input id="signup-name" name="name" type="text" placeholder="Full Name" autocomplete="name" required>
+        <label class="visually-hidden" for="signup-email">Email address</label>
+        <input id="signup-email" name="email" type="email" placeholder="Email Address" autocomplete="email" required>
+        <label class="visually-hidden" for="signup-password">Password</label>
+        <input id="signup-password" name="password" type="password" placeholder="Password" autocomplete="new-password" minlength="8" required>
+        <label class="visually-hidden" for="signup-confirm-password">Confirm password</label>
+        <input id="signup-confirm-password" name="confirmPassword" type="password" placeholder="Confirm Password" autocomplete="new-password" minlength="8" required>
+        <button class="submit-button signup-submit" type="submit">Sign Up</button>
+        <p class="form-message signup-message" data-form-message role="status" aria-live="polite"></p>
+      </form>
+
+      <p class="account-prompt signup-prompt">Already have an account? <a href="signin.html">Sign in</a></p>
+
+      <a class="back-button signup-back" href="index.html"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-left"></use></svg> Back</a>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,265 @@
+.journal-page { --journal-width: 1120px; overflow-x: hidden; }
+.journal-container { width: min(var(--journal-width), calc(100% - 84px)); margin: 0 auto; }
+.journal-hero { min-height: 445px; margin: 12px 16px 0; overflow: hidden; border-radius: 18px; color: var(--paper); background: #a9bbc0; }
+.journal-nav { position: relative; z-index: 4; color: var(--ink); border-bottom-color: rgba(36,27,23,.12); }
+.journal-nav .nav-links a, .journal-nav .nav-actions { color: var(--ink); }
+.journal-nav .brand-mark { border-color: var(--paper); color: var(--paper); }
+.journal-nav .menu-toggle span { background: var(--ink); }
+.journal-hero-inner { position: relative; min-height: 387px; overflow: hidden; }
+.journal-hero-copy { position: absolute; z-index: 2; top: 14%; right: 2%; width: 62%; }
+.journal-hero-copy .eyebrow { margin-bottom: 9px; text-align: center; }
+.journal-hero-copy h1 { margin: 0; color: white; font-family: var(--script); font-size: clamp(48px, 6vw, 76px); font-weight: 400; line-height: .94; letter-spacing: 0; text-align: center; }
+.journal-hero-chair { position: absolute; bottom: -8%; left: 3%; width: 42%; height: 86%; object-fit: contain; object-position: center bottom; mix-blend-mode: multiply; }
+.journal-hero-table { position: absolute; bottom: -16%; left: 35%; width: 27%; height: 54%; border-radius: 50%; object-fit: cover; opacity: .94; mix-blend-mode: multiply; }
+.journal-pendants { position: absolute; z-index: 1; inset: 0; pointer-events: none; }
+.journal-pendants i { position: absolute; top: -2px; width: 1px; height: 80px; background: rgba(59,66,65,.55); }
+.journal-pendants i::after { position: absolute; bottom: 0; left: -17px; width: 34px; height: 17px; border-radius: 0 0 50% 50%; background: #d7a69e; clip-path: polygon(0 0,100% 0,78% 100%,22% 100%); content: ""; }
+.journal-pendants i:nth-child(1) { left: 30%; height: 76px; }
+.journal-pendants i:nth-child(2) { left: 38%; height: 128px; }
+.journal-pendants i:nth-child(3) { left: 46%; height: 166px; }
+.journal-styling { display: grid; grid-template-columns: 1.15fr .85fr; align-items: center; gap: 45px; padding-top: 40px; padding-bottom: 40px; }
+.styling-copy { padding-left: 1%; }
+.styling-copy .eyebrow, .consultation-copy .eyebrow { margin-bottom: 9px; }
+.styling-copy h2, .consultation-copy h2, .shopping-copy h2 { font-size: clamp(35px, 4.3vw, 53px); line-height: .97; }
+.styling-copy h2 em, .consultation-copy h2 em, .before-after h2 em, .makeovers h2 em, .steps h2 em, .shopping-copy h2 em { font-weight: 400; }
+.styling-copy > p:not(.eyebrow), .consultation-copy > p:not(.eyebrow), .shopping-copy > p:not(.eyebrow) { max-width: 420px; color: #5e554d; font-size: 14px; line-height: 1.3; }
+.journal-text-link { display: inline-block; margin-top: 4px; color: #b18a50; font-family: var(--sans); font-size: 13px; letter-spacing: .08em; text-decoration: underline; text-transform: uppercase; text-underline-offset: 4px; }
+.styling-photo { height: 275px; padding: 5px; border: 1px solid #c8b695; border-radius: 16px; }
+.styling-photo img { border-radius: 11px; }
+.consultation { padding: 27px 0; background: var(--sand); }
+.consultation-inner { display: grid; grid-template-columns: .9fr 1.1fr; align-items: center; gap: 55px; padding: 12px 20px; border: 1px solid #968775; border-radius: 18px; }
+.consultation-photo { position: relative; height: 310px; padding: 6px; border: 1px solid #c4b59f; border-radius: 15px; }
+.consultation-photo img { border-radius: 10px; filter: grayscale(1); }
+.consultation-photo span { position: absolute; bottom: 13px; left: 14px; color: white; font-family: var(--sans); font-size: 13px; letter-spacing: .1em; }
+.consultation-copy h2 { font-size: clamp(33px, 4vw, 49px); }
+.consultation-copy > p:not(.eyebrow) { margin: 18px 0 12px; font-size: 14px; }
+.consultation-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.consultation-tags span { padding: 5px 9px; border: 1px solid #c7a674; border-radius: 15px; color: #a7824e; font-family: var(--sans); font-size: 14px; letter-spacing: .08em; }
+.before-after { padding-top: 42px; padding-bottom: 42px; }
+.before-after > .eyebrow, .makeovers > .eyebrow, .steps > .eyebrow { margin: 0 0 7px; color: var(--ink); }
+.before-after h2, .makeovers h2, .steps h2 { font-size: clamp(34px, 4.4vw, 50px); }
+.comparison-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; margin-top: 18px; align-items: center; }
+.comparison-card { margin: 0; }
+.comparison-card > div { position: relative; height: 280px; overflow: hidden; border-radius: 15px; }
+.comparison-card img { transition: transform .45s; }
+.comparison-card:hover img { transform: scale(1.025); }
+.comparison-card > div > span { position: absolute; top: 12px; left: 13px; color: white; font-family: var(--sans); font-size: 14px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+.comparison-card figcaption { margin: 9px 15px 0; font-family: var(--sans); font-size: 13px; letter-spacing: .1em; text-transform: uppercase; }
+.after-card { margin-top: 72px; padding: 5px; border: 1px solid #cbb894; border-radius: 17px; }
+.after-card > div { height: 260px; border-radius: 11px; }
+.after-card figcaption { margin-bottom: 7px; }
+.curation { padding: 35px 0; color: var(--paper); background: var(--ink); }
+.curation-inner { display: grid; grid-template-columns: 1.3fr .9fr; align-items: center; gap: 40px; }
+.curation-copy { padding-left: 5%; }
+.curation-copy .eyebrow { margin-bottom: 11px; }
+.curation-copy h2 { margin: 0; font-size: clamp(35px, 4.6vw, 53px); line-height: .95; }
+.curation-copy h2 em { color: var(--gold); font-weight: 400; }
+.curation-copy > p:not(.eyebrow) { max-width: 390px; margin: 13px 0 12px; color: #d9d0c5; font-size: 14px; line-height: 1.35; }
+.curation-copy .button { min-height: 28px; padding: 0 12px; font-size: 14px; text-transform: uppercase; }
+.curation-gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+.curation-gallery img { height: 145px; padding: 5px; border: 1px solid #877456; border-radius: 10px; background: #312720; object-fit: cover; }
+.personal-shopping { display: grid; grid-template-columns: .95fr 1.05fr; align-items: center; gap: 48px; margin-top: 45px; padding: 20px; border: 1px solid #b8aa97; border-radius: 15px; background: #f4eee4; }
+.shopping-photo { height: 340px; overflow: hidden; border-radius: 12px; }
+.shopping-photo img { object-position: 55% center; }
+.shopping-copy .eyebrow { margin-bottom: 9px; }
+.shopping-copy h2 { font-size: clamp(35px, 4.2vw, 51px); }
+.shopping-copy > p:not(.eyebrow) { margin: 15px 0; font-size: 14px; }
+.shopping-copy .button { min-height: 30px; padding: 0 13px; font-size: 14px; text-transform: uppercase; }
+.makeovers { padding-top: 40px; padding-bottom: 30px; }
+.makeover-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 19px; }
+.makeover-card { position: relative; height: 220px; overflow: hidden; border-radius: 14px; }
+.makeover-card img { transition: transform .45s; }
+.makeover-card:hover img { transform: scale(1.05); }
+.makeover-card span { position: absolute; right: 0; bottom: 0; left: 0; padding: 24px 10px 10px; color: white; background: linear-gradient(transparent, rgba(24,20,17,.65)); font-family: var(--sans); font-size: 13px; letter-spacing: .1em; text-transform: uppercase; }
+.steps { padding-top: 23px; padding-bottom: 45px; }
+.steps h2 { text-align: center; }
+.steps > .eyebrow { margin-left: 5%; }
+.steps-grid { position: relative; display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; margin: 28px 5% 0; padding: 0; list-style: none; }
+.steps-grid li { position: relative; }
+.steps-grid li::after { position: absolute; top: 17px; left: 44px; width: calc(100% - 42px); height: 1px; background: #c5a36e; content: ""; }
+.steps-grid li:last-child::after { display: none; }
+.step-number { display: grid; width: 35px; height: 35px; place-items: center; border: 1px solid #c49a5b; border-radius: 50%; color: #b28c54; font-size: 19px; }
+.steps-grid h3 { margin: 12px 0 3px; font-size: 16px; font-weight: 500; }
+.steps-grid p { max-width: 170px; margin: 0; font-size: 13px; line-height: 1.35; }
+.journal-cta { padding-bottom: 44px; }
+.journal-cta-inner { display: flex; min-height: 320px; flex-direction: column; align-items: center; justify-content: center; overflow: hidden; border: 1px solid #bba77f; border-radius: 20px; outline: 1px solid rgba(255,255,255,.22); outline-offset: -13px; color: var(--paper); background: radial-gradient(ellipse at 50% 8%, #727965 0%, #4f5245 36%, #281f1a 82%); text-align: center; }
+.journal-cta-inner .eyebrow { margin-bottom: 11px; }
+.journal-cta-inner h2 { font-size: clamp(37px, 5vw, 55px); line-height: .98; }
+.journal-cta-inner h2 em { display: inline-block; margin-top: 3px; color: var(--gold); font-size: .83em; font-weight: 400; }
+.journal-cta-inner .button { min-height: 33px; margin-top: 18px; }
+
+@media (max-width: 760px) {
+  .journal-container { width: calc(100% - 40px); }
+  .journal-hero { min-height: 206px; margin: 6px 5px 0; border-radius: 9px; }
+  .journal-nav { height: 34px; gap: 12px; padding: 0 10px; }
+  .journal-nav .wordmark { gap: 3px; font-size: 14px; }
+  .journal-nav .brand-mark { width: 14px; height: 14px; font-size: 13px; }
+  .journal-nav .nav-links { top: 33px; padding: 5px 12px 10px; }
+  .journal-nav .nav-links a { padding: 8px 0; font-size: 13px; }
+  .journal-nav .nav-actions { gap: 7px; }
+  .journal-nav .icon-button { width: 12px; height: 18px; }
+  .journal-nav .icon-button svg { width: 11px; }
+  .journal-nav .menu-toggle { width: 19px; height: 21px; gap: 4px; padding: 2px; }
+  .journal-nav .menu-toggle span { width: 14px; }
+  .journal-hero-inner { min-height: 172px; }
+  .journal-hero-copy { top: 21%; right: 1%; width: 63%; }
+  .journal-hero-copy .eyebrow { margin-bottom: 5px; font-size: 14px; }
+  .journal-hero-copy h1 { font-size: clamp(27px, 7.7vw, 34px); line-height: 1.02; }
+  .journal-hero-chair { bottom: -4%; left: -3%; width: 43%; height: 79%; }
+  .journal-hero-table { bottom: -19%; left: 28%; width: 35%; height: 49%; }
+  .journal-pendants i::after { left: -11px; width: 22px; height: 11px; }
+  .journal-pendants i:nth-child(1) { left: 28%; height: 46px; }
+  .journal-pendants i:nth-child(2) { left: 36%; height: 76px; }
+  .journal-pendants i:nth-child(3) { left: 44%; height: 100px; }
+  .journal-styling { grid-template-columns: 1.2fr .8fr; gap: 16px; padding-top: 19px; padding-bottom: 19px; }
+  .styling-copy .eyebrow, .consultation-copy .eyebrow { margin-bottom: 5px; font-size: 14px; }
+  .styling-copy h2, .consultation-copy h2, .shopping-copy h2 { font-size: clamp(20px, 6vw, 26px); }
+  .styling-copy > p:not(.eyebrow), .consultation-copy > p:not(.eyebrow), .shopping-copy > p:not(.eyebrow) { margin: 7px 0; font-size: 14px; line-height: 1.3; }
+  .journal-text-link { margin-top: 1px; font-size: 14px; }
+  .styling-photo { height: 145px; padding: 3px; border-radius: 9px; }
+  .styling-photo img { border-radius: 6px; }
+  .consultation { padding: 15px 0; }
+  .consultation-inner { grid-template-columns: .9fr 1.1fr; gap: 30px; padding: 5px; border-radius: 11px; }
+  .consultation-photo { height: 146px; padding: 3px; border-radius: 8px; }
+  .consultation-photo img { border-radius: 5px; }
+  .consultation-photo span { bottom: 7px; left: 8px; font-size: 14px; }
+  .consultation-copy h2 { font-size: clamp(19px, 5.5vw, 24px); }
+  .consultation-copy > p:not(.eyebrow) { margin: 8px 0 6px; font-size: 14px; }
+  .consultation-tags { gap: 3px; }
+  .consultation-tags span { padding: 3px 4px; font-size: 14px; }
+  .before-after { padding-top: 21px; padding-bottom: 20px; }
+  .before-after > .eyebrow, .makeovers > .eyebrow, .steps > .eyebrow { margin-bottom: 4px; font-size: 14px; }
+  .before-after h2, .makeovers h2, .steps h2 { font-size: 22px; }
+  .comparison-grid { gap: 23px; margin: 10px 2px 0; }
+  .comparison-card > div { height: 116px; border-radius: 9px; }
+  .comparison-card > div > span { top: 7px; left: 8px; font-size: 14px; }
+  .comparison-card figcaption { margin: 5px 5px 0; font-size: 14px; }
+  .after-card { margin-top: 28px; padding: 3px; border-radius: 10px; }
+  .after-card > div { height: 108px; border-radius: 6px; }
+  .after-card figcaption { margin-bottom: 3px; }
+  .curation { padding: 16px 0; }
+  .curation-inner { grid-template-columns: 1.2fr .8fr; gap: 16px; }
+  .curation-copy { padding-left: 4%; }
+  .curation-copy .eyebrow { margin-bottom: 6px; font-size: 14px; }
+  .curation-copy h2 { font-size: clamp(21px, 6vw, 27px); }
+  .curation-copy > p:not(.eyebrow) { margin: 7px 0; font-size: 14px; }
+  .curation-copy .button { min-height: 19px; padding: 0 7px; font-size: 14px; }
+  .curation-gallery { gap: 6px; }
+  .curation-gallery img { height: 78px; padding: 3px; border-radius: 6px; }
+  .personal-shopping { grid-template-columns: .95fr 1.05fr; gap: 18px; margin-top: 20px; padding: 9px; border-radius: 9px; }
+  .shopping-photo { height: 154px; border-radius: 7px; }
+  .shopping-copy .eyebrow { margin-bottom: 5px; font-size: 14px; }
+  .shopping-copy h2 { font-size: clamp(20px, 5.7vw, 25px); }
+  .shopping-copy > p:not(.eyebrow) { margin: 7px 0; font-size: 14px; }
+  .shopping-copy .button { min-height: 20px; padding: 0 7px; font-size: 14px; }
+  .makeovers { padding-top: 21px; padding-bottom: 15px; }
+  .makeover-grid { gap: 10px; margin-top: 11px; }
+  .makeover-card { height: 98px; border-radius: 8px; }
+  .makeover-card span { padding: 16px 5px 5px; font-size: 14px; }
+  .steps { padding-top: 14px; padding-bottom: 25px; }
+  .steps > .eyebrow { margin-left: 5%; }
+  .steps h2 { font-size: 21px; }
+  .steps-grid { gap: 9px; margin: 15px 5% 0; }
+  .steps-grid li::after { top: 10px; left: 26px; width: calc(100% - 25px); }
+  .step-number { width: 21px; height: 21px; font-size: 14px; }
+  .steps-grid h3 { margin: 7px 0 2px; font-size: 13px; }
+  .steps-grid p { font-size: 14px; }
+  .journal-cta { padding-bottom: 28px; }
+  .journal-cta-inner { min-height: 170px; border-radius: 10px; outline-offset: -8px; }
+  .journal-cta-inner .eyebrow { margin-bottom: 7px; font-size: 14px; }
+  .journal-cta-inner h2 { font-size: 23px; }
+  .journal-cta-inner .button { min-height: 22px; margin-top: 12px; padding: 0 11px; font-size: 14px; }
+  .journal-page .footer-wrap { padding-top: 27px; }
+  .journal-page .footer-brand h2 { font-size: 27px; }
+  .journal-page .footer-brand .eyebrow { font-size: 14px; }
+  .journal-page .footer-wordmark { margin-top: 11px; font-size: 18px; }
+  .journal-page .footer-note { font-size: 14px; }
+  .journal-page .footer-newsletter > p:first-child { font-size: 13px; }
+  .journal-page .newsletter-form { height: 29px; margin-top: 8px; }
+  .journal-page .newsletter-form input, .journal-page .newsletter-form button { font-size: 14px; }
+  .journal-page .newsletter-form button { min-width: 75px; }
+  .journal-page .footer-bottom { grid-template-columns: .8fr 1.2fr 1.2fr; gap: 9px; margin-top: 14px; padding: 14px 0; }
+  .journal-page .footer-bottom h3 { margin-bottom: 6px; font-size: 14px; }
+  .journal-page .footer-bottom a, .journal-page .footer-bottom p { margin-bottom: 4px; font-size: 14px; }
+  .journal-page .footer-bottom > div:last-child { grid-column: auto; }
+  .journal-page .social-links { gap: 4px; margin-top: 5px; }
+  .journal-page .social-links a { width: 17px; height: 17px; }
+  .journal-page .copyright { gap: 7px; padding-top: 10px; font-size: 14px; }
+}
+
+@media (max-width: 390px) {
+  .journal-hero-copy h1 { font-size: 27px; }
+  .comparison-grid { gap: 16px; }
+  .personal-shopping { gap: 12px; }
+  .makeover-grid { gap: 7px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .journal-page *, .journal-page *::before, .journal-page *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
+}
+
+/* ==========================================================================
+   Professional polish — alignment, spacing, padding & sizing
+   ========================================================================== */
+.journal-styling { padding-top: 56px; padding-bottom: 56px; }
+.consultation { padding: 44px 0; }
+.before-after { padding-top: 56px; padding-bottom: 56px; }
+.curation { padding: 52px 0; }
+.personal-shopping { margin-top: 56px; padding: 28px; }
+.makeovers { padding-top: 56px; padding-bottom: 40px; }
+.steps { padding-top: 40px; padding-bottom: 64px; }
+.journal-text-link { font-size: 13px; }
+.consultation-tags span { padding: 7px 12px; font-size: 12px; }
+.curation-copy .button { min-height: 44px; padding: 0 22px; font-size: 13px; }
+.shopping-copy .button { min-height: 44px; padding: 0 22px; font-size: 13px; }
+.curation-gallery img { height: 160px; }
+.journal-cta-inner .button { min-height: 46px; }
+
+@media (max-width: 760px) {
+  .journal-styling { grid-template-columns: 1fr; gap: 22px; padding-top: 40px; padding-bottom: 40px; }
+  .styling-photo { height: 260px; }
+  .styling-copy > p:not(.eyebrow), .consultation-copy > p:not(.eyebrow), .shopping-copy > p:not(.eyebrow) { max-width: none; font-size: 14px; line-height: 1.5; }
+  .journal-text-link { font-size: 13px; }
+  .consultation { padding: 36px 0; }
+  .consultation-inner { grid-template-columns: 1fr; gap: 22px; padding: 14px; }
+  .consultation-photo { height: 240px; }
+  .consultation-photo span { font-size: 12px; }
+  .consultation-copy > p:not(.eyebrow) { margin: 12px 0 10px; font-size: 14px; }
+  .consultation-tags span { padding: 7px 12px; font-size: 12px; }
+  .before-after { padding-top: 44px; padding-bottom: 44px; }
+  .comparison-grid { gap: 20px; margin: 18px 0 0; }
+  .comparison-card > div { height: 240px; }
+  .comparison-card > div > span { font-size: 14px; }
+  .comparison-card figcaption { margin-top: 10px; font-size: 13px; }
+  .after-card { margin-top: 34px; padding: 6px; }
+  .after-card > div { height: 224px; }
+  .curation { padding: 40px 0; }
+  .curation-inner { grid-template-columns: 1fr; gap: 24px; }
+  .curation-copy { padding-left: 0; }
+  .curation-copy > p:not(.eyebrow) { font-size: 14px; }
+  .curation-copy .button { min-height: 46px; font-size: 14px; }
+  .curation-gallery img { height: 160px; }
+  .personal-shopping { grid-template-columns: 1fr; gap: 22px; margin-top: 40px; padding: 16px; }
+  .shopping-photo { height: 260px; }
+  .shopping-copy > p:not(.eyebrow) { margin: 12px 0; font-size: 14px; }
+  .shopping-copy .button { min-height: 46px; font-size: 14px; }
+  .makeovers { padding-top: 44px; padding-bottom: 32px; }
+  .makeover-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 20px; }
+  .makeover-card { height: 180px; }
+  .makeover-card span { padding: 22px 10px 10px; font-size: 12px; }
+  .steps { padding-top: 32px; padding-bottom: 48px; }
+  .steps-grid { grid-template-columns: repeat(2, 1fr); gap: 24px 16px; margin: 26px 0 0; }
+  .steps-grid li::after { display: none; }
+  .step-number { width: 40px; height: 40px; font-size: 18px; }
+  .steps-grid h3 { margin: 12px 0 4px; font-size: 17px; }
+  .steps-grid p { max-width: none; font-size: 13px; }
+  .journal-cta { padding-bottom: 52px; }
+  .journal-cta-inner { min-height: 240px; }
+  .journal-cta-inner .button { min-height: 46px; }
+  .journal-page .footer-wrap { padding-top: 46px; }
+  .journal-page .footer-note { font-size: 12px; }
+  .journal-page .footer-bottom { gap: 24px 16px; padding: 22px 0; }
+  .journal-page .footer-bottom h3 { font-size: 11px; }
+  .journal-page .footer-bottom a, .journal-page .footer-bottom p { font-size: 12px; }
+  .journal-page .copyright { font-size: 11px; }
+}

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#241b17">
+  <meta name="description" content="View and manage Stackly Home customers.">
+  <title>Customers — STACKLY Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/dashboard.css">
+  <script src="../../js/email-validation.js" defer></script>
+  <script src="../js/dashboard.js" defer></script>
+</head>
+<body class="dash-body" data-dash="admin" data-page="customers" data-title="Customers">
+  <div class="dash">
+    <aside class="dash-sidebar" id="sidebar"></aside>
+    <div class="dash-scrim" data-sidebar-close></div>
+    <div class="dash-main">
+      <header class="dash-topbar" id="topbar"></header>
+
+      <main class="dash-content">
+        <section class="grid stat-grid">
+          <article class="stat">
+            <div class="stat-top"><span class="stat-label">Total customers</span><span class="stat-ico" data-icon="users"></span></div>
+            <p class="stat-value">3,942</p>
+            <div class="stat-foot"><span class="trend up" data-icon="arrowUp">3.2%</span><span>this month</span></div>
+          </article>
+          <article class="stat">
+            <div class="stat-top"><span class="stat-label">New this month</span><span class="stat-ico" data-icon="plus"></span></div>
+            <p class="stat-value">186</p>
+            <div class="stat-foot"><span class="trend up" data-icon="arrowUp">8.4%</span><span>vs last month</span></div>
+          </article>
+          <article class="stat">
+            <div class="stat-top"><span class="stat-label">VIP members</span><span class="stat-ico" data-icon="star"></span></div>
+            <p class="stat-value">128</p>
+            <div class="stat-foot"><span>Top 3% by spend</span></div>
+          </article>
+          <article class="stat">
+            <div class="stat-top"><span class="stat-label">Churn rate</span><span class="stat-ico" data-icon="chart"></span></div>
+            <p class="stat-value">1.9%</p>
+            <div class="stat-foot"><span class="trend down" data-icon="arrowDown">0.4%</span><span>improving</span></div>
+          </article>
+        </section>
+
+        <section class="panel">
+          <div class="toolbar">
+            <div class="tabs" role="tablist" aria-label="Filter customers">
+              <button onclick="window.location.href='../../404.html';return false" class="tab is-active" data-filter-tab="all" data-table-key="customers">All</button>
+              <button onclick="window.location.href='../../404.html';return false" class="tab" data-filter-tab="vip" data-table-key="customers">VIP</button>
+              <button onclick="window.location.href='../../404.html';return false" class="tab" data-filter-tab="gold" data-table-key="customers">Gold</button>
+              <button onclick="window.location.href='../../404.html';return false" class="tab" data-filter-tab="member" data-table-key="customers">Member</button>
+              <button onclick="window.location.href='../../404.html';return false" class="tab" data-filter-tab="inactive" data-table-key="customers">Inactive</button>
+            </div>
+            <div class="toolbar-spacer"></div>
+            <label class="field field-search"><span class="sr-only">Search customers</span><span data-icon="search"></span><input type="search" placeholder="Search name or email" data-filter-search="customers"></label>
+            <label class="field"><span class="sr-only">Filter by tier</span>
+              <select data-filter-status="customers">
+                <option value="all">All tiers</option>
+                <option value="vip">VIP</option>
+                <option value="gold">Gold</option>
+                <option value="member">Member</option>
+                <option value="inactive">Inactive</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="table-wrap">
+            <table class="table" data-table="customers">
+              <thead>
+                <tr><th>Customer</th><th>Orders</th><th>Lifetime spend</th><th>Tier</th><th>Joined</th><th>Status</th></tr>
+              </thead>
+              <tbody>
+                <tr data-status="gold">
+                  <td><div class="cell-flex"><span class="avatar sm">AO</span><span class="cell-title"><b>Amelia Clarke</b><small>amelia.clarke@gmail.com</small></span></div></td>
+                  <td class="num">24</td>
+                  <td class="num">$8,420</td>
+                  <td><span class="badge badge-amber">Gold</span></td>
+                  <td class="muted">Sep 2023</td>
+                  <td><span class="badge badge-green">Active</span></td>
+                </tr>
+                <tr data-status="vip">
+                  <td><div class="cell-flex"><span class="avatar sm">PN</span><span class="cell-title"><b>Priya Nair</b><small>priya.nair@gmail.com</small></span></div></td>
+                  <td class="num">31</td>
+                  <td class="num">$12,960</td>
+                  <td><span class="badge badge-violet">VIP</span></td>
+                  <td class="muted">Jan 2022</td>
+                  <td><span class="badge badge-green">Active</span></td>
+                </tr>
+                <tr data-status="member">
+                  <td><div class="cell-flex"><span class="avatar sm">DC</span><span class="cell-title"><b>Daniel Cross</b><small>daniel.cross@gmail.com</small></span></div></td>
+                  <td class="num">6</td>
+                  <td class="num">$1,840</td>
+                  <td><span class="badge badge-blue">Member</span></td>
+                  <td class="muted">Nov 2024</td>
+                  <td><span class="badge badge-green">Active</span></td>
+                </tr>
+                <tr data-status="gold">
+                  <td><div class="cell-flex"><span class="avatar sm">ML</span><span class="cell-title"><b>Marcelle Lee</b><small>marcelle.lee@gmail.com</small></span></div></td>
+                  <td class="num">12</td>
+                  <td class="num">$4,320</td>
+                  <td><span class="badge badge-amber">Gold</span></td>
+                  <td class="muted">Mar 2023</td>
+                  <td><span class="badge badge-green">Active</span></td>
+                </tr>
+                <tr data-status="gold">
+                  <td><div class="cell-flex"><span class="avatar sm">TR</span><span class="cell-title"><b>Tomas Rivera</b><small>tomas.rivera@gmail.com</small></span></div></td>
+                  <td class="num">18</td>
+                  <td class="num">$6,980</td>
+                  <td><span class="badge badge-amber">Gold</span></td>
+                  <td class="muted">Jun 2023</td>
+                  <td><span class="badge badge-green">Active</span></td>
+                </tr>
+                <tr data-status="inactive">
+                  <td><div class="cell-flex"><span class="avatar sm">HS</span><span class="cell-title"><b>Hana Suzuki</b><small>hana.suzuki@gmail.com</small></span></div></td>
+                  <td class="num">3</td>
+                  <td class="num">$780</td>
+                  <td><span class="badge badge-blue">Member</span></td>
+                  <td class="muted">Feb 2025</td>
+                  <td><span class="badge badge-muted">Inactive</span></td>
+                </tr>
+                <tr data-status="member">
+                  <td><div class="cell-flex"><span class="avatar sm">OB</span><span class="cell-title"><b>Owen Blake</b><small>owen.blake@gmail.com</small></span></div></td>
+                  <td class="num">9</td>
+                  <td class="num">$3,110</td>
+                  <td><span class="badge badge-blue">Member</span></td>
+                  <td class="muted">Aug 2024</td>
+                  <td><span class="badge badge-green">Active</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+  <div class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

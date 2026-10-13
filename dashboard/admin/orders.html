@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#241b17">
+  <meta name="description" content="Manage and fulfil Stackly Home orders.">
+  <title>Orders — STACKLY Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/dashboard.css">
+  <script src="../../js/email-validation.js" defer></script>
+  <script src="../js/dashboard.js" defer></script>
+</head>
+<body class="dash-body" data-dash="admin" data-page="orders" data-title="Orders">
+  <div class="dash">
+    <aside class="dash-sidebar" id="sidebar"></aside>
+    <div class="dash-scrim" data-sidebar-close></div>
+    <div class="dash-main">
+      <header class="dash-topbar" id="topbar"></header>
+
+      <main class="dash-content">
+        <section class="grid stat-grid">
+          <article class="stat">
+            <div class="stat-top"><span class="stat-label">Awaiting fulfilment</span><span class="stat-ico" data-icon="bag"></span></div>
+            <p class="stat-value">18</p>
+            <div class="stat-foot"><span>Needs attention today</span></div>
+          </article>
+          <article class="stat">
+            <div class="stat-top"><span class="stat-label">In transit</span><span class="stat-ico" data-icon="truck"></span></div>
+            <p class="stat-value">42</p>
+            <div class="stat-foot"><span class="trend up" data-icon="arrowUp">6 today</span></div>
+          </article>
+          <article class="stat">
+            <div class="stat-top"><span class="stat-label">Delivered this week</span><span class="stat-ico" data-icon="check"></span></div>
+            <p class="stat-value">264</p>
+            <div class="stat-foot"><span class="trend up" data-icon="arrowUp">9.2%</span><span>on time</span></div>
+          </article>
+          <article class="stat">
+            <div class="stat-top"><span class="stat-label">Returns</span><span class="stat-ico" data-icon="arrowDown"></span></div>
+            <p class="stat-value">7</p>
+            <div class="stat-foot"><span class="trend down" data-icon="arrowDown">0.5%</span><span>return rate</span></div>
+          </article>
+        </section>
+
+        <section class="panel">
+          <div class="toolbar">
+            <div class="tabs" role="tablist" aria-label="Filter orders">
+              <button onclick="window.location.href='../../404.html';return false" class="tab is-active" data-filter-tab="all" data-table-key="adminorders">All</button>
+              <button onclick="window.location.href='../../404.html';return false" class="tab" data-filter-tab="processing" data-table-key="adminorders">Processing</button>
+              <button onclick="window.location.href='../../404.html';return false" class="tab" data-filter-tab="packed" data-table-key="adminorders">Packed</button>
+              <button onclick="window.location.href='../../404.html';return false" class="tab" data-filter-tab="shipped" data-table-key="adminorders">In transit</button>
+              <button onclick="window.location.href='../../404.html';return false" class="tab" data-filter-tab="delivered" data-table-key="adminorders">Delivered</button>
+              <button onclick="window.location.href='../../404.html';return false" class="tab" data-filter-tab="cancelled" data-table-key="adminorders">Cancelled</button>
+            </div>
+            <div class="toolbar-spacer"></div>
+            <label class="field field-search"><span class="sr-only">Search orders</span><span data-icon="search"></span><input type="search" placeholder="Search order or customer" data-filter-search="adminorders"></label>
+            <button onclick="window.location.href='../../404.html';return false" class="btn btn-line btn-sm" data-toast="Orders exported to CSV"><span data-icon="download"></span> Export</button>
+          </div>
+
+          <div class="table-wrap">
+            <table class="table" data-table="adminorders">
+              <thead>
+                <tr><th>Order</th><th>Customer</th><th>Date</th><th>Total</th><th>Payment</th><th>Fulfillment</th><th class="right">Update</th></tr>
+              </thead>
+              <tbody>
+                <tr data-status="shipped">
+                  <td class="cell-strong">#STK-9231<br><small class="muted">2 items</small></td>
+                  <td><div class="cell-flex"><span class="avatar sm">AO</span><span class="cell-title"><b>Amelia Clarke</b><small>amelia.clarke@gmail.com</small></span></div></td>
+                  <td class="muted">Mar 12</td>
+                  <td class="num">$1,920</td>
+                  <td><span class="badge badge-green">Paid</span></td>
+                  <td><span class="badge badge-blue" data-status-badge>In transit</span></td>
+                  <td><div class="row-actions"><select class="status-select" data-order-status aria-label="Update fulfilment"><option value="processing">Processing</option><option value="packed">Packed</option><option value="shipped" selected>In transit</option><option value="delivered">Delivered</option><option value="cancelled">Cancelled</option></select></div></td>
+                </tr>
+                <tr data-status="processing">
+                  <td class="cell-strong">#STK-9228<br><small class="muted">1 item</small></td>
+                  <td><div class="cell-flex"><span class="avatar sm">DC</span><span class="cell-title"><b>Daniel Cross</b><small>daniel.cross@gmail.com</small></span></div></td>
+                  <td class="muted">Mar 12</td>
+                  <td class="num">$420</td>
+                  <td><span class="badge badge-amber">Pending</span></td>
+                  <td><span class="badge badge-amber" data-status-badge>Processing</span></td>
+                  <td><div class="row-actions"><select class="status-select" data-order-status aria-label="Update fulfilment"><option value="processing" selected>Processing</option><option value="packed">Packed</option><option value="shipped">In transit</option><option value="delivered">Delivered</option><option value="cancelled">Cancelled</option></select></div></td>
+                </tr>
+                <tr data-status="delivered">
+                  <td class="cell-strong">#STK-9224<br><small class="muted">3 items</small></td>
+                  <td><div class="cell-flex"><span class="avatar sm">PN</span><span class="cell-title"><b>Priya Nair</b><small>priya.nair@gmail.com</small></span></div></td>
+                  <td class="muted">Mar 11</td>
+                  <td class="num">$2,450</td>
+                  <td><span class="badge badge-green">Paid</span></td>
+                  <td><span class="badge badge-green" data-status-badge>Delivered</span></td>
+                  <td><div class="row-actions"><select class="status-select" data-order-status aria-label="Update fulfilment"><option value="processing">Processing</option><option value="packed">Packed</option><option value="shipped">In transit</option><option value="delivered" selected>Delivered</option><option value="cancelled">Cancelled</option></select></div></td>
+                </tr>
+                <tr data-status="packed">
+                  <td class="cell-strong">#STK-9219<br><small class="muted">1 item</small></td>
+                  <td><div class="cell-flex"><span class="avatar sm">ML</span><span class="cell-title"><b>Marcelle Lee</b><small>marcelle.lee@gmail.com</small></span></div></td>
+                  <td class="muted">Mar 11</td>
+                  <td class="num">$680</td>
+                  <td><span class="badge badge-green">Paid</span></td>
+                  <td><span class="badge badge-violet" data-status-badge>Packed</span></td>
+                  <td><div class="row-actions"><select class="status-select" data-order-status aria-label="Update fulfilment"><option value="processing">Processing</option><option value="packed" selected>Packed</option><option value="shipped">In transit</option><option value="delivered">Delivered</option><option value="cancelled">Cancelled</option></select></div></td>
+                </tr>
+                <tr data-status="delivered">
+                  <td class="cell-strong">#STK-9210<br><small class="muted">1 item</small></td>
+                  <td><div class="cell-flex"><span class="avatar sm">TR</span><span class="cell-title"><b>Tomas Rivera</b><small>tomas.rivera@gmail.com</small></span></div></td>
+                  <td class="muted">Mar 10</td>
+                  <td class="num">$1,890</td>
+                  <td><span class="badge badge-green">Paid</span></td>
+                  <td><span class="badge badge-green" data-status-badge>Delivered</span></td>
+                  <td><div class="row-actions"><select class="status-select" data-order-status aria-label="Update fulfilment"><option value="processing">Processing</option><option value="packed">Packed</option><option value="shipped">In transit</option><option value="delivered" selected>Delivered</option><option value="cancelled">Cancelled</option></select></div></td>
+                </tr>
+                <tr data-status="cancelled">
+                  <td class="cell-strong">#STK-9204<br><small class="muted">2 items</small></td>
+                  <td><div class="cell-flex"><span class="avatar sm">HS</span><span class="cell-title"><b>Hana Suzuki</b><small>hana.suzuki@gmail.com</small></span></div></td>
+                  <td class="muted">Mar 10</td>
+                  <td class="num">$565</td>
+                  <td><span class="badge badge-muted">Refunded</span></td>
+                  <td><span class="badge badge-red" data-status-badge>Cancelled</span></td>
+                  <td><div class="row-actions"><select class="status-select" data-order-status aria-label="Update fulfilment"><option value="processing">Processing</option><option value="packed">Packed</option><option value="shipped">In transit</option><option value="delivered">Delivered</option><option value="cancelled" selected>Cancelled</option></select></div></td>
+                </tr>
+                <tr data-status="processing">
+                  <td class="cell-strong">#STK-9197<br><small class="muted">2 items</small></td>
+                  <td><div class="cell-flex"><span class="avatar sm">OB</span><span class="cell-title"><b>Owen Blake</b><small>owen.blake@gmail.com</small></span></div></td>
+                  <td class="muted">Mar 09</td>
+                  <td class="num">$1,110</td>
+                  <td><span class="badge badge-green">Paid</span></td>
+                  <td><span class="badge badge-amber" data-status-badge>Processing</span></td>
+                  <td><div class="row-actions"><select class="status-select" data-order-status aria-label="Update fulfilment"><option value="processing" selected>Processing</option><option value="packed">Packed</option><option value="shipped">In transit</option><option value="delivered">Delivered</option><option value="cancelled">Cancelled</option></select></div></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+  <div class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

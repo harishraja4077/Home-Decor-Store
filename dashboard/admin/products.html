@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#241b17">
+  <meta name="description" content="Manage the Stackly Home product catalogue.">
+  <title>Products — STACKLY Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/dashboard.css">
+  <script src="../../js/email-validation.js" defer></script>
+  <script src="../js/dashboard.js" defer></script>
+</head>
+<body class="dash-body" data-dash="admin" data-page="products" data-title="Products">
+  <div class="dash">
+    <aside class="dash-sidebar" id="sidebar"></aside>
+    <div class="dash-scrim" data-sidebar-close></div>
+    <div class="dash-main">
+      <header class="dash-topbar" id="topbar"></header>
+
+      <main class="dash-content">
+        <section class="panel kpi-row">
+          <div class="kpi"><b>248</b><small>Total products</small></div>
+          <div class="kpi"><b>12</b><small>Low stock</small></div>
+          <div class="kpi"><b>3</b><small>Out of stock</small></div>
+          <div class="kpi"><b>4.8</b><small>Avg. rating</small></div>
+          <div class="kpi"><b>$612</b><small>Avg. price</small></div>
+        </section>
+
+        <section class="panel">
+          <div class="toolbar">
+            <div class="tabs" role="tablist" aria-label="Filter products">
+              <button onclick="window.location.href='../../404.html';return false" class="tab is-active" data-filter-tab="all" data-table-key="products">All</button>
+              <button onclick="window.location.href='../../404.html';return false" class="tab" data-filter-tab="active" data-table-key="products">Active</button>
+              <button onclick="window.location.href='../../404.html';return false" class="tab" data-filter-tab="low" data-table-key="products">Low stock</button>
+              <button onclick="window.location.href='../../404.html';return false" class="tab" data-filter-tab="out" data-table-key="products">Out of stock</button>
+              <button onclick="window.location.href='../../404.html';return false" class="tab" data-filter-tab="draft" data-table-key="products">Draft</button>
+            </div>
+            <div class="toolbar-spacer"></div>
+            <label class="field field-search"><span class="sr-only">Search products</span><span data-icon="search"></span><input type="search" placeholder="Search products" data-filter-search="products"></label>
+            <label class="field"><span class="sr-only">Filter by status</span>
+              <select data-filter-status="products">
+                <option value="all">All statuses</option>
+                <option value="active">Active</option>
+                <option value="low">Low stock</option>
+                <option value="out">Out of stock</option>
+                <option value="draft">Draft</option>
+              </select>
+            </label>
+            <button onclick="window.location.href='../../404.html';return false" class="btn btn-gold" data-modal-open="productModal"><span data-icon="plus"></span> Add product</button>
+          </div>
+
+          <div class="table-wrap">
+            <table class="table" id="adminProductsTable" data-table="products">
+              <thead>
+                <tr><th>Product</th><th>Category</th><th>Price</th><th>Stock</th><th>Status</th><th class="right">Actions</th></tr>
+              </thead>
+              <tbody>
+                <tr data-status="active">
+                  <td><div class="cell-flex"><span class="thumb"><img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&w=200&q=70" alt="Sculpted boucle chair"></span><span class="cell-title"><b>Sculpted Boucle Chair</b><small>SKU-CHR-1042</small></span></div></td>
+                  <td class="muted">Living</td>
+                  <td class="num">$1,240</td>
+                  <td style="min-width:130px"><div class="progress"><span style="width:80%"></span></div><small class="muted">64 in stock</small></td>
+                  <td><span class="badge badge-green">Active</span></td>
+                  <td><div class="row-actions"><button onclick="window.location.href='../../404.html';return false" class="mini-btn" data-toast="Editing Sculpted Boucle Chair" aria-label="Edit"><span data-icon="edit"></span></button><button onclick="window.location.href='../../404.html';return false" class="mini-btn danger" data-row-delete="Product deleted" aria-label="Delete"><span data-icon="trash"></span></button></div></td>
+                </tr>
+                <tr data-status="low">
+                  <td><div class="cell-flex"><span class="thumb"><img src="https://images.unsplash.com/photo-1499933374294-4584851497cc?auto=format&fit=crop&w=200&q=70" alt="Travertine side table"></span><span class="cell-title"><b>Travertine Side Table</b><small>SKU-TBL-0231</small></span></div></td>
+                  <td class="muted">Living</td>
+                  <td class="num">$680</td>
+                  <td style="min-width:130px"><div class="progress danger"><span style="width:8%"></span></div><small class="muted">5 in stock</small></td>
+                  <td><span class="badge badge-amber">Low stock</span></td>
+                  <td><div class="row-actions"><button onclick="window.location.href='../../404.html';return false" class="mini-btn" data-toast="Editing Travertine Side Table" aria-label="Edit"><span data-icon="edit"></span></button><button onclick="window.location.href='../../404.html';return false" class="mini-btn danger" data-row-delete="Product deleted" aria-label="Delete"><span data-icon="trash"></span></button></div></td>
+                </tr>
+                <tr data-status="low">
+                  <td><div class="cell-flex"><span class="thumb"><img src="https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=200&q=70" alt="Amber glass lamp"></span><span class="cell-title"><b>Amber Glass Lamp</b><small>SKU-LMP-0455</small></span></div></td>
+                  <td class="muted">Lighting</td>
+                  <td class="num">$420</td>
+                  <td style="min-width:130px"><div class="progress warn"><span style="width:14%"></span></div><small class="muted">9 in stock</small></td>
+                  <td><span class="badge badge-amber">Low stock</span></td>
+                  <td><div class="row-actions"><button onclick="window.location.href='../../404.html';return false" class="mini-btn" data-toast="Editing Amber Glass Lamp" aria-label="Edit"><span data-icon="edit"></span></button><button onclick="window.location.href='../../404.html';return false" class="mini-btn danger" data-row-delete="Product deleted" aria-label="Delete"><span data-icon="trash"></span></button></div></td>
+                </tr>
+                <tr data-status="active">
+                  <td><div class="cell-flex"><span class="thumb"><img src="https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&w=200&q=70" alt="Ribbed ceramic vase"></span><span class="cell-title"><b>Ribbed Ceramic Vase</b><small>SKU-OBJ-0110</small></span></div></td>
+                  <td class="muted">Objects</td>
+                  <td class="num">$145</td>
+                  <td style="min-width:130px"><div class="progress"><span style="width:55%"></span></div><small class="muted">42 in stock</small></td>
+                  <td><span class="badge badge-green">Active</span></td>
+                  <td><div class="row-actions"><button onclick="window.location.href='../../404.html';return false" class="mini-btn" data-toast="Editing Ribbed Ceramic Vase" aria-label="Edit"><span data-icon="edit"></span></button><button onclick="window.location.href='../../404.html';return false" class="mini-btn danger" data-row-delete="Product deleted" aria-label="Delete"><span data-icon="trash"></span></button></div></td>
+                </tr>
+                <tr data-status="low">
+                  <td><div class="cell-flex"><span class="thumb"><img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=200&q=70" alt="Walnut console"></span><span class="cell-title"><b>Walnut Console</b><small>SKU-FUR-0907</small></span></div></td>
+                  <td class="muted">Furniture</td>
+                  <td class="num">$1,890</td>
+                  <td style="min-width:130px"><div class="progress danger"><span style="width:5%"></span></div><small class="muted">3 in stock</small></td>
+                  <td><span class="badge badge-red">Critical</span></td>
+                  <td><div class="row-actions"><button onclick="window.location.href='../../404.html';return false" class="mini-btn" data-toast="Editing Walnut Console" aria-label="Edit"><span data-icon="edit"></span></button><button onclick="window.location.href='../../404.html';return false" class="mini-btn danger" data-row-delete="Product deleted" aria-label="Delete"><span data-icon="trash"></span></button></div></td>
+                </tr>
+                <tr data-status="active">
+                  <td><div class="cell-flex"><span class="thumb"><img src="https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?auto=format&fit=crop&w=200&q=70" alt="Linen throw collection"></span><span class="cell-title"><b>Linen Throw Collection</b><small>SKU-TXT-0302</small></span></div></td>
+                  <td class="muted">Textiles</td>
+                  <td class="num">$190</td>
+                  <td style="min-width:130px"><div class="progress"><span style="width:90%"></span></div><small class="muted">120 in stock</small></td>
+                  <td><span class="badge badge-green">Active</span></td>
+                  <td><div class="row-actions"><button onclick="window.location.href='../../404.html';return false" class="mini-btn" data-toast="Editing Linen Throw Collection" aria-label="Edit"><span data-icon="edit"></span></button><button onclick="window.location.href='../../404.html';return false" class="mini-btn danger" data-row-delete="Product deleted" aria-label="Delete"><span data-icon="trash"></span></button></div></td>
+                </tr>
+                <tr data-status="out">
+                  <td><div class="cell-flex"><span class="thumb"><img src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=200&q=70" alt="Marble bookend pair"></span><span class="cell-title"><b>Marble Bookend Pair</b><small>SKU-OBJ-0218</small></span></div></td>
+                  <td class="muted">Objects</td>
+                  <td class="num">$120</td>
+                  <td style="min-width:130px"><div class="progress danger"><span style="width:0%"></span></div><small class="muted">0 in stock</small></td>
+                  <td><span class="badge badge-red">Out of stock</span></td>
+                  <td><div class="row-actions"><button onclick="window.location.href='../../404.html';return false" class="mini-btn" data-toast="Editing Marble Bookend Pair" aria-label="Edit"><span data-icon="edit"></span></button><button onclick="window.location.href='../../404.html';return false" class="mini-btn danger" data-row-delete="Product deleted" aria-label="Delete"><span data-icon="trash"></span></button></div></td>
+                </tr>
+                <tr data-status="draft">
+                  <td><div class="cell-flex"><span class="thumb"><img src="https://images.unsplash.com/photo-1594026112284-02bb6f3352fe?auto=format&fit=crop&w=200&q=70" alt="Rattan lounge chair"></span><span class="cell-title"><b>Rattan Lounge Chair</b><small>SKU-CHR-1188</small></span></div></td>
+                  <td class="muted">Living</td>
+                  <td class="num">$980</td>
+                  <td style="min-width:130px"><div class="progress"><span style="width:0%"></span></div><small class="muted">Not stocked</small></td>
+                  <td><span class="badge badge-muted">Draft</span></td>
+                  <td><div class="row-actions"><button onclick="window.location.href='../../404.html';return false" class="mini-btn" data-toast="Editing Rattan Lounge Chair" aria-label="Edit"><span data-icon="edit"></span></button><button onclick="window.location.href='../../404.html';return false" class="mini-btn danger" data-row-delete="Product deleted" aria-label="Delete"><span data-icon="trash"></span></button></div></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <div class="modal" id="productModal" role="dialog" aria-modal="true" aria-labelledby="productModalTitle">
+    <div class="modal-card">
+      <div class="modal-head">
+        <h2 id="productModalTitle">Add a new product</h2>
+        <button class="mini-btn" data-modal-close aria-label="Close"><span data-icon="close"></span></button>
+      </div>
+      <form data-product-form>
+        <div class="modal-body">
+          <div class="form-grid">
+            <div class="form-field full"><label for="p-name">Product name</label><input id="p-name" name="name" placeholder="e.g. Sculpted Oak Bench" required></div>
+            <div class="form-field"><label for="p-category">Category</label>
+              <select id="p-category" name="category"><option>Living</option><option>Lighting</option><option>Objects</option><option>Textiles</option><option>Furniture</option></select>
+            </div>
+            <div class="form-field"><label for="p-price">Price (USD)</label><input id="p-price" name="price" type="number" min="1" placeholder="0" required></div>
+            <div class="form-field"><label for="p-stock">Initial stock</label><input id="p-stock" name="stock" type="number" min="0" placeholder="0"></div>
+            <div class="form-field"><label for="p-status">Status</label>
+              <select id="p-status" name="status"><option>Active</option><option>Draft</option></select>
+            </div>
+            <div class="form-field full"><label for="p-desc">Description</label><textarea id="p-desc" name="description" placeholder="A short, lovely description."></textarea></div>
+          </div>
+        </div>
+        <div class="modal-foot">
+          <button type="button" class="btn btn-ghost" data-modal-close>Cancel</button>
+          <button type="submit" class="btn btn-gold">Add product</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

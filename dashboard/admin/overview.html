@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#241b17">
+  <meta name="description" content="Stackly Home admin console — revenue, orders and store health.">
+  <title>Admin Overview — STACKLY</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/dashboard.css">
+  <script src="../../js/email-validation.js" defer></script>
+  <script src="../js/dashboard.js" defer></script>
+</head>
+<body class="dash-body" data-dash="admin" data-page="overview" data-title="Admin Overview">
+  <div class="dash">
+    <aside class="dash-sidebar" id="sidebar"></aside>
+    <div class="dash-scrim" data-sidebar-close></div>
+    <div class="dash-main">
+      <header class="dash-topbar" id="topbar"></header>
+
+      <main class="dash-content">
+        <section class="welcome">
+          <div class="welcome-copy">
+            <p class="welcome-eyebrow">Store health · last 30 days</p>
+            <h1 data-greeting>Good evening.</h1>
+            <p>Revenue is trending up and fulfilment is on schedule. Three products need restocking before the weekend.</p>
+            <div class="welcome-actions mt-20">
+              <a class="btn btn-gold" href="../../404.html">Review inventory</a>
+              <a class="btn btn-light-line" href="../../404.html">Open analytics</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="grid stat-grid">
+          <article class="stat">
+            <div class="stat-top"><span class="stat-label">Revenue</span><span class="stat-ico" data-icon="card"></span></div>
+            <p class="stat-value">$148,920</p>
+            <div class="stat-foot"><span class="trend up" data-icon="arrowUp">12.4%</span><span>vs last month</span></div>
+          </article>
+          <article class="stat">
+            <div class="stat-top"><span class="stat-label">Orders</span><span class="stat-ico" data-icon="bag"></span></div>
+            <p class="stat-value">1,284</p>
+            <div class="stat-foot"><span class="trend up" data-icon="arrowUp">6.1%</span><span>vs last month</span></div>
+          </article>
+          <article class="stat">
+            <div class="stat-top"><span class="stat-label">Customers</span><span class="stat-ico" data-icon="users"></span></div>
+            <p class="stat-value">3,942</p>
+            <div class="stat-foot"><span class="trend up" data-icon="arrowUp">3.2%</span><span>new sign-ups</span></div>
+          </article>
+          <article class="stat">
+            <div class="stat-top"><span class="stat-label">Avg. order value</span><span class="stat-ico" data-icon="chart"></span></div>
+            <p class="stat-value">$116</p>
+            <div class="stat-foot"><span class="trend down" data-icon="arrowDown">1.8%</span><span>vs last month</span></div>
+          </article>
+        </section>
+
+        <section class="grid split align-start">
+          <div class="panel">
+            <div class="panel-head">
+              <div class="panel-title-wrap"><h2>Revenue overview</h2><p>Gross sales across all channels</p></div>
+              <span class="badge badge-green badge-plain">On track</span>
+            </div>
+            <div class="panel-pad">
+              <div class="chart">
+                <div data-chart="area" data-values="42,48,40,55,52,63,58,66,61,72,69,80" data-labels="1,,4,,8,,12,,16,,22,30"></div>
+                <div class="chart-x" data-chart-x></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="panel-head"><div class="panel-title-wrap"><h2>Sales by category</h2><p>Share of total revenue</p></div></div>
+            <div class="panel-pad">
+              <div class="donut-wrap">
+                <div class="donut" style="background:conic-gradient(#c9a05b 0 38%, #7a5a9e 38% 62%, #3e6d96 62% 82%, #3f8f6b 82% 100%)">
+                  <div class="donut-center"><b>1,284</b><small>orders</small></div>
+                </div>
+                <div class="donut-legend">
+                  <span><span class="dot" style="background:#c9a05b"></span>Living<b>38%</b></span>
+                  <span><span class="dot" style="background:#7a5a9e"></span>Lighting<b>24%</b></span>
+                  <span><span class="dot" style="background:#3e6d96"></span>Objects<b>20%</b></span>
+                  <span><span class="dot" style="background:#3f8f6b"></span>Textiles<b>18%</b></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="grid split align-start">
+          <div class="panel">
+            <div class="panel-head">
+              <div class="panel-title-wrap"><h2>Recent orders</h2><p>Latest activity across the store</p></div>
+              <a class="btn btn-line btn-sm" href="../../404.html">View all</a>
+            </div>
+            <div class="table-wrap">
+              <table class="table">
+                <thead><tr><th>Order</th><th>Customer</th><th>Total</th><th>Status</th></tr></thead>
+                <tbody>
+                  <tr><td class="cell-strong">#STK-9231</td><td><div class="cell-flex"><span class="avatar sm">AC</span><span class="cell-title"><b>Amelia Clarke</b><small>Brooklyn, NY</small></span></div></td><td class="num">$1,920</td><td><span class="badge badge-blue">In transit</span></td></tr>
+                  <tr><td class="cell-strong">#STK-9228</td><td><div class="cell-flex"><span class="avatar sm">DC</span><span class="cell-title"><b>Daniel Cross</b><small>Austin, TX</small></span></div></td><td class="num">$420</td><td><span class="badge badge-amber">Processing</span></td></tr>
+                  <tr><td class="cell-strong">#STK-9224</td><td><div class="cell-flex"><span class="avatar sm">PN</span><span class="cell-title"><b>Priya Nair</b><small>Seattle, WA</small></span></div></td><td class="num">$2,450</td><td><span class="badge badge-green">Delivered</span></td></tr>
+                  <tr><td class="cell-strong">#STK-9219</td><td><div class="cell-flex"><span class="avatar sm">ML</span><span class="cell-title"><b>Marcelle Lee</b><small>Chicago, IL</small></span></div></td><td class="num">$680</td><td><span class="badge badge-violet">Packed</span></td></tr>
+                  <tr><td class="cell-strong">#STK-9210</td><td><div class="cell-flex"><span class="avatar sm">TR</span><span class="cell-title"><b>Tomas Rivera</b><small>Miami, FL</small></span></div></td><td class="num">$1,890</td><td><span class="badge badge-green">Delivered</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="panel-head"><div class="panel-title-wrap"><h2>Low stock alerts</h2><p>Restock before the weekend</p></div></div>
+            <ul class="list">
+              <li>
+                <span class="thumb"><img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=200&q=70" alt="Walnut console"></span>
+                <span class="list-main"><b>Walnut Console</b><small>3 units remaining</small></span>
+                <span class="badge badge-red">Critical</span>
+              </li>
+              <li>
+                <span class="thumb"><img src="https://images.unsplash.com/photo-1499933374294-4584851497cc?auto=format&fit=crop&w=200&q=70" alt="Travertine side table"></span>
+                <span class="list-main"><b>Travertine Side Table</b><small>5 units remaining</small></span>
+                <span class="badge badge-amber">Low</span>
+              </li>
+              <li>
+                <span class="thumb"><img src="https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=200&q=70" alt="Amber glass lamp"></span>
+                <span class="list-main"><b>Amber Glass Lamp</b><small>9 units remaining</small></span>
+                <span class="badge badge-amber">Low</span>
+              </li>
+              <li>
+                <span class="thumb"><img src="https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&w=200&q=70" alt="Ribbed ceramic vase"></span>
+                <span class="list-main"><b>Ribbed Ceramic Vase</b><small>14 units remaining</small></span>
+                <span class="badge badge-blue">Watch</span>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-head">
+            <div class="panel-title-wrap"><h2>Top performing products</h2><p>By units sold this month</p></div>
+            <a class="btn btn-line btn-sm" href="../../404.html">Manage catalogue</a>
+          </div>
+          <div class="table-wrap">
+            <table class="table">
+              <thead><tr><th>Product</th><th>Category</th><th>Units sold</th><th>Revenue</th><th>Trend</th></tr></thead>
+              <tbody>
+                <tr><td><div class="cell-flex"><span class="thumb"><img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&w=200&q=70" alt="Sculpted boucle chair"></span><span class="cell-title"><b>Sculpted Boucle Chair</b><small>$1,240</small></span></div></td><td class="muted">Living</td><td class="num">128</td><td class="num">$158,720</td><td><span class="trend up" data-icon="arrowUp">9.4%</span></td></tr>
+                <tr><td><div class="cell-flex"><span class="thumb"><img src="https://images.unsplash.com/photo-1499933374294-4584851497cc?auto=format&fit=crop&w=200&q=70" alt="Travertine side table"></span><span class="cell-title"><b>Travertine Side Table</b><small>$680</small></span></div></td><td class="muted">Living</td><td class="num">96</td><td class="num">$65,280</td><td><span class="trend up" data-icon="arrowUp">6.1%</span></td></tr>
+                <tr><td><div class="cell-flex"><span class="thumb"><img src="https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=200&q=70" alt="Amber glass lamp"></span><span class="cell-title"><b>Amber Glass Lamp</b><small>$420</small></span></div></td><td class="muted">Lighting</td><td class="num">84</td><td class="num">$35,280</td><td><span class="trend up" data-icon="arrowUp">4.8%</span></td></tr>
+                <tr><td><div class="cell-flex"><span class="thumb"><img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=200&q=70" alt="Walnut console"></span><span class="cell-title"><b>Walnut Console</b><small>$1,890</small></span></div></td><td class="muted">Furniture</td><td class="num">42</td><td class="num">$79,380</td><td><span class="trend down" data-icon="arrowDown">2.3%</span></td></tr>
+                <tr><td><div class="cell-flex"><span class="thumb"><img src="https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?auto=format&fit=crop&w=200&q=70" alt="Linen throw collection"></span><span class="cell-title"><b>Linen Throw Collection</b><small>$190</small></span></div></td><td class="muted">Textiles</td><td class="num">210</td><td class="num">$39,900</td><td><span class="trend up" data-icon="arrowUp">11.2%</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+  <div class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

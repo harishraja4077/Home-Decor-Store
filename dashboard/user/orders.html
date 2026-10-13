@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#241b17">
+  <meta name="description" content="Track and manage your Stackly Home orders.">
+  <title>My Orders — STACKLY</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/dashboard.css">
+  <script src="../../js/email-validation.js" defer></script>
+  <script src="../js/dashboard.js" defer></script>
+</head>
+<body class="dash-body" data-dash="user" data-page="orders" data-title="My Orders">
+  <div class="dash">
+    <aside class="dash-sidebar" id="sidebar"></aside>
+    <div class="dash-scrim" data-sidebar-close></div>
+    <div class="dash-main">
+      <header class="dash-topbar" id="topbar"></header>
+
+      <main class="dash-content">
+        <section class="grid cols-3">
+          <article class="stat">
+            <div class="stat-top"><span class="stat-label">Orders placed</span><span class="stat-ico" data-icon="bag"></span></div>
+            <p class="stat-value">24</p>
+            <div class="stat-foot"><span>Lifetime with Stackly</span></div>
+          </article>
+          <article class="stat">
+            <div class="stat-top"><span class="stat-label">Total spent</span><span class="stat-ico" data-icon="card"></span></div>
+            <p class="stat-value">$8,420</p>
+            <div class="stat-foot"><span class="trend up" data-icon="arrowUp">+12%</span><span>vs last year</span></div>
+          </article>
+          <article class="stat">
+            <div class="stat-top"><span class="stat-label">In transit</span><span class="stat-ico" data-icon="truck"></span></div>
+            <p class="stat-value">1</p>
+            <div class="stat-foot"><span>Arriving Mar 16</span></div>
+          </article>
+        </section>
+
+        <section class="panel">
+          <div class="toolbar">
+            <div class="tabs" role="tablist" aria-label="Filter orders">
+              <button onclick="window.location.href='../../404.html';return false" class="tab is-active" data-filter-tab="all" data-table-key="orders">All</button>
+              <button onclick="window.location.href='../../404.html';return false" class="tab" data-filter-tab="processing" data-table-key="orders">Processing</button>
+              <button onclick="window.location.href='../../404.html';return false" class="tab" data-filter-tab="shipped" data-table-key="orders">In transit</button>
+              <button onclick="window.location.href='../../404.html';return false" class="tab" data-filter-tab="delivered" data-table-key="orders">Delivered</button>
+              <button onclick="window.location.href='../../404.html';return false" class="tab" data-filter-tab="cancelled" data-table-key="orders">Cancelled</button>
+            </div>
+            <div class="toolbar-spacer"></div>
+            <label class="field field-search"><span class="sr-only">Search orders</span>
+              <span data-icon="search"></span>
+              <input type="search" placeholder="Search orders" data-filter-search="orders">
+            </label>
+            <label class="field"><span class="sr-only">Filter by status</span>
+              <select data-filter-status="orders">
+                <option value="all">All statuses</option>
+                <option value="processing">Processing</option>
+                <option value="shipped">In transit</option>
+                <option value="delivered">Delivered</option>
+                <option value="cancelled">Cancelled</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="table-wrap">
+            <table class="table" data-table="orders">
+              <thead>
+                <tr><th>Order</th><th>Date</th><th>Items</th><th>Total</th><th>Status</th><th class="right">Action</th></tr>
+              </thead>
+              <tbody>
+                <tr data-status="shipped">
+                  <td class="cell-strong">#STK-2481</td>
+                  <td class="muted">Mar 12, 2026</td>
+                  <td class="muted">Sculpted Boucle Chair · Travertine Side Table</td>
+                  <td class="num">$1,920</td>
+                  <td><span class="badge badge-blue">In transit</span></td>
+                  <td><div class="row-actions"><button onclick="window.location.href='../../404.html';return false" class="btn btn-line btn-sm" data-toast="Live tracking opened for #STK-2481">Track</button><button onclick="window.location.href='../../404.html';return false" class="mini-btn" data-toast="Invoice #STK-2481 downloaded" aria-label="Download invoice"><span data-icon="download"></span></button></div></td>
+                </tr>
+                <tr data-status="delivered">
+                  <td class="cell-strong">#STK-2466</td>
+                  <td class="muted">Mar 02, 2026</td>
+                  <td class="muted">Amber Glass Lamp</td>
+                  <td class="num">$420</td>
+                  <td><span class="badge badge-green">Delivered</span></td>
+                  <td><div class="row-actions"><button onclick="window.location.href='../../404.html';return false" class="btn btn-line btn-sm" data-toast="Feedback form opened for #STK-2466">Review</button><button onclick="window.location.href='../../404.html';return false" class="mini-btn" data-toast="Invoice #STK-2466 downloaded" aria-label="Download invoice"><span data-icon="download"></span></button></div></td>
+                </tr>
+                <tr data-status="delivered">
+                  <td class="cell-strong">#STK-2450</td>
+                  <td class="muted">Feb 21, 2026</td>
+                  <td class="muted">Linen Throw Collection ×2</td>
+                  <td class="num">$380</td>
+                  <td><span class="badge badge-green">Delivered</span></td>
+                  <td><div class="row-actions"><button onclick="window.location.href='../../404.html';return false" class="btn btn-line btn-sm" data-toast="Feedback form opened for #STK-2450">Review</button><button onclick="window.location.href='../../404.html';return false" class="mini-btn" data-toast="Invoice #STK-2450 downloaded" aria-label="Download invoice"><span data-icon="download"></span></button></div></td>
+                </tr>
+                <tr data-status="processing">
+                  <td class="cell-strong">#STK-2437</td>
+                  <td class="muted">Feb 15, 2026</td>
+                  <td class="muted">Walnut Console</td>
+                  <td class="num">$1,890</td>
+                  <td><span class="badge badge-amber">Processing</span></td>
+                  <td><div class="row-actions"><button onclick="window.location.href='../../404.html';return false" class="btn btn-line btn-sm" data-toast="We will update tracking for #STK-2437 shortly">Track</button><button onclick="window.location.href='../../404.html';return false" class="mini-btn" data-toast="Invoice #STK-2437 downloaded" aria-label="Download invoice"><span data-icon="download"></span></button></div></td>
+                </tr>
+                <tr data-status="delivered">
+                  <td class="cell-strong">#STK-2401</td>
+                  <td class="muted">Feb 04, 2026</td>
+                  <td class="muted">Ribbed Ceramic Vase</td>
+                  <td class="num">$145</td>
+                  <td><span class="badge badge-green">Delivered</span></td>
+                  <td><div class="row-actions"><button onclick="window.location.href='../../404.html';return false" class="btn btn-line btn-sm" data-toast="Feedback form opened for #STK-2401">Review</button><button onclick="window.location.href='../../404.html';return false" class="mini-btn" data-toast="Invoice #STK-2401 downloaded" aria-label="Download invoice"><span data-icon="download"></span></button></div></td>
+                </tr>
+                <tr data-status="cancelled">
+                  <td class="cell-strong">#STK-2388</td>
+                  <td class="muted">Jan 28, 2026</td>
+                  <td class="muted">Amber Glass Lamp · Ribbed Ceramic Vase</td>
+                  <td class="num">$565</td>
+                  <td><span class="badge badge-red">Cancelled</span></td>
+                  <td><div class="row-actions"><button onclick="window.location.href='../../404.html';return false" class="btn btn-line btn-sm" data-add-bag="Order #STK-2388">Buy again</button><button onclick="window.location.href='../../404.html';return false" class="mini-btn" data-toast="Invoice #STK-2388 downloaded" aria-label="Download invoice"><span data-icon="download"></span></button></div></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="panel panel-pad between">
+          <div>
+            <h2 class="panel-title">Need a hand?</h2>
+            <p class="lead mt-8">Our client advisors can help with delivery, styling or returns — usually within a few hours.</p>
+          </div>
+          <a class="btn btn-gold" href="../../404.html">Contact an advisor</a>
+        </section>
+      </main>
+    </div>
+  </div>
+  <div class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

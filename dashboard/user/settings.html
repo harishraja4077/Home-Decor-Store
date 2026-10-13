@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#241b17">
+  <meta name="description" content="Manage your Stackly Home profile, notifications and security.">
+  <title>Settings — STACKLY</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/dashboard.css">
+  <script src="../../js/email-validation.js" defer></script>
+  <script src="../js/dashboard.js" defer></script>
+</head>
+<body class="dash-body" data-dash="user" data-page="settings" data-title="Settings">
+  <div class="dash">
+    <aside class="dash-sidebar" id="sidebar"></aside>
+    <div class="dash-scrim" data-sidebar-close></div>
+    <div class="dash-main">
+      <header class="dash-topbar" id="topbar"></header>
+
+      <main class="dash-content">
+        <section class="panel">
+          <div class="panel-head">
+            <div class="panel-title-wrap"><h2>Profile</h2><p>This is how we address you and your deliveries.</p></div>
+          </div>
+          <div class="panel-pad">
+            <div class="between mb-0" style="margin-bottom:24px">
+              <div class="cell-flex">
+                <span class="avatar lg" data-account-avatar></span>
+                <div class="cell-title"><b data-account-name></b><small data-account-email></small></div>
+              </div>
+              <button onclick="window.location.href='../../404.html';return false" class="btn btn-line btn-sm" data-toast="Photo upload is a demo action">Change photo</button>
+            </div>
+            <form data-simple-form="Profile updated successfully" data-reset="false">
+              <div class="form-grid">
+                <div class="form-field"><label for="pf-first">First name</label><input id="pf-first" name="first" data-account-first value="" required></div>
+                <div class="form-field"><label for="pf-last">Last name</label><input id="pf-last" name="last" data-account-last value="" required></div>
+                <div class="form-field"><label for="pf-email">Email</label><input id="pf-email" name="email" type="email" value="" required></div>
+                <div class="form-field"><label for="pf-phone">Phone</label><input id="pf-phone" name="phone" type="tel" value="+1 (212) 555-0148"></div>
+                <div class="form-field"><label for="pf-city">City</label><input id="pf-city" name="city" value="Brooklyn, NY"></div>
+                <div class="form-field"><label for="pf-zip">Postal code</label><input id="pf-zip" name="postal" value="11201"></div>
+              </div>
+              <div class="form-actions">
+                <button onclick="window.location.href='../../404.html';return false" type="submit" class="btn btn-gold">Save changes</button>
+                <button onclick="window.location.href='../../404.html';return false" type="reset" class="btn btn-ghost">Discard</button>
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <section class="grid split-even align-start">
+          <div class="panel">
+            <div class="panel-head"><div class="panel-title-wrap"><h2>Notifications</h2><p>Choose what reaches your inbox.</p></div></div>
+            <div class="panel-pad">
+              <label class="setting-row">
+                <span class="setting-text"><b>Order updates</b><small>Dispatch, delivery and tracking alerts.</small></span>
+                <span class="switch"><input type="checkbox" checked data-label="Order updates"><span class="track"></span><span class="thumb"></span></span>
+              </label>
+              <label class="setting-row">
+                <span class="setting-text"><b>New collections</b><small>First look at seasonal arrivals and edits.</small></span>
+                <span class="switch"><input type="checkbox" checked data-label="New collections"><span class="track"></span><span class="thumb"></span></span>
+              </label>
+              <label class="setting-row">
+                <span class="setting-text"><b>Journal &amp; styling notes</b><small>Interiors inspiration from our studio.</small></span>
+                <span class="switch"><input type="checkbox" data-label="Journal"><span class="track"></span><span class="thumb"></span></span>
+              </label>
+              <label class="setting-row">
+                <span class="setting-text"><b>SMS alerts</b><small>Delivery-day texts to your phone.</small></span>
+                <span class="switch"><input type="checkbox" data-label="SMS alerts"><span class="track"></span><span class="thumb"></span></span>
+              </label>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="panel-head"><div class="panel-title-wrap"><h2>Preferences</h2><p>Regional and display settings.</p></div></div>
+            <div class="panel-pad">
+              <form data-simple-form="Preferences saved" data-reset="false">
+                <div class="form-grid" style="grid-template-columns:1fr">
+                  <div class="form-field"><label for="pref-currency">Currency</label>
+                    <select id="pref-currency" name="currency"><option>USD — US Dollar</option><option>GBP — Pound Sterling</option><option>EUR — Euro</option><option>INR — Indian Rupee</option></select>
+                  </div>
+                  <div class="form-field"><label for="pref-lang">Language</label>
+                    <select id="pref-lang" name="language"><option>English (US)</option><option>English (UK)</option><option>Français</option><option>Deutsch</option></select>
+                  </div>
+                  <div class="form-field"><label for="pref-room">Favourite room</label>
+                    <select id="pref-room" name="room"><option>Living</option><option>Dining</option><option>Bedroom</option><option>Outdoor</option></select>
+                  </div>
+                </div>
+                <div class="form-actions"><button onclick="window.location.href='../../404.html';return false" type="submit" class="btn btn-gold">Save preferences</button></div>
+              </form>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-head"><div class="panel-title-wrap"><h2>Security</h2><p>Keep your account safe.</p></div></div>
+          <div class="panel-pad">
+            <form data-simple-form="Your password has been updated" data-reset="false">
+              <div class="form-grid">
+                <div class="form-field full"><label for="sec-current">Current password</label><input id="sec-current" name="current" type="password" placeholder="Enter current password" required></div>
+                <div class="form-field"><label for="sec-new">New password</label><input id="sec-new" name="new" type="password" placeholder="At least 8 characters" minlength="8" required></div>
+                <div class="form-field"><label for="sec-confirm">Confirm new password</label><input id="sec-confirm" name="confirm" type="password" placeholder="Re-enter new password" minlength="8" required></div>
+              </div>
+              <div class="form-actions">
+                <button onclick="window.location.href='../../404.html';return false" type="submit" class="btn btn-dark">Update password</button>
+                <button onclick="window.location.href='../../404.html';return false" type="button" class="btn btn-line" data-toast="Two-factor setup is a demo action"><span data-icon="shield"></span> Enable two-factor</button>
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-head"><div class="panel-title-wrap"><h2>Danger zone</h2><p>Permanent account actions.</p></div></div>
+          <div class="panel-pad between">
+            <div class="setting-text"><b>Delete account</b><small>Remove your profile, orders history and saved data. This cannot be undone.</small></div>
+            <button onclick="window.location.href='../../404.html';return false" class="btn btn-danger" data-toast="Account deletion requires email confirmation">Delete account</button>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+  <div class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
