@@ -223,14 +223,33 @@
   function wireInteractions() {
     var dash = document.querySelector(".dash");
 
+    function setScrollLock(lock) {
+      document.documentElement.classList.toggle("no-scroll", lock);
+      document.body.classList.toggle("no-scroll", lock);
+    }
+
+    function setNavOpen(open) {
+      if (!dash) return;
+      dash.classList.toggle("is-nav-open", open);
+      document.querySelectorAll("[data-sidebar-toggle]").forEach(function (btn) {
+        btn.setAttribute("aria-expanded", String(open));
+      });
+      setScrollLock(open);
+    }
+
     document.querySelectorAll("[data-sidebar-toggle]").forEach(function (btn) {
       btn.addEventListener("click", function () {
-        var open = dash.classList.toggle("is-nav-open");
-        btn.setAttribute("aria-expanded", String(open));
+        setNavOpen(!dash.classList.contains("is-nav-open"));
       });
     });
     document.querySelectorAll("[data-sidebar-close]").forEach(function (el) {
-      el.addEventListener("click", function () { dash.classList.remove("is-nav-open"); });
+      el.addEventListener("click", function () { setNavOpen(false); });
+    });
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape" && dash && dash.classList.contains("is-nav-open")) setNavOpen(false);
+    });
+    window.addEventListener("resize", function () {
+      if (!window.matchMedia("(max-width: 1080px)").matches) setNavOpen(false);
     });
 
     document.body.addEventListener("click", function (event) {

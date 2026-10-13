@@ -13,6 +13,18 @@ body {
 
 body { overflow-wrap: break-word; }
 
+/* JS-injected close (X) button for the mobile drawer. Hidden everywhere
+   except the mobile full-screen drawer so it never appears in the desktop
+   horizontal nav row. */
+.menu-close { display: none; }
+
+/* Scroll lock while the mobile drawer menu is open so the background
+   never moves behind it. */
+html.no-scroll,
+body.no-scroll {
+  overflow: hidden;
+}
+
 /* Fixed header reserves its own height so page content is never hidden. */
 body:has(.nav-bar) { padding-top: 70px; }
 
@@ -102,30 +114,30 @@ p, a, li, blockquote, figcaption, address {
   .menu-toggle span { height: 1px; width: 20px; background: var(--paper); }
   .signin-button { min-height: 38px; padding: 0 16px; font-size: 13px; }
 
-  /* Drawer menu — fixed to the viewport so a hero's overflow:hidden
-     can never clip it, on any page or screen height. */
+  /* Drawer menu — full-screen overlay pinned to the viewport so a hero's
+     overflow:hidden can never clip it, on any page or screen height.
+     Covers the entire screen and sports a dedicated close (X) button. */
   .nav-bar .nav-links,
   .nav-bar.about-nav .nav-links,
   .nav-bar.contact-nav .nav-links,
   .nav-bar.journal-nav .nav-links,
   .nav-bar.spaces-nav .nav-links {
     position: fixed;
-    top: 60px;
-    right: auto;
-    left: 0;
+    inset: 0;
     width: 100%;
-    z-index: 60;
+    height: 100%;
+    height: 100dvh;
+    z-index: 100;
     display: none;
     flex-direction: column;
     gap: 0;
     margin: 0;
-    padding: 8px 18px 14px;
-    max-height: calc(100vh - 84px);
+    padding: 88px 24px 28px;
     overflow-y: auto;
     overscroll-behavior: contain;
-    border-radius: 0 0 14px 14px;
+    border-radius: 0;
     background: var(--ink);
-    box-shadow: 0 28px 54px -28px rgba(0, 0, 0, .72);
+    box-shadow: none;
   }
 
   .nav-bar .nav-links.is-open,
@@ -139,9 +151,9 @@ p, a, li, blockquote, figcaption, address {
   .nav-bar.contact-nav .nav-links a,
   .nav-bar.journal-nav .nav-links a,
   .nav-bar.spaces-nav .nav-links a {
-    padding: 13px 0;
+    padding: 15px 0;
     border-bottom: 1px solid rgba(255, 255, 255, .08);
-    font-size: 15px;
+    font-size: 16px;
     letter-spacing: .06em;
   }
 
@@ -151,9 +163,26 @@ p, a, li, blockquote, figcaption, address {
   .nav-bar.journal-nav .nav-links a:last-child,
   .nav-bar.spaces-nav .nav-links a:last-child { border-bottom: 0; }
 
+  /* Close (X) button pinned to the top-right of the full-screen drawer. */
+  .menu-close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    display: grid;
+    width: 44px;
+    height: 44px;
+    place-items: center;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: var(--paper);
+  }
+  .menu-close svg { width: 26px; height: 26px; }
+
   /* Spaces keeps its light hero, so its drawer stays light with dark links. */
   .nav-bar.spaces-nav .nav-links { background: var(--paper); }
   .nav-bar.spaces-nav .nav-links a { color: var(--ink); }
+  .nav-bar.spaces-nav .menu-close { color: var(--ink); }
 
   .desktop-break { display: none; }
 }

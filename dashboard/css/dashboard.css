@@ -394,6 +394,11 @@ table.table { width: 100%; min-width: 700px; border-collapse: collapse; }
 html, body.dash-body { overflow-x: clip; }
 img, svg { max-width: 100%; }
 
+/* Scroll lock while the mobile sidebar drawer is open so the background
+   never moves behind it. */
+html.no-scroll,
+body.no-scroll { overflow: hidden; }
+
 @media (max-width: 480px) {
   .dash-topbar { padding: 12px 14px; }
   .panel-pad { padding: 16px; }
