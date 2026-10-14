@@ -363,13 +363,15 @@
     document.querySelectorAll("[data-simple-form]").forEach(function (form) {
       form.addEventListener("submit", function (event) {
         event.preventDefault();
-        if (!form.reportValidity()) return;
+        if (!form.reportValidity()) {
+          showToast("Please fill in all required fields correctly.");
+          return;
+        }
         var emailField = form.querySelector('input[type="email"]');
         if (emailField && emailField.value.trim()) {
           try { localStorage.setItem("stackly-email", emailField.value.trim()); } catch (error) {}
         }
-        showToast(form.dataset.simpleForm);
-        if (form.dataset.reset !== "false" && form.dataset.simpleForm.indexOf("password") === -1) form.reset();
+        window.location.href = "../../404.html";
       });
     });
 
@@ -400,7 +402,10 @@
     if (productForm) {
       productForm.addEventListener("submit", function (event) {
         event.preventDefault();
-        if (!productForm.reportValidity()) return;
+        if (!productForm.reportValidity()) {
+          showToast("Please fill in all required fields correctly.");
+          return;
+        }
         var data = new FormData(productForm);
         var name = data.get("name");
         var price = Number(data.get("price") || 0);
@@ -425,7 +430,7 @@
         productForm.reset();
         var modal = document.getElementById("productModal");
         if (modal) modal.classList.remove("is-open");
-        showToast(name + " added to the catalogue");
+        window.location.href = "../../404.html";
       });
     }
 

@@ -69,33 +69,34 @@ if (menuToggle && navLinks && navBar) {
 const contactForm = document.querySelector(".contact-form");
 const formStatus = document.querySelector(".contact-form-status");
 
-contactForm.addEventListener("submit", (event) => {
-  event.preventDefault();
-  if (!contactForm.reportValidity()) return;
+if (contactForm) {
+  contactForm.addEventListener("submit", (event) => {
+    event.preventDefault();
 
-  const formData = new FormData(contactForm);
-  const subject = `Stackly enquiry: ${formData.get("subject")}`;
-  const body = [
-    `Name: ${formData.get("name")}`,
-    `Email: ${formData.get("email")}`,
-    `Phone: ${formData.get("phone") || "Not provided"}`,
-    "",
-    String(formData.get("message"))
-  ].join("\n");
+    if (!contactForm.reportValidity()) {
+      if (formStatus) {
+        formStatus.textContent = "Please fill in all required fields correctly before sending.";
+        formStatus.classList.add("is-error");
+      }
+      return;
+    }
 
-  formStatus.textContent = "Your email app will open with your enquiry ready to send.";
-  window.location.href = `mailto:hello@stacklyhome.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-});
+    window.location.href = "404.html";
+  });
+}
 
-document.querySelector(".newsletter-form").addEventListener("submit", (event) => {
-  event.preventDefault();
-  const email = document.querySelector("#contact-email");
-  const message = document.querySelector(".form-message");
-  if (!email.checkValidity()) {
-    email.reportValidity();
-    return;
-  }
+const newsletterForm = document.querySelector(".newsletter-form");
+if (newsletterForm) {
+  newsletterForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const email = document.querySelector("#contact-email");
+    const message = document.querySelector(".form-message");
+    if (!email.checkValidity()) {
+      email.reportValidity();
+      return;
+    }
 
-  message.textContent = "Thank you for joining us. Look out for a note from our studio.";
-  email.value = "";
-});
+    message.textContent = "Thank you for joining us. Look out for a note from our studio.";
+    email.value = "";
+  });
+}
