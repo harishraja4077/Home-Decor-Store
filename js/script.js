@@ -1,6 +1,4 @@
-const bagCount = document.querySelector(".bag-count");
 const toast = document.querySelector(".toast");
-let bagItems = 0;
 let toastTimer;
 
 function showToast(message) {
@@ -12,9 +10,7 @@ function showToast(message) {
 
 document.querySelectorAll(".add-button").forEach((button) => {
   button.addEventListener("click", () => {
-    bagItems += 1;
-    bagCount.textContent = String(bagItems);
-    showToast(`${button.dataset.product} added to your bag`);
+    window.location.href = "404.html";
   });
 });
 

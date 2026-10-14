@@ -16,8 +16,25 @@
 <script src="js/animations.js"></script>
 <script src="js/email-validation.js" defer></script>
   <script src="js/404.js" defer></script>
+  <link rel="stylesheet" href="css/preloader.css">
+  <script src="js/preloader.js" defer></script>
 </head>
 <body class="notfound-page">
+  <div class="preloader" id="preloader" role="status" aria-live="polite" aria-label="Loading Stackly">
+    <div class="preloader-inner">
+      <div class="preloader-emblem" aria-hidden="true">
+        <span class="preloader-ring preloader-ring--outer"></span>
+        <span class="preloader-ring preloader-ring--inner"></span>
+        <span class="preloader-monogram">S</span>
+      </div>
+      <div class="preloader-brand" aria-hidden="true">
+        <span>S</span><span>T</span><span>A</span><span>C</span><span>K</span><span>L</span><span>Y</span>
+      </div>
+      <p class="preloader-tagline">Elevate the way you live</p>
+      <div class="preloader-progress"><span class="preloader-progress-bar"></span></div>
+      <p class="preloader-count" data-preloader-count>00</p>
+    </div>
+  </div>
   <div class="nf-glow" aria-hidden="true"></div>
 
   <nav class="nav-bar" aria-label="Main navigation">

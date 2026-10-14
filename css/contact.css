@@ -226,3 +226,47 @@
   .contact-page .footer-bottom a, .contact-page .footer-bottom p { font-size: 12px; }
   .contact-page .copyright { font-size: 11px; }
 }
+
+/* ==========================================================================
+   New premium sections — FAQ & Trade programme
+   ========================================================================== */
+.faq { padding-top: 52px; padding-bottom: 44px; }
+.faq .section-heading { margin-bottom: 30px; }
+.faq h2 em { color: #b08a4f; font-weight: 400; }
+.faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 44px; border-top: 1px solid #c9bca9; }
+.faq-item { border-bottom: 1px solid #c9bca9; }
+.faq-item summary { position: relative; padding: 20px 40px 20px 0; cursor: pointer; font-size: 19px; font-weight: 500; list-style: none; }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after { position: absolute; top: 50%; right: 4px; content: "+"; transform: translateY(-50%); color: var(--gold); font-family: var(--sans); font-size: 22px; line-height: 1; }
+.faq-item[open] summary::after { content: "–"; }
+.faq-item p { margin: 0 0 20px; color: #5e554d; font-size: 14px; line-height: 1.6; }
+
+.trade { padding: 66px 0 70px; color: var(--paper); background: var(--ink); }
+.trade-inner { display: grid; grid-template-columns: 1.05fr .95fr; align-items: center; gap: 60px; }
+.trade-copy .eyebrow { margin-bottom: 12px; }
+.trade-copy h2 { font-size: clamp(40px, 5vw, 58px); line-height: .98; }
+.trade-copy h2 em { color: var(--gold); font-weight: 400; }
+.trade-copy > p:not(.eyebrow) { max-width: 450px; margin: 16px 0 22px; color: #d8cfc4; font-size: 15px; line-height: 1.6; }
+.trade-list { display: grid; gap: 11px; margin: 0 0 28px; padding: 0; list-style: none; }
+.trade-list li { position: relative; padding-left: 26px; color: #e2d7c9; font-family: var(--sans); font-size: 14px; }
+.trade-list li::before { position: absolute; left: 0; content: "✦"; color: var(--gold); font-size: 13px; }
+.trade-media { position: relative; height: 400px; padding: 6px; border: 1px solid #877456; border-radius: 20px; }
+.trade-media img { border-radius: 13px; }
+.trade-badge { position: absolute; right: -18px; bottom: 28px; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 118px; height: 118px; border: 1px solid var(--gold); border-radius: 50%; background: var(--paper); color: var(--ink); text-align: center; box-shadow: 0 14px 30px rgba(0,0,0,.35); }
+.trade-badge strong { color: #a98551; font-size: 34px; font-style: italic; font-weight: 400; line-height: 1; }
+.trade-badge strong span { font-size: .55em; }
+.trade-badge small { width: 78px; margin-top: 4px; color: #4a3f34; font-family: var(--sans); font-size: 10px; letter-spacing: .08em; line-height: 1.25; text-transform: uppercase; }
+
+@media (max-width: 760px) {
+  .faq { padding-top: 40px; padding-bottom: 32px; }
+  .faq-grid { grid-template-columns: 1fr; gap: 0; }
+  .faq-item summary { padding: 16px 34px 16px 0; font-size: 17px; }
+  .trade { padding: 50px 0 54px; }
+  .trade-inner { grid-template-columns: 1fr; gap: 34px; }
+  .trade-copy h2 { font-size: clamp(32px, 9vw, 42px); }
+  .trade-copy > p:not(.eyebrow) { font-size: 14px; }
+  .trade-media { height: 280px; }
+  .trade-badge { right: 8px; bottom: -18px; width: 92px; height: 92px; }
+  .trade-badge strong { font-size: 26px; }
+  .trade-badge small { width: 64px; font-size: 9px; }
+}

@@ -16,8 +16,25 @@
 <script src="js/animations.js"></script>
 <script src="js/email-validation.js" defer></script>
   <script src="js/script.js" defer></script>
+  <link rel="stylesheet" href="css/preloader.css">
+  <script src="js/preloader.js" defer></script>
 </head>
 <body>
+  <div class="preloader" id="preloader" role="status" aria-live="polite" aria-label="Loading Stackly">
+    <div class="preloader-inner">
+      <div class="preloader-emblem" aria-hidden="true">
+        <span class="preloader-ring preloader-ring--outer"></span>
+        <span class="preloader-ring preloader-ring--inner"></span>
+        <span class="preloader-monogram">S</span>
+      </div>
+      <div class="preloader-brand" aria-hidden="true">
+        <span>S</span><span>T</span><span>A</span><span>C</span><span>K</span><span>L</span><span>Y</span>
+      </div>
+      <p class="preloader-tagline">Elevate the way you live</p>
+      <div class="preloader-progress"><span class="preloader-progress-bar"></span></div>
+      <p class="preloader-count" data-preloader-count>00</p>
+    </div>
+  </div>
   <svg class="icon-sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
     <symbol id="i-search" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="m20.4 20.4-4-4"></path></g></symbol>
     <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.4 8.8c0 5.1-8.4 10.1-8.4 10.1S3.6 13.9 3.6 8.8a4.1 4.1 0 0 1 7.3-2.5 4.1 4.1 0 0 1 7.3 2.5Z"></path></symbol>
@@ -148,8 +165,75 @@
       <div class="testimonial-inner"><p class="eyebrow">07 — A little love note</p><blockquote>“Shop reviewed the pieces transformed<br>our home into something calm,<br>warm and entirely ours.”</blockquote><div class="stars" role="img" aria-label="5 out of 5 stars"><svg viewBox="0 0 120 24" aria-hidden="true"><use href="#i-stars"></use></svg></div><p class="reviewer">JULIETTE MARTIN<br><span>SOHO, COTSWOLDS</span></p><div class="ornament ornament-left">❧</div><div class="ornament ornament-right">❧</div></div>
     </section>
 
+    <section class="craft section-wrap" id="craft">
+      <div class="craft-visual">
+        <img class="craft-main" src="Assets/1600210491892-03d54c0aaf87.webp" alt="A calm living room layered with natural textures and warm light">
+        <img class="craft-detail" src="Assets/1513506003901-1e6a229e2d15.webp" alt="Artisan detail of warm brass and oak lighting">
+        <div class="craft-badge"><strong>25<span>+</span></strong><small>Years of mindful making</small></div>
+      </div>
+      <div class="craft-copy">
+        <p class="eyebrow">08 — Made by hand</p>
+        <h2>Honest materials,<br><em>patient hands.</em></h2>
+        <p>Every Stackly piece begins with a maker and a material worth keeping. We work in small runs with workshops that share our belief in slow, considered craft.</p>
+        <ul class="craft-points">
+          <li><span class="craft-check" aria-hidden="true">✦</span><div><h3>Natural materials</h3><p>Solid oak, honed stone and stonewashed linen, chosen to age beautifully.</p></div></li>
+          <li><span class="craft-check" aria-hidden="true">✦</span><div><h3>Small-batch making</h3><p>Limited runs, hand-finished so no two pieces are ever exactly alike.</p></div></li>
+          <li><span class="craft-check" aria-hidden="true">✦</span><div><h3>Built to be kept</h3><p>Joinery and finishes made to live with you for decades, not seasons.</p></div></li>
+        </ul>
+        <a class="button button-outline-dark" href="404.html">Meet Our Makers <span>↗</span></a>
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="section-wrap">
+        <div class="section-heading">
+          <div><p class="eyebrow">09 — Design services</p><h2>Bring us your <em>vision.</em></h2></div>
+          <a class="text-link" href="404.html">BOOK A CONSULTATION <span>↗</span></a>
+        </div>
+        <div class="service-grid">
+          <article class="service-card">
+            <span class="service-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-sparkle"></use></svg></span>
+            <h3>Interior Styling</h3>
+            <p>A personal edit of colour, texture and layout shaped around the way you live.</p>
+            <a href="404.html">Learn more <span>↗</span></a>
+          </article>
+          <article class="service-card">
+            <span class="service-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-gem"></use></svg></span>
+            <h3>Bespoke Curation</h3>
+            <p>Furniture and decor selected piece by piece to feel unmistakably yours.</p>
+            <a href="404.html">Learn more <span>↗</span></a>
+          </article>
+          <article class="service-card">
+            <span class="service-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-clock"></use></svg></span>
+            <h3>Room Makeovers</h3>
+            <p>From first sketch to final styling, we reimagine one room or the whole home.</p>
+            <a href="404.html">Learn more <span>↗</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="editorial-section">
+      <p class="eyebrow">10 — A more considered home</p>
+      <div class="editorial-heading"><h2>Good design lives<br>in the details.</h2><p>Bring a room together with thoughtful choices that balance comfort, character and everyday function.</p></div>
+      <div class="editorial-grid">
+        <article class="editorial-card"><span class="editorial-index">01</span><h3>Start with how you live</h3><p>Let the routines of your home guide the layout, from slow mornings to evenings spent together.</p></article>
+        <article class="editorial-card"><span class="editorial-index">02</span><h3>Layer natural textures</h3><p>Pair tactile linen, warm wood and considered finishes to create depth without visual clutter.</p></article>
+        <article class="editorial-card"><span class="editorial-index">03</span><h3>Choose pieces with purpose</h3><p>Make room for the furniture and objects you use, love and want to keep around.</p></article>
+      </div>
+    </section>
+
+    <section class="editorial-feature">
+      <div class="editorial-feature-copy"><p class="eyebrow">11 — The Stackly approach</p><h2>A home should feel<br><em>like it belongs to you.</em></h2><p>There is no single formula for a beautiful home. We help you find the pieces, palette and pace that feel right for your own space.</p><a class="button button-gold" href="404.html">Find your feeling</a></div>
+      <ul class="editorial-feature-list">
+        <li><span>01</span><div><h3>Make it personal</h3><p>Let meaningful objects and favourite colours tell your story.</p></div></li>
+        <li><span>02</span><div><h3>Leave space to breathe</h3><p>A considered edit gives every room a calmer, clearer feel.</p></div></li>
+        <li><span>03</span><div><h3>Let it evolve</h3><p>Build a home over time, one well-chosen detail at a time.</p></div></li>
+      </ul>
+    </section>
+
     <section class="dream-cta section-wrap">
-      <div class="dream-inner"><p class="eyebrow">08 — Begin</p><h2>Your Dream Space<br><em>Starts Here.</em></h2><a class="button button-gold" href="404.html">Shop the Collection</a></div>
+      <div class="dream-inner"><p class="eyebrow">12 — Begin</p><h2>Your Dream Space<br><em>Starts Here.</em></h2><a class="button button-gold" href="404.html">Shop the Collection</a></div>
     </section>
   </main>
 

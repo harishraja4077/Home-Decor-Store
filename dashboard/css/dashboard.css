@@ -125,6 +125,7 @@ svg { display: block; stroke-linecap: round; stroke-linejoin: round; }
 .cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .split { grid-template-columns: 1.7fr 1fr; }
 .split-even { grid-template-columns: 1fr 1fr; }
+.split > * { min-width: 0; }
 .align-start { align-items: start; }
 
 .panel { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); }

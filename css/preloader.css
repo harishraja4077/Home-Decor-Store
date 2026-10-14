@@ -1,0 +1,205 @@
+/* ==========================================================================
+   Preloader — premium 3 second brand intro
+   Full-screen ink overlay with a rotating gold emblem, staggered STACKLY
+   wordmark, shimmering progress rail and an eased percentage counter.
+   Markup lives at the top of <body>; behaviour in js/preloader.js.
+   ========================================================================== */
+
+.preloader {
+  --pl-ink: var(--ink, #241b17);
+  --pl-gold: var(--gold, #c9a05b);
+  --pl-paper: var(--paper, #f8f4ec);
+  --pl-sans: var(--sans, "DM Sans", Arial, sans-serif);
+  --pl-serif: var(--serif, "Cormorant Garamond", Georgia, serif);
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  color: var(--pl-paper);
+  background:
+    radial-gradient(120% 90% at 50% 30%, rgba(201, 160, 91, .16), transparent 55%),
+    radial-gradient(90% 70% at 50% 120%, rgba(201, 160, 91, .08), transparent 60%),
+    var(--pl-ink);
+  overflow: hidden;
+  opacity: 1;
+  transition: opacity .9s ease, visibility .9s ease;
+}
+
+.preloader::before {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, .028) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, .028) 1px, transparent 1px);
+  background-size: 46px 46px;
+  -webkit-mask-image: radial-gradient(circle at 50% 45%, #000 0%, transparent 72%);
+  mask-image: radial-gradient(circle at 50% 45%, #000 0%, transparent 72%);
+  animation: preloader-drift 18s linear infinite;
+  pointer-events: none;
+}
+
+.preloader-inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transform: translateY(0);
+  transition: transform 1s cubic-bezier(.76, 0, .24, 1), opacity .7s ease;
+}
+
+/* --- rotating emblem ------------------------------------------------- */
+.preloader-emblem {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 118px;
+  height: 118px;
+  margin-bottom: 34px;
+}
+
+.preloader-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1px solid rgba(201, 160, 91, .32);
+}
+
+.preloader-ring--outer {
+  border-color: transparent;
+  border-top-color: var(--pl-gold);
+  border-right-color: rgba(201, 160, 91, .5);
+  animation: preloader-spin 3.4s cubic-bezier(.6, .1, .4, .9) infinite;
+}
+
+.preloader-ring--inner {
+  inset: 15px;
+  border-color: rgba(201, 160, 91, .16);
+  border-bottom-color: var(--pl-gold);
+  animation: preloader-spin 2.4s linear infinite reverse;
+}
+
+.preloader-monogram {
+  font-family: var(--pl-serif);
+  font-size: 40px;
+  font-style: italic;
+  line-height: 1;
+  color: var(--pl-gold);
+  animation: preloader-pulse 2.4s ease-in-out infinite;
+}
+
+/* --- wordmark -------------------------------------------------------- */
+.preloader-brand {
+  display: flex;
+  gap: .34em;
+  margin: 0 0 16px;
+  font-family: var(--pl-sans);
+  font-size: clamp(22px, 4vw, 34px);
+  font-weight: 600;
+  letter-spacing: .42em;
+  padding-left: .42em;
+}
+
+.preloader-brand span {
+  display: inline-block;
+  color: var(--pl-paper);
+  opacity: 0;
+  transform: translateY(120%);
+  animation: preloader-letter .8s cubic-bezier(.2, .7, .2, 1) forwards;
+}
+
+.preloader-brand span:nth-child(1) { animation-delay: .18s; }
+.preloader-brand span:nth-child(2) { animation-delay: .26s; }
+.preloader-brand span:nth-child(3) { animation-delay: .34s; }
+.preloader-brand span:nth-child(4) { animation-delay: .42s; }
+.preloader-brand span:nth-child(5) { animation-delay: .50s; }
+.preloader-brand span:nth-child(6) { animation-delay: .58s; }
+.preloader-brand span:nth-child(7) { animation-delay: .66s; }
+
+.preloader-tagline {
+  margin: 0 0 30px;
+  color: rgba(248, 244, 236, .62);
+  font-family: var(--pl-serif);
+  font-style: italic;
+  font-size: clamp(14px, 2.4vw, 17px);
+  letter-spacing: .06em;
+  opacity: 0;
+  animation: preloader-fade .9s ease .78s forwards;
+}
+
+/* --- progress rail --------------------------------------------------- */
+.preloader-progress {
+  position: relative;
+  width: min(230px, 58vw);
+  height: 2px;
+  margin-bottom: 16px;
+  overflow: hidden;
+  background: rgba(248, 244, 236, .12);
+}
+
+.preloader-progress-bar {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 0;
+  background: linear-gradient(90deg, rgba(201, 160, 91, .35), var(--pl-gold));
+  animation: preloader-fill 3s cubic-bezier(.65, .04, .36, 1) forwards;
+}
+
+.preloader-progress-bar::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 247, 230, .9), transparent);
+  mix-blend-mode: screen;
+  animation: preloader-shimmer 1.15s linear infinite;
+}
+
+.preloader-count {
+  margin: 0;
+  color: rgba(248, 244, 236, .5);
+  font-family: var(--pl-sans);
+  font-size: 12px;
+  letter-spacing: .3em;
+  font-variant-numeric: tabular-nums;
+}
+
+.preloader-count::after {
+  content: "%";
+  margin-left: .35em;
+  color: var(--pl-gold);
+}
+
+/* --- exit ------------------------------------------------------------ */
+.preloader.is-done {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.preloader.is-done .preloader-inner {
+  transform: translateY(-14px) scale(.97);
+  opacity: 0;
+}
+
+/* --- keyframes ------------------------------------------------------- */
+@keyframes preloader-spin { to { transform: rotate(360deg); } }
+@keyframes preloader-drift { to { transform: translate3d(46px, 46px, 0); } }
+@keyframes preloader-pulse { 0%, 100% { opacity: .55; } 50% { opacity: 1; } }
+@keyframes preloader-letter { to { opacity: 1; transform: none; } }
+@keyframes preloader-fade { to { opacity: 1; } }
+@keyframes preloader-fill { to { width: 100%; } }
+@keyframes preloader-shimmer { from { transform: translateX(-100%); } to { transform: translateX(100%); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .preloader::before,
+  .preloader-ring--outer,
+  .preloader-ring--inner,
+  .preloader-monogram,
+  .preloader-progress-bar::after { animation: none; }
+
+  .preloader-brand span { opacity: 1; transform: none; animation: none; }
+  .preloader-tagline { opacity: 1; animation: none; }
+  .preloader-progress-bar { animation-duration: 3s; }
+}

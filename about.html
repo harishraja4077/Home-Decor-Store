@@ -17,8 +17,25 @@
 <script src="js/animations.js"></script>
 <script src="js/email-validation.js" defer></script>
   <script src="js/about.js" defer></script>
+  <link rel="stylesheet" href="css/preloader.css">
+  <script src="js/preloader.js" defer></script>
 </head>
 <body class="about-page">
+  <div class="preloader" id="preloader" role="status" aria-live="polite" aria-label="Loading Stackly">
+    <div class="preloader-inner">
+      <div class="preloader-emblem" aria-hidden="true">
+        <span class="preloader-ring preloader-ring--outer"></span>
+        <span class="preloader-ring preloader-ring--inner"></span>
+        <span class="preloader-monogram">S</span>
+      </div>
+      <div class="preloader-brand" aria-hidden="true">
+        <span>S</span><span>T</span><span>A</span><span>C</span><span>K</span><span>L</span><span>Y</span>
+      </div>
+      <p class="preloader-tagline">Elevate the way you live</p>
+      <div class="preloader-progress"><span class="preloader-progress-bar"></span></div>
+      <p class="preloader-count" data-preloader-count>00</p>
+    </div>
+  </div>
   <svg class="icon-sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
     <symbol id="i-search" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="m20.4 20.4-4-4"></path></g></symbol>
     <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.4 8.8c0 5.1-8.4 10.1-8.4 10.1S3.6 13.9 3.6 8.8a4.1 4.1 0 0 1 7.3-2.5 4.1 4.1 0 0 1 7.3 2.5Z"></path></symbol>
@@ -159,9 +176,64 @@
       </div>
     </section>
 
+    <section class="atelier" id="atelier">
+      <div class="about-container">
+        <div class="section-heading">
+          <div><p class="eyebrow">08 — The atelier</p><h2>Where ideas become <em>objects.</em></h2></div>
+          <p class="section-note">A look inside the studios and workshops we are proud to work with.</p>
+        </div>
+        <div class="atelier-grid">
+          <article class="atelier-card">
+            <div class="atelier-photo"><img src="Assets/1454165804606-c3d57bc86b40.webp" alt="Designers sketching a new furniture silhouette at a drafting table"></div>
+            <span class="atelier-step">01 — The sketch</span>
+            <p>Forms are drawn by hand, refined until every curve feels effortless and right.</p>
+          </article>
+          <article class="atelier-card">
+            <div class="atelier-photo"><img src="Assets/1529139574466-a303027c1d8b.webp" alt="Two makers reviewing material samples together in a studio"></div>
+            <span class="atelier-step">02 — The material</span>
+            <p>Wood, stone and linen are chosen for the way they feel and the way they age.</p>
+          </article>
+          <article class="atelier-card">
+            <div class="atelier-photo"><img src="Assets/1513506003901-1e6a229e2d15.webp" alt="Artisan applying a final hand finish to a lighting detail"></div>
+            <span class="atelier-step">03 — The finish</span>
+            <p>Each piece is hand-finished, polished and checked before it ever leaves us.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="promise" id="promise">
+      <div class="about-container promise-inner">
+        <div class="promise-copy">
+          <p class="eyebrow">09 — Our promise</p>
+          <h2>Beautiful, and<br><em>responsible.</em></h2>
+          <p>We believe the pieces you bring home should be as kind to the planet as they are to live with. That belief shapes every choice we make.</p>
+          <ul class="promise-list">
+            <li><strong>Responsibly sourced</strong><span>Timber and materials from certified, regeneratively managed suppliers.</span></li>
+            <li><strong>Low-impact making</strong><span>Small-batch production that wastes less and lasts longer.</span></li>
+            <li><strong>Made to be repaired</strong><span>Spare parts and friendly care advice, so nothing is thrown away.</span></li>
+            <li><strong>Fair partnerships</strong><span>Long relationships with makers who are paid and treated well.</span></li>
+          </ul>
+        </div>
+        <div class="promise-media">
+          <img src="Assets/1600566753086-00f18fb6b3ea.webp" alt="Natural decor objects styled on open shelving in warm light">
+          <div class="promise-quote"><span aria-hidden="true">❧</span><p>“Buy less. Choose well. Make it last.”</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="editorial-feature">
+      <div class="editorial-feature-copy"><p class="eyebrow">11 — Our point of view</p><h2>Keep what matters.<br><em>Make room for living.</em></h2><p>A home is shaped by the people in it. We believe the best interiors are personal, practical and never finished all at once.</p></div>
+      <ul class="editorial-feature-list">
+        <li><span>01</span><div><h3>Choose with intention</h3><p>Look beyond the moment and consider how a piece will serve your home.</p></div></li>
+        <li><span>02</span><div><h3>Value the maker</h3><p>Appreciate the skill and care behind the things you bring home.</p></div></li>
+        <li><span>03</span><div><h3>Make it your own</h3><p>Mix old favourites with new finds to create a space that feels personal.</p></div></li>
+      </ul>
+    </section>
+
     <section class="about-cta about-container">
       <div class="about-cta-inner">
-        <p class="eyebrow">08 — Begin</p>
+        <p class="eyebrow">12 — Begin</p>
         <h2>Your Dream Space<br><em>Starts Here.</em></h2>
         <a class="button button-gold" href="404.html">Shop the Collection</a>
       </div>

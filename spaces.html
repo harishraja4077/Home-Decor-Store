@@ -17,8 +17,25 @@
 <script src="js/animations.js"></script>
 <script src="js/email-validation.js" defer></script>
   <script src="js/spaces.js" defer></script>
+  <link rel="stylesheet" href="css/preloader.css">
+  <script src="js/preloader.js" defer></script>
 </head>
 <body class="spaces-page">
+  <div class="preloader" id="preloader" role="status" aria-live="polite" aria-label="Loading Stackly">
+    <div class="preloader-inner">
+      <div class="preloader-emblem" aria-hidden="true">
+        <span class="preloader-ring preloader-ring--outer"></span>
+        <span class="preloader-ring preloader-ring--inner"></span>
+        <span class="preloader-monogram">S</span>
+      </div>
+      <div class="preloader-brand" aria-hidden="true">
+        <span>S</span><span>T</span><span>A</span><span>C</span><span>K</span><span>L</span><span>Y</span>
+      </div>
+      <p class="preloader-tagline">Elevate the way you live</p>
+      <div class="preloader-progress"><span class="preloader-progress-bar"></span></div>
+      <p class="preloader-count" data-preloader-count>00</p>
+    </div>
+  </div>
   <svg class="icon-sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
     <symbol id="i-search" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="m20.4 20.4-4-4"></path></g></symbol>
     <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.4 8.8c0 5.1-8.4 10.1-8.4 10.1S3.6 13.9 3.6 8.8a4.1 4.1 0 0 1 7.3-2.5 4.1 4.1 0 0 1 7.3 2.5Z"></path></symbol>
@@ -116,14 +133,75 @@
       </div>
     </section>
 
+    <section class="shop-look spaces-container" id="shop-look">
+      <div class="section-heading">
+        <div><p class="eyebrow">04 — Shop the look</p><h2>Rooms worth <em>copying.</em></h2></div>
+        <a class="text-link" href="404.html">SHOP ALL <span>↗</span></a>
+      </div>
+      <div class="look-grid">
+        <a class="look-card" href="404.html">
+          <div class="look-photo"><img src="Assets/1600210491892-03d54c0aaf87.webp" alt="A calm living room with warm wood and natural textures"><span class="look-tag">The living edit</span></div>
+          <h3>Calm &amp; Collected</h3>
+          <p>6 pieces · from $1,240</p>
+        </a>
+        <a class="look-card" href="404.html">
+          <div class="look-photo"><img src="Assets/1616486338812-3dadae4b4ace.webp" alt="A serene bedroom with linen bedding and soft light"><span class="look-tag">Slow mornings</span></div>
+          <h3>Quiet Retreat</h3>
+          <p>5 pieces · from $890</p>
+        </a>
+        <a class="look-card" href="404.html">
+          <div class="look-photo"><img src="Assets/1600607687939-ce8a6c25118c.webp" alt="A warm dining room styled for gathering"><span class="look-tag">Gather here</span></div>
+          <h3>The Dining Room</h3>
+          <p>7 pieces · from $1,760</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="palette" id="palette">
+      <div class="palette-inner spaces-container">
+        <div class="palette-copy">
+          <p class="eyebrow">05 — Colour &amp; mood</p>
+          <h2>Find your <em>palette.</em></h2>
+          <p>Every room has a feeling. Begin with a palette that feels like home, then layer texture, light and objects on top.</p>
+          <a class="button button-outline-dark" href="404.html">Explore the guide <span>↗</span></a>
+        </div>
+        <div class="palette-swatches">
+          <div class="swatch"><span>Warm Sand</span></div>
+          <div class="swatch"><span>Soft Linen</span></div>
+          <div class="swatch"><span>Honed Stone</span></div>
+          <div class="swatch"><span>Antique Gold</span></div>
+          <div class="swatch"><span>Deep Walnut</span></div>
+        </div>
+      </div>
+    </section>
+
     <section class="space-review spaces-container" aria-label="Customer review">
       <span class="review-ornament ornament-top" aria-hidden="true">❧</span>
       <span class="review-ornament ornament-bottom" aria-hidden="true">❧</span>
-      <p class="eyebrow">07 — Customer love</p>
+      <p class="eyebrow">06 — Customer love</p>
       <span class="quote-mark" aria-hidden="true">“</span>
       <blockquote>[Short review] The pieces transformed<br>our home into something calm,<br>warm and entirely ours.</blockquote>
       <div class="review-stars" role="img" aria-label="5 out of 5 stars"><svg viewBox="0 0 120 24" aria-hidden="true"><use href="#i-stars"></use></svg></div>
       <p class="reviewer">[CUSTOMER NAME]<br><span>[CITY, COUNTRY]</span></p>
+    </section>
+
+    <section class="editorial-section">
+      <p class="eyebrow">07 — A guide to living well</p>
+      <div class="editorial-heading"><h2>Make every room<br>feel more like home.</h2><p>Explore a few simple ways to bring harmony to the spaces you use every day.</p></div>
+      <div class="editorial-grid">
+        <article class="editorial-card"><span class="editorial-index">01</span><h3>Living, at your pace</h3><p>Balance inviting seating with clear pathways to make gathering and unwinding equally easy.</p></article>
+        <article class="editorial-card"><span class="editorial-index">02</span><h3>A restful bedroom</h3><p>Layer breathable fabrics, soft light and a restrained palette for a gentler end to the day.</p></article>
+        <article class="editorial-card"><span class="editorial-index">03</span><h3>Room to gather</h3><p>Bring dining furniture, warm light and useful surfaces together around shared moments.</p></article>
+      </div>
+    </section>
+
+    <section class="editorial-feature">
+      <div class="editorial-feature-copy"><p class="eyebrow">08 — The finishing touch</p><h2>Small changes.<br><em>A different feeling.</em></h2><p>Refresh a room without starting over. A new light source, a considered textile or a rearranged favourite can shift the mood in an instant.</p></div>
+      <ul class="editorial-feature-list">
+        <li><span>01</span><div><h3>Bring in a softer light</h3><p>Use lamps at different heights to make evenings feel warm and welcoming.</p></div></li>
+        <li><span>02</span><div><h3>Add a natural layer</h3><p>Introduce a tactile material that complements what is already in the room.</p></div></li>
+        <li><span>03</span><div><h3>Style with restraint</h3><p>Group a few meaningful objects and leave space around them to breathe.</p></div></li>
+      </ul>
     </section>
   </main>
 

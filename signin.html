@@ -15,8 +15,25 @@
 <script src="js/animations.js"></script>
 <script src="js/email-validation.js" defer></script>
   <script src="js/auth.js" defer></script>
+  <link rel="stylesheet" href="css/preloader.css">
+  <script src="js/preloader.js" defer></script>
 </head>
 <body class="auth-page login-page">
+  <div class="preloader" id="preloader" role="status" aria-live="polite" aria-label="Loading Stackly">
+    <div class="preloader-inner">
+      <div class="preloader-emblem" aria-hidden="true">
+        <span class="preloader-ring preloader-ring--outer"></span>
+        <span class="preloader-ring preloader-ring--inner"></span>
+        <span class="preloader-monogram">S</span>
+      </div>
+      <div class="preloader-brand" aria-hidden="true">
+        <span>S</span><span>T</span><span>A</span><span>C</span><span>K</span><span>L</span><span>Y</span>
+      </div>
+      <p class="preloader-tagline">Elevate the way you live</p>
+      <div class="preloader-progress"><span class="preloader-progress-bar"></span></div>
+      <p class="preloader-count" data-preloader-count>00</p>
+    </div>
+  </div>
   <svg class="icon-sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
     <symbol id="i-arrow-left" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12H5"></path><path d="m10.5 6.5L5 12l5.5 5.5"></path></g></symbol>
     <symbol id="i-google" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"></path></symbol>

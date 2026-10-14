@@ -17,8 +17,25 @@
 <script src="js/animations.js"></script>
 <script src="js/email-validation.js" defer></script>
   <script src="js/contact.js" defer></script>
+  <link rel="stylesheet" href="css/preloader.css">
+  <script src="js/preloader.js" defer></script>
 </head>
 <body class="contact-page">
+  <div class="preloader" id="preloader" role="status" aria-live="polite" aria-label="Loading Stackly">
+    <div class="preloader-inner">
+      <div class="preloader-emblem" aria-hidden="true">
+        <span class="preloader-ring preloader-ring--outer"></span>
+        <span class="preloader-ring preloader-ring--inner"></span>
+        <span class="preloader-monogram">S</span>
+      </div>
+      <div class="preloader-brand" aria-hidden="true">
+        <span>S</span><span>T</span><span>A</span><span>C</span><span>K</span><span>L</span><span>Y</span>
+      </div>
+      <p class="preloader-tagline">Elevate the way you live</p>
+      <div class="preloader-progress"><span class="preloader-progress-bar"></span></div>
+      <p class="preloader-count" data-preloader-count>00</p>
+    </div>
+  </div>
   <svg class="icon-sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
     <symbol id="i-search" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="m20.4 20.4-4-4"></path></g></symbol>
     <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.4 8.8c0 5.1-8.4 10.1-8.4 10.1S3.6 13.9 3.6 8.8a4.1 4.1 0 0 1 7.3-2.5 4.1 4.1 0 0 1 7.3 2.5Z"></path></symbol>
@@ -109,13 +126,77 @@
       </div>
     </section>
 
+    <section class="faq contact-container" id="faq">
+      <div class="section-heading">
+        <div><p class="eyebrow">03 — Good to know</p><h2>Frequently <em>asked.</em></h2></div>
+      </div>
+      <div class="faq-grid">
+        <details class="faq-item" open>
+          <summary>Do you deliver outside Salem?</summary>
+          <p>Yes. We arrange careful, insured delivery across Tamil Nadu and beyond, with white-glove placement on request.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Can I see pieces before I buy?</summary>
+          <p>Absolutely. Visit our store to see finishes and fabrics in person, or book a private virtual viewing.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How long does a consultation take?</summary>
+          <p>A first styling session runs for about 45 minutes, in store or online, with no obligation to purchase.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What is your returns policy?</summary>
+          <p>Unused items can be returned within 14 days. Bespoke and made-to-order pieces are excluded.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="trade" id="trade">
+      <div class="trade-inner contact-container">
+        <div class="trade-copy">
+          <p class="eyebrow">04 — Trade programme</p>
+          <h2>Designed for<br><em>professionals.</em></h2>
+          <p>Interior designers, architects and stylists receive dedicated pricing, priority lead times and a personal account team.</p>
+          <ul class="trade-list">
+            <li>Trade pricing on the full collection</li>
+            <li>A dedicated design consultant</li>
+            <li>Priority production and delivery</li>
+            <li>Sample and swatch library access</li>
+          </ul>
+          <a class="button button-gold" href="404.html">Apply for trade access</a>
+        </div>
+        <div class="trade-media">
+          <img src="Assets/1529139574466-a303027c1d8b.webp" alt="Design partners reviewing material samples and plans together">
+          <div class="trade-badge"><strong>500<span>+</span></strong><small>Design partners</small></div>
+        </div>
+      </div>
+    </section>
+
     <section class="find-us contact-container" id="find-us">
-      <p class="eyebrow">06 — Find us</p>
+      <p class="eyebrow">05 — Find us</p>
       <h2>Come say <em>hello.</em></h2>
       <div class="map-frame">
         <iframe title="Map showing the Stackly Home store on Chinna Thirupathi, Salem" src="https://www.openstreetmap.org/export/embed.html?bbox=78.136%2C11.6578%2C78.156%2C11.6708&amp;layer=mapnik&amp;marker=11.6643%2C78.146" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         <a class="map-label" href="404.html">Our Store<br><span>MMR Complex, Chinna Thirupathi, Salem</span></a>
       </div>
+    </section>
+
+    <section class="editorial-section">
+      <p class="eyebrow">06 — Here to help</p>
+      <div class="editorial-heading"><h2>A thoughtful answer<br>starts with a conversation.</h2><p>Whether you are choosing a piece or planning a room, our team is ready to help you find the right next step.</p></div>
+      <div class="editorial-grid">
+        <article class="editorial-card"><span class="editorial-index">01</span><h3>Choosing a piece</h3><p>Ask about dimensions, materials and finishes to make a confident choice for your home.</p></article>
+        <article class="editorial-card"><span class="editorial-index">02</span><h3>Planning a room</h3><p>Share your ideas with a stylist and explore options for bringing the whole space together.</p></article>
+        <article class="editorial-card"><span class="editorial-index">03</span><h3>After your purchase</h3><p>Get in touch for product guidance and support with your Stackly Home order.</p></article>
+      </div>
+    </section>
+
+    <section class="editorial-feature">
+      <div class="editorial-feature-copy"><p class="eyebrow">07 — What happens next</p><h2>Your enquiry is the<br><em>start of something.</em></h2><p>Tell us what you have in mind. We will take the time to understand your needs and help you move forward with clarity.</p><a class="button button-gold" href="#enquiry">Share your enquiry</a></div>
+      <ul class="editorial-feature-list">
+        <li><span>01</span><div><h3>Tell us a little</h3><p>Share the room, product or idea you would like to discuss.</p></div></li>
+        <li><span>02</span><div><h3>We listen first</h3><p>Our team will review the details and understand what matters to you.</p></div></li>
+        <li><span>03</span><div><h3>Find a way forward</h3><p>We will follow up with helpful information and a clear next step.</p></div></li>
+      </ul>
     </section>
 
     <section class="contact-cta contact-container">

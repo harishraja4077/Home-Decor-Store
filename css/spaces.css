@@ -238,3 +238,49 @@
   .spaces-page .footer-bottom a, .spaces-page .footer-bottom p { font-size: 12px; }
   .spaces-page .copyright { font-size: 11px; }
 }
+
+/* ==========================================================================
+   New premium sections — Shop the look & Find your palette
+   ========================================================================== */
+.shop-look { padding-top: 60px; padding-bottom: 56px; }
+.shop-look .section-heading { margin-bottom: 30px; }
+.shop-look h2 em { font-weight: 400; }
+.look-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.look-card { display: flex; flex-direction: column; }
+.look-photo { position: relative; height: 320px; overflow: hidden; border-radius: 16px; }
+.look-photo img { transition: transform .55s; }
+.look-card:hover .look-photo img { transform: scale(1.05); }
+.look-tag { position: absolute; top: 13px; left: 13px; padding: 6px 12px; border-radius: 14px; color: var(--ink); background: rgba(248,244,236,.92); font-family: var(--sans); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; }
+.look-card h3 { margin: 16px 0 4px; font-size: 23px; font-weight: 500; }
+.look-card p { margin: 0; color: #b08a4f; font-family: var(--sans); font-size: 13px; letter-spacing: .08em; text-transform: uppercase; }
+
+.palette { padding: 66px 0 70px; background: var(--sand); }
+.palette-inner { display: grid; grid-template-columns: 1fr 1.05fr; align-items: center; gap: 58px; }
+.palette-copy .eyebrow { margin-bottom: 12px; }
+.palette-copy h2 { font-size: clamp(40px, 5vw, 58px); line-height: .98; }
+.palette-copy h2 em { color: #b08a4f; font-weight: 400; }
+.palette-copy > p:not(.eyebrow) { max-width: 420px; margin: 16px 0 26px; color: #5e554d; font-size: 15px; line-height: 1.6; }
+.palette-swatches { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
+.swatch { display: flex; height: 250px; align-items: flex-end; padding: 14px 10px; border-radius: 13px; box-shadow: inset 0 0 0 1px rgba(36,27,23,.12); }
+.swatch span { color: #fff; font-family: var(--sans); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; text-shadow: 0 1px 4px rgba(0,0,0,.4); }
+.swatch:nth-child(1) { background: #d9c7ab; }
+.swatch:nth-child(2) { background: #cfc4b2; }
+.swatch:nth-child(3) { background: #a99e8d; }
+.swatch:nth-child(4) { background: #c9a05b; }
+.swatch:nth-child(5) { background: #4a3324; }
+.swatch:nth-child(even) { margin-top: 22px; }
+
+@media (max-width: 760px) {
+  .shop-look { padding-top: 44px; padding-bottom: 44px; }
+  .look-grid { grid-template-columns: 1fr; gap: 26px; }
+  .look-photo { height: 260px; }
+  .look-card h3 { font-size: 21px; }
+  .palette { padding: 48px 0 52px; }
+  .palette-inner { grid-template-columns: 1fr; gap: 30px; }
+  .palette-copy h2 { font-size: clamp(32px, 9vw, 42px); }
+  .palette-copy > p:not(.eyebrow) { font-size: 14px; }
+  .palette-swatches { grid-template-columns: repeat(5, 1fr); gap: 7px; }
+  .swatch { height: 130px; padding: 9px 5px; border-radius: 8px; }
+  .swatch span { font-size: 8px; }
+  .swatch:nth-child(even) { margin-top: 14px; }
+}

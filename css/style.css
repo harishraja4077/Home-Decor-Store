@@ -205,7 +205,8 @@ h2 { margin: 0; font-size: clamp(34px, 4vw, 54px); line-height: 1; font-weight: 
   .hero-copy { width: 100%; }
   .hero-copy h1 { font-size: clamp(54px, 12vw, 82px); }
   .hero-description { margin-top: 20px; font-size: 13px; }
-  .hero-art { top: auto; right: 5%; bottom: 49px; width: 41%; height: 44%; transform: none; opacity: .92; }
+  .hero-content { display: block; min-height: 0; }
+  .hero-art { position: relative; top: auto; right: auto; bottom: auto; width: min(100%, 300px); height: 205px; margin: 24px 0 0 auto; transform: none; opacity: .92; }
   .hero-arch p { margin-top: 17px; font-size: 17px; }
   .hero-arch small { font-size: 14px; }
   .hero-copy .button-row { position: relative; z-index: 2; max-width: 230px; }
@@ -272,6 +273,135 @@ h2 { margin: 0; font-size: clamp(34px, 4vw, 54px); line-height: 1; font-weight: 
   .product-meta span:last-child { display: none; }
   .product-card h3 { font-size: 16px; }
   .add-button { letter-spacing: 0; }
+}
+
+.editorial-section {
+  width: min(1120px, calc(100% - 84px));
+  margin: 0 auto;
+  padding: 62px 0 34px;
+}
+.editorial-section > .eyebrow { margin-bottom: 8px; }
+.editorial-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+.editorial-heading h2 {
+  font-size: clamp(34px, 4.5vw, 52px);
+  line-height: .98;
+}
+.editorial-heading > p {
+  max-width: 390px;
+  margin: 0 0 3px;
+  color: #675b4e;
+  font-family: var(--sans);
+  font-size: 14px;
+  line-height: 1.65;
+}
+.editorial-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+.editorial-card {
+  min-height: 180px;
+  padding: 22px;
+  border: 1px solid #d5c9b9;
+  border-radius: 14px;
+  background: var(--paper);
+}
+.editorial-index {
+  color: #a77f46;
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: .14em;
+}
+.editorial-card h3 {
+  margin: 18px 0 8px;
+  font-size: 21px;
+  font-weight: 500;
+}
+.editorial-card p {
+  margin: 0;
+  color: #675b4e;
+  font-family: var(--sans);
+  font-size: 13px;
+  line-height: 1.65;
+}
+.editorial-feature {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 48px;
+  width: min(1120px, calc(100% - 84px));
+  margin: 24px auto 64px;
+  padding: clamp(28px, 5vw, 56px);
+  border: 1px solid #8d7652;
+  border-radius: 18px;
+  color: var(--paper);
+  background: var(--ink);
+}
+.editorial-feature-copy .eyebrow { margin-bottom: 12px; }
+.editorial-feature-copy h2 {
+  margin: 0;
+  font-size: clamp(34px, 4.5vw, 52px);
+  line-height: .98;
+}
+.editorial-feature-copy h2 em {
+  color: var(--gold);
+  font-weight: 400;
+}
+.editorial-feature-copy > p:not(.eyebrow) {
+  max-width: 440px;
+  margin: 16px 0 20px;
+  color: #e1d8cc;
+  font-family: var(--sans);
+  font-size: 14px;
+  line-height: 1.7;
+}
+.editorial-feature-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.editorial-feature-list li {
+  display: flex;
+  gap: 16px;
+  padding: 17px 0;
+  border-top: 1px solid rgba(201, 160, 91, .35);
+}
+.editorial-feature-list li > span {
+  padding-top: 3px;
+  color: var(--gold);
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: .12em;
+}
+.editorial-feature-list h3 {
+  margin: 0 0 5px;
+  color: var(--paper);
+  font-size: 18px;
+  font-weight: 500;
+}
+.editorial-feature-list p {
+  margin: 0;
+  color: #cfc3b5;
+  font-family: var(--sans);
+  font-size: 13px;
+  line-height: 1.6;
+}
+@media (max-width: 760px) {
+  .editorial-section,
+  .editorial-feature { width: calc(100% - 36px); }
+  .editorial-section { padding: 42px 0 24px; }
+  .editorial-heading { align-items: flex-start; flex-direction: column; gap: 10px; margin-bottom: 18px; }
+  .editorial-heading > p { max-width: none; }
+  .editorial-grid { grid-template-columns: 1fr; gap: 10px; }
+  .editorial-card { min-height: 0; padding: 18px; }
+  .editorial-card h3 { margin-top: 10px; }
+  .editorial-feature { grid-template-columns: 1fr; gap: 22px; margin: 16px auto 42px; padding: 26px 22px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -357,4 +487,51 @@ h2 { margin: 0; font-size: clamp(34px, 4vw, 54px); line-height: 1; font-weight: 
   .newsletter-form { height: 48px; }
   .newsletter-form input, .newsletter-form button { font-size: 13px; }
   .copyright { font-size: 12px; }
+}
+
+/* ==========================================================================
+   New premium sections — Craft & Design services
+   ========================================================================== */
+.craft { display: grid; grid-template-columns: 1.02fr .98fr; align-items: center; gap: 62px; padding-top: 78px; padding-bottom: 78px; }
+.craft-visual { position: relative; }
+.craft-main { height: 474px; padding: 6px; border: 1px solid #c7b696; border-radius: 20px; background: var(--paper); }
+.craft-detail { position: absolute; right: -6%; bottom: -24px; width: 42%; height: 200px; padding: 5px; border: 1px solid #cbb894; border-radius: 16px; background: var(--paper); }
+.craft-badge { position: absolute; top: 26px; left: -22px; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 108px; height: 108px; border: 1px solid var(--gold); border-radius: 50%; background: var(--ink); text-align: center; }
+.craft-badge strong { color: var(--gold); font-size: 38px; font-style: italic; font-weight: 400; line-height: 1; }
+.craft-badge strong span { font-size: .55em; }
+.craft-badge small { width: 76px; margin-top: 5px; color: #d8cfc4; font-family: var(--sans); font-size: 10px; letter-spacing: .08em; line-height: 1.25; text-transform: uppercase; }
+.craft-copy .eyebrow { margin-bottom: 12px; }
+.craft-copy h2 { font-size: clamp(42px, 5vw, 64px); line-height: .98; }
+.craft-copy h2 em { color: #ac8248; font-weight: 400; }
+.craft-copy > p:not(.eyebrow) { max-width: 470px; margin: 18px 0 24px; color: #594f46; font-size: 15px; line-height: 1.6; }
+.craft-points { display: grid; gap: 17px; margin: 0 0 30px; padding: 0; list-style: none; }
+.craft-points li { display: flex; gap: 15px; }
+.craft-check { display: grid; width: 32px; height: 32px; flex: none; place-items: center; border: 1px solid #c49a5b; border-radius: 50%; color: var(--gold); font-size: 13px; }
+.craft-points h3 { margin: 0 0 3px; font-size: 18px; font-weight: 500; }
+.craft-points p { max-width: 430px; margin: 0; color: #6b6157; font-size: 14px; line-height: 1.5; }
+
+.services { padding: 68px 0 72px; background: var(--sand); }
+.services .section-heading { margin-bottom: 30px; }
+.services h2 em { color: #ac8248; font-weight: 400; }
+.service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.service-card { display: flex; min-height: 250px; flex-direction: column; align-items: flex-start; padding: 32px 30px; border: 1px solid #c9beaf; border-radius: 16px; background: var(--paper); transition: transform .25s, box-shadow .25s; }
+.service-card:hover { transform: translateY(-5px); box-shadow: 0 16px 34px rgba(36,27,23,.14); }
+.service-icon { display: grid; width: 54px; height: 54px; place-items: center; border: 1px solid var(--gold); border-radius: 50%; color: #a98551; }
+.service-icon svg { width: 25px; height: 25px; }
+.service-card h3 { margin: 24px 0 9px; font-size: 24px; font-weight: 500; }
+.service-card p { margin: 0; color: #655a50; font-size: 14px; line-height: 1.55; }
+.service-card a { margin-top: auto; padding-top: 20px; color: #886b42; font-family: var(--sans); font-size: 13px; letter-spacing: .08em; text-transform: uppercase; }
+
+@media (max-width: 760px) {
+  .craft { grid-template-columns: 1fr; gap: 36px; padding-top: 52px; padding-bottom: 54px; }
+  .craft-main { height: 300px; }
+  .craft-detail { right: 4%; bottom: -16px; width: 40%; height: 138px; }
+  .craft-badge { top: 14px; left: -6px; width: 80px; height: 80px; }
+  .craft-badge strong { font-size: 26px; }
+  .craft-badge small { width: 60px; font-size: 9px; }
+  .craft-copy h2 { font-size: clamp(34px, 9vw, 44px); }
+  .craft-copy > p:not(.eyebrow) { font-size: 14px; }
+  .services { padding: 48px 0 52px; }
+  .service-grid { grid-template-columns: 1fr; gap: 14px; }
+  .service-card { min-height: 0; padding: 24px 22px; }
 }
