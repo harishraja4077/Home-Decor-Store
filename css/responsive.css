@@ -18,6 +18,9 @@ body { overflow-wrap: break-word; }
    horizontal nav row. */
 .menu-close { display: none; }
 
+/* Brand logo inside the drawer is a mobile-only affordance. */
+.drawer-wordmark { display: none; }
+
 /* Scroll lock while the mobile drawer menu is open so the background
    never moves behind it. */
 html.no-scroll,
@@ -163,6 +166,26 @@ p, a, li, blockquote, figcaption, address {
   .nav-bar.journal-nav .nav-links a:last-child,
   .nav-bar.spaces-nav .nav-links a:last-child { border-bottom: 0; }
 
+  /* Brand logo shown inside the mobile drawer so the wordmark stays visible
+     once the full-screen menu covers the header bar. Hidden on desktop. */
+  .nav-bar .nav-links a.drawer-wordmark,
+  .nav-bar.about-nav .nav-links a.drawer-wordmark,
+  .nav-bar.contact-nav .nav-links a.drawer-wordmark,
+  .nav-bar.journal-nav .nav-links a.drawer-wordmark,
+  .nav-bar.spaces-nav .nav-links a.drawer-wordmark {
+    display: inline-flex;
+    align-self: flex-start;
+    align-items: center;
+    margin: 0 0 20px;
+    padding: 0 0 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, .12);
+  }
+  .nav-bar .nav-links a.drawer-wordmark img,
+  .nav-bar.about-nav .nav-links a.drawer-wordmark img,
+  .nav-bar.contact-nav .nav-links a.drawer-wordmark img,
+  .nav-bar.journal-nav .nav-links a.drawer-wordmark img,
+  .nav-bar.spaces-nav .nav-links a.drawer-wordmark img { height: 30px; width: auto; }
+
   /* Close (X) button pinned to the top-right of the full-screen drawer. */
   .menu-close {
     position: absolute;
@@ -182,6 +205,7 @@ p, a, li, blockquote, figcaption, address {
   /* Spaces keeps its light hero, so its drawer stays light with dark links. */
   .nav-bar.spaces-nav .nav-links { background: var(--paper); }
   .nav-bar.spaces-nav .nav-links a { color: var(--ink); }
+  .nav-bar.spaces-nav .nav-links a.drawer-wordmark { border-bottom-color: rgba(36, 27, 23, .16); }
   .nav-bar.spaces-nav .menu-close { color: var(--ink); }
 
   .desktop-break { display: none; }

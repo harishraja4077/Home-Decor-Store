@@ -91,16 +91,18 @@
 @media (max-width: 760px) {
   .journal-container { width: calc(100% - 40px); }
   .journal-hero { min-height: 206px; margin: 6px 5px 0; border-radius: 9px; }
-  .journal-nav { height: 34px; gap: 12px; padding: 0 10px; }
-  .journal-nav .wordmark { gap: 3px; font-size: 14px; }
-  .journal-nav .brand-mark { width: 14px; height: 14px; font-size: 13px; }
-  .journal-nav .nav-links { top: 33px; padding: 5px 12px 10px; }
-  .journal-nav .nav-links a { padding: 8px 0; font-size: 13px; }
-  .journal-nav .nav-actions { gap: 7px; }
-  .journal-nav .icon-button { width: 12px; height: 18px; }
-  .journal-nav .icon-button svg { width: 11px; }
-  .journal-nav .menu-toggle { width: 19px; height: 21px; gap: 4px; padding: 2px; }
-  .journal-nav .menu-toggle span { width: 14px; }
+  /* Mobile nav — inherit the shared drawer from responsive.css, but keep the
+     journal's light header readable: dark hamburger lines on the paper bar,
+     and light links inside the full-screen dark drawer (otherwise ink text
+     on the ink drawer looks like an empty menu). */
+  .journal-page .nav-bar.journal-nav .menu-toggle span { background: var(--ink); }
+  .journal-page .nav-bar.journal-nav .nav-links a:not(.drawer-wordmark) {
+    color: var(--paper);
+    padding: 15px 0;
+    border-bottom-color: rgba(255, 255, 255, .12);
+    font-size: 16px;
+  }
+  .journal-page .nav-bar.journal-nav .menu-close { color: var(--paper); }
   .journal-hero-inner { min-height: 172px; }
   .journal-hero-copy { top: 21%; right: 1%; width: 63%; }
   .journal-hero-copy .eyebrow { margin-bottom: 5px; font-size: 14px; }
