@@ -52,7 +52,7 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
 .hero-copy h1 span { font-family: var(--script); font-size: 1.01em; letter-spacing: -.025em; }
 .hero-description { margin: 28px 0 21px; color: #e1d8cc; font-family: var(--sans); font-size: 14px; line-height: 1.8; }
 .button-row { display: flex; flex-wrap: wrap; gap: 10px; }
-.button { display: inline-flex; min-height: 37px; align-items: center; justify-content: center; padding: 0 19px; border: 1px solid var(--gold); border-radius: 24px; font-family: var(--sans); font-size: 13px; letter-spacing: .035em; transition: background .2s, color .2s, transform .2s; }
+.button { display: inline-flex; min-height: 37px; align-items: center; justify-content: center; padding: 0 19px; border: 1px solid var(--gold); border-radius: 24px; font-family: var(--sans); font-size: 13px; letter-spacing: .035em; cursor: pointer; transition: background .2s, color .2s, transform .2s; }
 .button:hover { transform: translateY(-2px); }
 .button-gold { color: var(--ink); background: var(--gold); }
 .button-gold:hover { background: #dfbc7d; }

@@ -276,15 +276,17 @@
       });
     });
 
+    var tableFilters = {};
+
     document.querySelectorAll("[data-table]").forEach(function (table) {
       var key = table.dataset.table;
       var search = document.querySelector('[data-filter-search="' + key + '"]');
       var status = document.querySelector('[data-filter-status="' + key + '"]');
       var count = document.querySelector('[data-filter-count="' + key + '"]');
-      var rows = Array.prototype.slice.call(table.querySelectorAll("tbody tr"));
       function apply() {
         var q = (search ? search.value : "").trim().toLowerCase();
-        var s = status ? status.value : "all";
+        var s = table.dataset.filterStatus || (status ? status.value : "all");
+        var rows = Array.prototype.slice.call(table.querySelectorAll("tbody tr"));
         var visible = 0;
         rows.forEach(function (r) {
           var okQ = !q || r.textContent.toLowerCase().indexOf(q) !== -1;
@@ -295,21 +297,27 @@
         });
         if (count) count.textContent = visible;
       }
+      tableFilters[key] = apply;
+      table.dataset.filterStatus = status ? status.value : "all";
       if (search) search.addEventListener("input", apply);
-      if (status) status.addEventListener("change", apply);
+      if (status) status.addEventListener("change", function () {
+        table.dataset.filterStatus = status.value;
+        apply();
+      });
       apply();
     });
 
     document.querySelectorAll("[data-filter-tab]").forEach(function (btn) {
       btn.addEventListener("click", function () {
         var key = btn.dataset.tableKey;
-        var select = document.querySelector('[data-filter-status="' + key + '"]');
+        var value = btn.dataset.filterTab;
         btn.parentElement.querySelectorAll("[data-filter-tab]").forEach(function (t) { t.classList.remove("is-active"); });
         btn.classList.add("is-active");
-        if (select) {
-          select.value = btn.dataset.filterTab;
-          select.dispatchEvent(new Event("change"));
-        }
+        var select = document.querySelector('[data-filter-status="' + key + '"]');
+        if (select) select.value = value;
+        var table = document.querySelector('[data-table="' + key + '"]');
+        if (table) table.dataset.filterStatus = value;
+        if (tableFilters[key]) tableFilters[key]();
       });
     });
 
@@ -415,7 +423,7 @@
           var tr = document.createElement("tr");
           tr.dataset.status = "active";
           tr.innerHTML =
-            '<td><div class="cell-flex"><span class="thumb"><img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=200&q=70" alt=""></span>' +
+            '<td><div class="cell-flex"><span class="thumb"><img src="../../Assets/1618221195710-dd6b41faaea6.webp" alt=""></span>' +
             '<span class="cell-title"><b>' + name + '</b><small>SKU-' + Math.floor(1000 + Math.random() * 9000) + "</small></span></div></td>" +
             '<td class="muted">' + category + "</td>" +
             '<td class="num">$' + price.toLocaleString() + "</td>" +

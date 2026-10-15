@@ -48,6 +48,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 svg { display: block; stroke-linecap: round; stroke-linejoin: round; }
 .muted { color: var(--muted); }
 .text-gold { color: var(--gold-2); }
+[hidden] { display: none !important; }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; clip-path: inset(50%); }
 
 .dash { display: grid; grid-template-columns: 268px minmax(0, 1fr); min-height: 100vh; }
