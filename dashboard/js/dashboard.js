@@ -43,10 +43,6 @@
         { page: "wishlist", href: "wishlist.html", label: "Wishlist", icon: "heart", badge: "6" },
         { page: "addresses", href: "addresses.html", label: "Addresses", icon: "pin" },
         { page: "settings", href: "settings.html", label: "Settings", icon: "gear" }
-      ] },
-      { label: "Discover", links: [
-        { href: "../../index.html#shop", label: "New Arrivals", icon: "star" },
-        { href: "../../index.html#collections", label: "Collections", icon: "box" }
       ] }
     ],
     admin: [
@@ -56,9 +52,6 @@
         { page: "orders", href: "orders.html", label: "Orders", icon: "bag", badge: "18" },
         { page: "customers", href: "customers.html", label: "Customers", icon: "users" },
         { page: "analytics", href: "analytics.html", label: "Analytics", icon: "chart" }
-      ] },
-      { label: "Store", links: [
-        { href: "../../index.html", label: "View storefront", icon: "star" }
       ] }
     ]
   };
@@ -405,42 +398,6 @@
         showToast("Order marked " + entry[0].toLowerCase());
       });
     });
-
-    var productForm = document.querySelector("[data-product-form]");
-    if (productForm) {
-      productForm.addEventListener("submit", function (event) {
-        event.preventDefault();
-        if (!productForm.reportValidity()) {
-          showToast("Please fill in all required fields correctly.");
-          return;
-        }
-        var data = new FormData(productForm);
-        var name = data.get("name");
-        var price = Number(data.get("price") || 0);
-        var category = data.get("category") || "Decor";
-        var tbody = document.querySelector("#adminProductsTable tbody");
-        if (tbody) {
-          var tr = document.createElement("tr");
-          tr.dataset.status = "active";
-          tr.innerHTML =
-            '<td><div class="cell-flex"><span class="thumb"><img src="../../Assets/1618221195710-dd6b41faaea6.webp" alt=""></span>' +
-            '<span class="cell-title"><b>' + name + '</b><small>SKU-' + Math.floor(1000 + Math.random() * 9000) + "</small></span></div></td>" +
-            '<td class="muted">' + category + "</td>" +
-            '<td class="num">$' + price.toLocaleString() + "</td>" +
-            '<td><div class="progress"><span style="width:60%"></span></div><small class="muted">60 in stock</small></td>' +
-            '<td><span class="badge badge-green">Active</span></td>' +
-            '<td><div class="row-actions">' +
-              '<button class="mini-btn" data-toast="Editing ' + name + '" aria-label="Edit">' + icon("edit") + "</button>" +
-              '<button class="mini-btn danger" data-row-delete="Product removed" aria-label="Delete">' + icon("trash") + "</button>" +
-            "</div></td>";
-          tbody.insertBefore(tr, tbody.firstChild);
-        }
-        productForm.reset();
-        var modal = document.getElementById("productModal");
-        if (modal) modal.classList.remove("is-open");
-        window.location.href = "../../404.html";
-      });
-    }
 
     document.querySelectorAll("[data-range]").forEach(function (btn) {
       btn.addEventListener("click", function () {

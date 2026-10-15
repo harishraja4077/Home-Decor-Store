@@ -57,7 +57,9 @@
 .value-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 27px; }
 .value-card { min-height: 166px; padding: 22px 18px 17px; border: 1px solid #c1b4a2; border-radius: 13px; background: var(--sand); box-shadow: 1px 2px 0 rgba(36,27,23,.08); }
 .value-card:nth-child(even) { margin-top: 18px; background: #f2ece2; }
-.value-card h3 { margin: 50px 0 6px; font-size: 19px; font-weight: 400; }
+.value-icon { display: inline-grid; width: 48px; height: 48px; place-items: center; border: 1px solid var(--gold); border-radius: 50%; color: #a98551; }
+.value-icon svg { width: 23px; height: 23px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linejoin: round; }
+.value-card h3 { margin: 20px 0 6px; font-size: 19px; font-weight: 400; }
 .value-card p { margin: 0; color: #665d53; font-size: 13px; line-height: 1.35; }
 
 .journey { padding: 48px 0 43px; background: var(--sand); }
@@ -70,9 +72,8 @@
 .journey-steps p { max-width: 150px; margin: 4px auto 0; color: #665d53; font-family: var(--sans); font-size: 13px; line-height: 1.45; }
 
 .materials { padding-top: 57px; padding-bottom: 58px; }
-.material-gallery { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 16px; margin-top: 24px; }
+.material-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 24px; }
 .material-card { height: 224px; padding: 6px; border: 1px solid #d1c3ae; border-radius: 12px; }
-.material-card:nth-child(4) { grid-column: 2; }
 .material-card img { height: calc(100% - 23px); border-radius: 8px; object-fit: cover; }
 .material-card span { display: block; padding-top: 4px; color: #b38d55; font-family: var(--script); font-size: 19px; line-height: 1; text-align: center; }
 
@@ -156,9 +157,6 @@
   .materials { padding-top: 25px; padding-bottom: 28px; }
   .material-gallery { grid-template-columns: repeat(3, 1fr); gap: 13px 12px; margin: 14px 4px 0; }
   .material-card { height: 89px; padding: 3px; border-radius: 7px; }
-  .material-card:nth-child(4) { grid-column: 2; }
-  .material-card:nth-child(5) { grid-column: 3; }
-  .material-card:nth-child(6) { grid-column: 1; }
   .material-card img { height: calc(100% - 14px); border-radius: 5px; }
   .material-card span { padding-top: 2px; font-size: 13px; }
   .brand-numbers { padding: 20px 0 22px; }
@@ -219,7 +217,7 @@
 .team { padding-top: 68px; padding-bottom: 68px; }
 .values h2, .team h2, .materials h2 { margin-bottom: 0; }
 .value-card { min-height: 190px; padding: 28px 22px 24px; }
-.value-card h3 { margin-top: 60px; }
+.value-card h3 { margin-top: 22px; }
 .team-card img { height: 240px; }
 .number-grid small { line-height: 1.4; }
 .team-card h3 { margin-top: 12px; }
@@ -242,7 +240,9 @@
   .value-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 24px; }
   .value-card { min-height: 150px; padding: 18px 15px 16px; }
   .value-card:nth-child(even) { margin-top: 0; }
-  .value-card h3 { margin: 34px 0 6px; font-size: 20px; }
+  .value-icon { width: 40px; height: 40px; }
+  .value-icon svg { width: 19px; height: 19px; }
+  .value-card h3 { margin: 16px 0 6px; font-size: 20px; }
   .value-card p { font-size: 13px; line-height: 1.45; }
   .journey { padding: 48px 0 44px; }
   .journey-steps { grid-template-columns: repeat(2, 1fr); gap: 24px 16px; margin-top: 36px; }
@@ -254,7 +254,6 @@
   .materials { padding-top: 48px; padding-bottom: 52px; }
   .material-gallery { grid-template-columns: repeat(2, 1fr); gap: 16px; margin: 24px 0 0; }
   .material-card { height: 158px; padding: 6px; }
-  .material-card:nth-child(n) { grid-column: auto; }
   .material-card img { height: calc(100% - 28px); }
   .material-card span { font-size: 18px; }
   .brand-numbers { padding: 42px 0 44px; }

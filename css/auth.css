@@ -408,3 +408,208 @@ button, a, input { -webkit-tap-highlight-color: transparent; }
   .login-card { padding: 28px 22px 26px; }
   .signup-card { padding: 30px 22px 28px; }
 }
+
+/* ==========================================================================
+   Premium theme — Sign in (login) page: warm ink + gold palette
+   ========================================================================== */
+.login-page {
+  --auth-cream: #f6efe3;
+  --auth-cream-soft: rgba(246, 239, 227, .85);
+  --auth-gold: #c9a05b;
+  --auth-gold-soft: #dcb877;
+  color: var(--auth-cream);
+}
+
+.login-page::before {
+  background-image:
+    linear-gradient(115deg, rgba(28, 20, 15, .8) 0%, rgba(48, 34, 25, .55) 52%, rgba(24, 17, 13, .74) 100%),
+    url("../Assets/1600210492486-724fe5c67fb0.webp");
+}
+
+.login-page .auth-card {
+  border: 1px solid rgba(201, 160, 91, .45);
+  background: linear-gradient(160deg, rgba(46, 33, 25, .74) 0%, rgba(24, 17, 13, .66) 100%);
+  box-shadow: 0 26px 60px rgba(10, 7, 5, .5), inset 0 0 0 1px rgba(201, 160, 91, .12);
+}
+
+.login-page .auth-intro h1 { color: var(--auth-cream); }
+.login-page .auth-intro > p { color: var(--auth-gold-soft); }
+
+.login-page .auth-role {
+  border-color: rgba(201, 160, 91, .35);
+  background: rgba(22, 16, 12, .44);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, .25);
+}
+
+.login-page .role-option span { color: var(--auth-cream-soft); }
+.login-page .role-option input:checked + span {
+  color: #241b17;
+  background: linear-gradient(180deg, var(--auth-gold-soft), var(--auth-gold));
+  box-shadow: 0 7px 16px rgba(0, 0, 0, .32);
+}
+
+.login-page .auth-form > input {
+  border-color: rgba(201, 160, 91, .28);
+  color: var(--auth-cream);
+  background: rgba(22, 16, 12, .46);
+  box-shadow: inset 0 1px 3px rgba(255, 255, 255, .05), 0 7px 14px rgba(0, 0, 0, .18);
+}
+.login-page .auth-form > input::placeholder { color: rgba(246, 239, 227, .55); opacity: 1; }
+.login-page .auth-form > input:focus { border-color: rgba(201, 160, 91, .85); }
+
+.login-page .remember-option { color: var(--auth-cream-soft); }
+.login-page .remember-option input { accent-color: var(--auth-gold); }
+.login-page .text-button { color: var(--auth-gold-soft); }
+
+.login-page .login-submit {
+  border-color: rgba(220, 184, 119, .9);
+  color: #241b17;
+  background: linear-gradient(180deg, var(--auth-gold-soft), var(--auth-gold));
+  box-shadow: 0 10px 22px rgba(0, 0, 0, .42);
+}
+.login-page .login-submit:hover { filter: brightness(1.06); transform: translateY(-1px); }
+
+.login-page .form-message { color: var(--auth-gold-soft); }
+.login-page .account-prompt { color: var(--auth-cream-soft); }
+.login-page .account-prompt a { color: var(--auth-gold-soft); }
+
+.login-page .login-back {
+  border-color: rgba(201, 160, 91, .55);
+  color: var(--auth-gold-soft);
+  background: rgba(22, 16, 12, .5);
+}
+.login-page .login-back:hover { color: #241b17; background: var(--auth-gold); filter: none; }
+
+.login-page .social-divider { color: var(--auth-cream-soft); }
+.login-page .social-divider::before,
+.login-page .social-divider::after { background: rgba(201, 160, 91, .5); }
+.login-page .social-actions { flex-direction: column; gap: 11px; }
+.login-page .social-button {
+  position: relative;
+  flex: none;
+  width: 100%;
+  min-height: 48px;
+  justify-content: center;
+  padding: 0 48px;
+  border: 1px solid rgba(201, 160, 91, .38);
+  border-radius: 12px;
+  color: var(--auth-cream);
+  background: linear-gradient(180deg, rgba(255, 255, 255, .08), rgba(255, 255, 255, .028));
+  box-shadow: 0 8px 18px rgba(0, 0, 0, .22);
+  font-size: 14px;
+  letter-spacing: .025em;
+  transition: border-color .2s, background .2s, transform .2s, box-shadow .2s;
+}
+.login-page .social-button:hover {
+  border-color: rgba(201, 160, 91, .8);
+  background: rgba(201, 160, 91, .15);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, .3);
+  transform: translateY(-1px);
+}
+.login-page .social-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  width: 26px;
+  height: 26px;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  background: rgba(246, 239, 227, .95);
+  box-shadow: inset 0 0 0 1px rgba(201, 160, 91, .25);
+}
+.login-page .social-icon svg { width: 15px; height: 15px; }
+
+.login-page .auth-promo { color: var(--auth-cream); }
+.login-page .auth-promo p { color: var(--auth-gold-soft); }
+.login-page .auth-promo h2 { color: var(--auth-cream); }
+
+@media (max-width: 480px) {
+  .login-page .social-button { min-height: 46px; padding: 0 44px; font-size: 13px; }
+}
+
+/* ==========================================================================
+   Premium promo copy — sign in (right) & sign up (left)
+   ========================================================================== */
+.auth-promo { color: #f4ede0; }
+
+.auth-promo .auth-promo-eyebrow {
+  position: relative;
+  display: inline-block;
+  margin: 0 0 16px;
+  padding-left: 44px;
+  color: #c9a05b;
+  font-family: var(--auth-sans);
+  font-size: 12px;
+  letter-spacing: .26em;
+  text-transform: uppercase;
+}
+.auth-promo .auth-promo-eyebrow::before {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 30px;
+  height: 1px;
+  content: "";
+  background: currentColor;
+  opacity: .75;
+}
+
+.auth-promo h2 {
+  margin: 0;
+  color: #f4ede0;
+  font-family: "Great Vibes", cursive;
+  font-size: clamp(38px, 4.4vw, 56px);
+  font-weight: 400;
+  line-height: 1.16;
+}
+
+.auth-promo-rule {
+  display: block;
+  width: 68px;
+  height: 2px;
+  margin: 22px 0 20px;
+  background: linear-gradient(90deg, #c9a05b, rgba(201, 160, 91, 0));
+}
+
+.auth-promo .auth-promo-note {
+  margin: 0 0 20px;
+  color: rgba(244, 237, 224, .82);
+  font-family: var(--auth-sans);
+  font-size: 14px;
+  line-height: 1.7;
+  letter-spacing: .01em;
+}
+
+.auth-promo .auth-promo-list {
+  display: grid;
+  gap: 11px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: rgba(244, 237, 224, .9);
+  font-family: var(--auth-sans);
+  font-size: 13px;
+  letter-spacing: .04em;
+}
+.auth-promo .auth-promo-list li { position: relative; padding-left: 22px; }
+.auth-promo .auth-promo-list li::before {
+  position: absolute;
+  left: 0;
+  top: .42em;
+  width: 8px;
+  height: 8px;
+  border: 1px solid #c9a05b;
+  border-radius: 50%;
+  content: "";
+}
+
+.signup-promo {
+  top: 20%;
+  right: auto;
+  left: 6%;
+  width: 30%;
+}
+
+.auth-promo h2,
+.auth-promo .auth-promo-note,
+.auth-promo .auth-promo-list { text-shadow: 0 1px 20px rgba(0, 0, 0, .38); }

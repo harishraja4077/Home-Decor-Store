@@ -49,7 +49,7 @@
                 <option value="draft">Draft</option>
               </select>
             </label>
-            <button onclick="window.location.href='../../404.html';return false" class="btn btn-gold" data-modal-open="productModal"><span data-icon="plus"></span> Add product</button>
+            <button onclick="window.location.href='../../404.html';return false" class="btn btn-gold"><span data-icon="plus"></span> Add product</button>
           </div>
 
           <div class="table-wrap">
@@ -127,35 +127,6 @@
           </div>
         </section>
       </main>
-    </div>
-  </div>
-
-  <div class="modal" id="productModal" role="dialog" aria-modal="true" aria-labelledby="productModalTitle">
-    <div class="modal-card">
-      <div class="modal-head">
-        <h2 id="productModalTitle">Add a new product</h2>
-        <button class="mini-btn" data-modal-close aria-label="Close"><span data-icon="close"></span></button>
-      </div>
-      <form data-product-form>
-        <div class="modal-body">
-          <div class="form-grid">
-            <div class="form-field full"><label for="p-name">Product name</label><input id="p-name" name="name" placeholder="e.g. Sculpted Oak Bench" required></div>
-            <div class="form-field"><label for="p-category">Category</label>
-              <select id="p-category" name="category"><option>Living</option><option>Lighting</option><option>Objects</option><option>Textiles</option><option>Furniture</option></select>
-            </div>
-            <div class="form-field"><label for="p-price">Price (USD)</label><input id="p-price" name="price" type="number" min="1" placeholder="0" required></div>
-            <div class="form-field"><label for="p-stock">Initial stock</label><input id="p-stock" name="stock" type="number" min="0" placeholder="0"></div>
-            <div class="form-field"><label for="p-status">Status</label>
-              <select id="p-status" name="status"><option>Active</option><option>Draft</option></select>
-            </div>
-            <div class="form-field full"><label for="p-desc">Description</label><textarea id="p-desc" name="description" placeholder="A short, lovely description."></textarea></div>
-          </div>
-        </div>
-        <div class="modal-foot">
-          <button type="button" class="btn btn-ghost" data-modal-close>Cancel</button>
-          <button type="submit" class="btn btn-gold">Add product</button>
-        </div>
-      </form>
     </div>
   </div>
 
